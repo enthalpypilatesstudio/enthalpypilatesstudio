@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ENTHALPY — Staff Admin & Desk</title>
+<link rel="stylesheet" href="assets/2ac995fe-f613-47da-bff5-3139b874b26e.js">
+<style>
+/* ENTHALPY Admin Design Tokens */
+:root {
+  --linen: #F5F1EA;
+  --khaki: #D7C9B8;
+  --camel: #B2967D;
+  --cocoa: #7D5A44;
+  --espresso: #4A342A;
+  --paper: #FAF8F5;
+  --white: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --line: #E6DFD5;
+  --success: #3A6B4C;
+  --success-bg: #EDF5F0;
+  --warning: #946221;
+  --warning-bg: #FAF3E8;
+  --danger: #8C2B2B;
+  --danger-bg: #FDF0F0;
+  --sans: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--linen);
+  color: var(--espresso);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Top Bar */
+.admin-header {
+  background: var(--espresso);
+  color: var(--linen);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.brand-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.badge-admin {
+  background: rgba(215, 201, 184, 0.2);
+  color: var(--khaki);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.desk-mode-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--khaki);
+}
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.9); }
+}
+.btn-site-link {
+  color: var(--linen);
+  text-decoration: none;
+  font-size: 12px;
+  border: 1px solid rgba(245, 241, 234, 0.25);
+  padding: 5px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.btn-site-link:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--linen);
+}
+
+/* Navigation Tabs */
+.admin-nav {
+  background: #FAF7F2;
+  border-bottom: 1px solid var(--line);
+  padding: 0 24px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+.nav-tab {
+  background: none;
+  border: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cocoa);
+  padding: 14px 16px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-tab:hover { color: var(--espresso); }
+.nav-tab.active {
+  color: var(--espresso);
+}
+.nav-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--espresso);
+}
+.tab-count {
+  background: var(--line);
+  color: var(--espresso);
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+/* Layout Content */
+.admin-content {
+  flex: 1;
+  padding: 24px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Stat Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(74, 52, 42, 0.04);
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--cocoa);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--espresso);
+  font-family: var(--sans);
+}
+.stat-sub {
+  font-size: 12px;
+  color: var(--camel);
+  margin-top: 4px;
+}
+
+/* Section Containers */
+.panel-section {
+  display: none;
+}
+.panel-section.active {
+  display: block;
+}
+
+/* Table Card */
+.table-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(74, 52, 42, 0.04);
+}
+.card-header-bar {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--espresso);
+}
+.card-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search-input {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: var(--sans);
+  color: var(--espresso);
+  width: 240px;
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--camel);
+  background: #FFF;
+}
+.btn {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-primary {
+  background: var(--espresso);
+  color: var(--linen);
+}
+.btn-primary:hover {
+  background: var(--cocoa);
+}
+.btn-secondary {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--espresso);
+}
+.btn-secondary:hover {
+  background: #EDE8E0;
+}
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.btn-checkin {
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid rgba(58, 107, 76, 0.2);
+}
+.btn-checkin:hover {
+  background: #DDF0E3;
+}
+.btn-checked {
+  background: #DDF0E3;
+  color: var(--success);
+  border: 1px solid var(--success);
+  font-weight: 700;
+  cursor: default;
+}
+
+/* Data Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.data-table th {
+  background: var(--paper);
+  padding: 12px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cocoa);
+  border-bottom: 1px solid var(--line);
+}
+.data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--espresso);
+  vertical-align: middle;
+}
+.data-table tr:hover td {
+  background: #FCFAF7;
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.status-confirmed { background: var(--success-bg); color: var(--success); }
+.status-waitlist { background: var(--warning-bg); color: var(--warning); }
+.status-cancelled { background: var(--danger-bg); color: var(--danger); }
+.status-pass { background: #EAE6DF; color: var(--espresso); }
+
+.tag-injury {
+  display: inline-block;
+  background: #FFF0EB;
+  color: #B24322;
+  border: 1px solid #FAD1C2;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+/* POS Quick Sell Grid */
+.pos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.pos-product {
+  background: #FFF;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pos-product:hover {
+  border-color: var(--camel);
+  box-shadow: 0 4px 12px rgba(74, 52, 42, 0.08);
+  transform: translateY(-2px);
+}
+.pos-title { font-size: 16px; font-weight: 700; color: var(--espresso); }
+.pos-price { font-size: 22px; font-weight: 700; color: var(--cocoa); margin: 8px 0; }
+.pos-desc { font-size: 12px; color: #777; margin-bottom: 12px; }
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 25, 18, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open {
+  display: flex;
+}
+.modal-box {
+  background: #FFF;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+.modal-head h3 { font-size: 18px; color: var(--espresso); }
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--espresso);
+  color: var(--linen);
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 2000;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="admin-header">
+  <div class="brand-group">
+    <div class="brand-name">ENTHALPY</div>
+    <span class="badge-admin">Studio Ops &amp; Admin</span>
+    <div class="desk-mode-indicator">
+      <span class="live-dot"></span>
+      <span>Front Desk Tablet View · Location 1 (Koramangala)</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <a href="index.html" class="btn-site-link">← View Public Website</a>
+    <a href="account.html" class="btn-site-link">Member Portal</a>
+  </div>
+</header>
+
+<!-- Navigation Tabs -->
+<nav class="admin-nav">
+  <button class="nav-tab active" onclick="switchTab('today')">
+    Today's Sessions <span class="tab-count" id="today-count">4</span>
+  </button>
+  <button class="nav-tab" onclick="switchTab('schedule')">
+    Schedule &amp; Timetable
+  </button>
+  <button class="nav-tab" onclick="switchTab('members')">
+    Member Directory
+  </button>
+  <button class="nav-tab" onclick="switchTab('pos')">
+    Front Desk POS &amp; Sales
+  </button>
+  <button class="nav-tab" onclick="switchTab('reports')">
+    Occupancy &amp; Reports
+  </button>
+  <button class="nav-tab" onclick="switchTab('settings')">
+    Studio Settings
+  </button>
+</nav>
+
+<!-- Main Container -->
+<main class="admin-content">
+
+  <!-- Stats Banner -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-label">Today's Check-ins</div>
+      <div class="stat-value" id="stat-checkin">38 / 48</div>
+      <div class="stat-sub">79% checked in so far</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Occupancy Rate</div>
+      <div class="stat-value">91.6%</div>
+      <div class="stat-sub">44 seats filled of 48 total</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Active Waitlist</div>
+      <div class="stat-value">7 members</div>
+      <div class="stat-sub">Across 4 sessions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Today's Desk Revenue</div>
+      <div class="stat-value">₹41,200</div>
+      <div class="stat-sub">12 transactions (UPI + Card)</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: TODAY'S SESSIONS -->
+  <section id="section-today" class="panel-section active">
+    <div class="table-card">
+      <div class="card-header-bar">
+        <div>
+          <div class="card-title">07:00 AM — Foundation Reformer (Room 1 · 12 Reformers)</div>
+          <div style="font-size: 12px; color: var(--cocoa); margin-top: 2px;">Instructor: Ananya Roy · Full Capacity (12/12) · 2 on waitlist</div>
+        </div>
+        <div class="card-controls">
+          <input type="text" class="search-input" placeholder="Search roster by name/phone..." onkeyup="filterRoster(this.value)">
+          <button class="btn btn-primary btn-sm" onclick="openWalkInModal()">+ Walk-in Booking</button>
+        </div>
+      </div>
+
+      <table class="data-table" id="roster-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Member</th>
+            <th>Phone</th>
+            <th>Pass / Plan</th>
+            <th>Notes &amp; Injuries</th>
+            <th>Status</th>
+            <th style="text-align: right;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>01</strong></td>
+            <td><strong>Priya Sharma</strong></td>
+            <td>+91 98450 12345</td>
+            <td><span class="status-pill status-pass">10-Class Pack (7 left)</span></td>
+            <td><span class="tag-injury">⚠️ Neck &amp; C5 tension</span></td>
+            <td><span class="status-pill status-confirmed" id="status-1">Checked in (06:52 AM)</span></td>
+            <td style="text-align: right;">
+              <button class="btn btn-sm btn-checked" id="btn-1" disabled>✓ Checked In</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>02</strong></td>
+            <td><strong>Rohan Mehta</strong></td>
+            <td>+91 98201 67890</td>
+            <td><span class="status-pill status-pass">Unlimited Monthly</span></td>
+            <td>None declared</td>
+            <td><span class="status-pill status-confirmed" id="status-2">Checked in (06:55 AM)</span></td>
+            <td style="text-align: right;">
+              <button class="btn btn-sm btn-checked" id="btn-2" disabled>✓ Checked In</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>03</strong></td>
+            <td><strong>Kavita Iyer</strong></td>
+            <td>+91 99160 55443</td>
+            <td><span class="status-pill status-pass">First-Timer Intro Offer</span></td>
+            <td><span class="tag-injury">⚠️ First time on reformer</span></td>
+            <td><span class="status-pill status-waitlist" id="status-3">Booked (Awaiting)</span></td>
+            <td style="text-align: right;">
+              <button class="btn btn-sm btn-checkin" id="btn-3" onclick="checkIn(3, 'Kavita Iyer')">Tap to Check In</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>04</strong></td>
+            <td><strong>Arjun Kapoor</strong></td>
+            <td>+91 97400 88219</td>
+            <td><span class="status-pill status-pass">5-Class Pack (3 left)</span></td>
+            <td><span class="tag-injury">⚠️ Lumbar disc / No twisting</span></td>
+            <td><span class="status-pill status-waitlist" id="status-4">Booked (Awaiting)</span></td>
+            <td style="text-align: right;">
+              <button class="btn btn-sm btn-checkin" id="btn-4" onclick="checkIn(4, 'Arjun Kapoor')">Tap to Check In</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>05</strong></td>
+            <td><strong>Sneha Rao</strong></td>
+            <td>+91 98860 11223</td>
+            <td><span class="status-pill status-pass">Core 8 Membership</span></td>
+            <td>Wrist sprain (right hand)</td>
+            <td><span class="status-pill status-confirmed" id="status-5">Checked in (06:48 AM)</span></td>
+            <td style="text-align: right;">
+              <button class="btn btn-sm btn-checked" id="btn-5" disabled>✓ Checked In</button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>06</strong></td>
+            <td><strong>Vikramaditya Sengupta</strong></td>
+            <td>+91 99001 44556</td>
+            <td><span class="status-pill status-pass">Single Drop-in</span></td>
+            <td>None</td>
+            <td><span class="status-pill status-waitlist" id="status-6">Booked (Awaiting)</span></td>
+            <td style="text-align: right;">
+              <button class="btn btn-sm btn-checkin" id="btn-6" onclick="checkIn(6, 'Vikramaditya Sengupta')">Tap to Check In</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 2: SCHEDULE -->
+  <section id="section-schedule" class="panel-section">
+    <div class="table-card">
+      <div class="card-header-bar">
+        <div class="card-title">Weekly Schedule &amp; Reformer Allocations</div>
+        <button class="btn btn-primary btn-sm" onclick="showToast('Class creator modal ready')">+ Add Class Session</button>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Class Name</th>
+            <th>Level</th>
+            <th>Instructor</th>
+            <th>Capacity</th>
+            <th>Waitlist</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>07:00 – 07:50</strong></td>
+            <td>Foundation Reformer</td>
+            <td>Foundation</td>
+            <td>Ananya Roy</td>
+            <td>12 / 12 (Full)</td>
+            <td>2 members</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Roster opened')">View Roster</button></td>
+          </tr>
+          <tr>
+            <td><strong>08:15 – 09:05</strong></td>
+            <td>Reformer Flow</td>
+            <td>All Levels</td>
+            <td>Devika Menon</td>
+            <td>11 / 12 (1 open)</td>
+            <td>0</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Roster opened')">View Roster</button></td>
+          </tr>
+          <tr>
+            <td><strong>09:30 – 10:25</strong></td>
+            <td>Dynamic Reformer</td>
+            <td>Intermediate</td>
+            <td>Kabir Oberoi</td>
+            <td>12 / 12 (Full)</td>
+            <td>3 members</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Roster opened')">View Roster</button></td>
+          </tr>
+          <tr>
+            <td><strong>11:00 – 11:55</strong></td>
+            <td>Advanced Reformer</td>
+            <td>Advanced</td>
+            <td>Ananya Roy</td>
+            <td>9 / 12 (3 open)</td>
+            <td>0</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Roster opened')">View Roster</button></td>
+          </tr>
+          <tr>
+            <td><strong>17:30 – 18:20</strong></td>
+            <td>Reformer Flow</td>
+            <td>All Levels</td>
+            <td>Devika Menon</td>
+            <td>12 / 12 (Full)</td>
+            <td>4 members</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Roster opened')">View Roster</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 3: MEMBERS -->
+  <section id="section-members" class="panel-section">
+    <div class="table-card">
+      <div class="card-header-bar">
+        <div class="card-title">Member Database &amp; Credit Ledgers</div>
+        <input type="text" class="search-input" placeholder="Search members by name/phone...">
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Member</th>
+            <th>Phone</th>
+            <th>Current Entitlement</th>
+            <th>Balance</th>
+            <th>Health Waiver</th>
+            <th>Attendance</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Aarav Sharma</strong></td>
+            <td>+91 98450 11002</td>
+            <td>Core 8 Monthly</td>
+            <td>5 credits left</td>
+            <td><span class="status-pill status-confirmed">Signed (v2.0)</span></td>
+            <td>96% (24 classes)</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Ledger opened')">Ledger</button></td>
+          </tr>
+          <tr>
+            <td><strong>Divya Krishnan</strong></td>
+            <td>+91 99000 88771</td>
+            <td>10-Class Pack</td>
+            <td>3 credits left</td>
+            <td><span class="status-pill status-confirmed">Signed (v2.0)</span></td>
+            <td>100% (7 classes)</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Ledger opened')">Ledger</button></td>
+          </tr>
+          <tr>
+            <td><strong>Meera Varma</strong></td>
+            <td>+91 98200 44332</td>
+            <td>Unlimited Monthly</td>
+            <td>Active (AutoPay)</td>
+            <td><span class="status-pill status-confirmed">Signed (v2.0)</span></td>
+            <td>91% (38 classes)</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Ledger opened')">Ledger</button></td>
+          </tr>
+          <tr>
+            <td><strong>Tanvi Hegde</strong></td>
+            <td>+91 97401 22998</td>
+            <td>Intro Offer (1 class)</td>
+            <td>1 credit</td>
+            <td><span class="status-pill status-waitlist">Pending Signature</span></td>
+            <td>First visit today</td>
+            <td><button class="btn btn-secondary btn-sm" onclick="showToast('Waiver sent to WhatsApp')">Send Waiver</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 4: POS & SALES -->
+  <section id="section-pos" class="panel-section">
+    <div class="card-title" style="margin-bottom: 16px;">Quick Desk Checkout (UPI QR / Card Terminal)</div>
+    <div class="pos-grid">
+      <div class="pos-product" onclick="sellItem('Intro Offer (1 Class)', 1500)">
+        <div>
+          <div class="pos-title">First-Timer Intro Class</div>
+          <div class="pos-desc">One-time offer for new visitors. Valid 14 days.</div>
+        </div>
+        <div>
+          <div class="pos-price">₹1,500 <span style="font-size: 13px; color: #888;">incl. GST</span></div>
+          <button class="btn btn-primary btn-sm" style="width: 100%;">Charge ₹1,500</button>
+        </div>
+      </div>
+      <div class="pos-product" onclick="sellItem('Single Class Drop-in', 2200)">
+        <div>
+          <div class="pos-title">Single Class Drop-in</div>
+          <div class="pos-desc">Any 50 or 55 min reformer class. Valid 30 days.</div>
+        </div>
+        <div>
+          <div class="pos-price">₹2,200 <span style="font-size: 13px; color: #888;">incl. GST</span></div>
+          <button class="btn btn-primary btn-sm" style="width: 100%;">Charge ₹2,200</button>
+        </div>
+      </div>
+      <div class="pos-product" onclick="sellItem('5-Class Pack', 9500)">
+        <div>
+          <div class="pos-title">5-Class Pack</div>
+          <div class="pos-desc">₹1,900 / class. Valid 60 days. Sharable with partner.</div>
+        </div>
+        <div>
+          <div class="pos-price">₹9,500 <span style="font-size: 13px; color: #888;">incl. GST</span></div>
+          <button class="btn btn-primary btn-sm" style="width: 100%;">Charge ₹9,500</button>
+        </div>
+      </div>
+      <div class="pos-product" onclick="sellItem('10-Class Pack', 17000)">
+        <div>
+          <div class="pos-title">10-Class Pack</div>
+          <div class="pos-desc">₹1,700 / class. Valid 90 days. Most popular pack.</div>
+        </div>
+        <div>
+          <div class="pos-price">₹17,000 <span style="font-size: 13px; color: #888;">incl. GST</span></div>
+          <button class="btn btn-primary btn-sm" style="width: 100%;">Charge ₹17,000</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: REPORTS -->
+  <section id="section-reports" class="panel-section">
+    <div class="table-card">
+      <div class="card-header-bar">
+        <div class="card-title">Studio Performance &amp; Revenue Metrics</div>
+        <button class="btn btn-secondary btn-sm" onclick="showToast('Exporting GST B2C CSV...')">Export CSV (Tally/Zoho)</button>
+      </div>
+      <div style="padding: 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <div>
+            <h4 style="margin-bottom: 12px; color: var(--espresso);">Revenue by Channel (This Month)</h4>
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span>Online Website &amp; UPI:</span> <strong>₹4,82,000 (68%)</strong>
+            </div>
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span>Front Desk POS (Card/UPI QR):</span> <strong>₹1,65,500 (23%)</strong>
+            </div>
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span>AutoPay Recurring Mandates:</span> <strong>₹62,000 (9%)</strong>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 12px; color: var(--espresso);">Capacity Utilization by Time</h4>
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span>Morning Peak (07:00 – 10:30):</span> <strong>98.2%</strong>
+            </div>
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span>Midday (11:00 – 16:00):</span> <strong>74.5%</strong>
+            </div>
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span>Evening Peak (17:30 – 20:30):</span> <strong>96.8%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: SETTINGS -->
+  <section id="section-settings" class="panel-section">
+    <div class="table-card" style="padding: 24px;">
+      <h3 style="margin-bottom: 16px; color: var(--espresso);">Studio Operating Policies (Enforced by Engine)</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div>
+          <label style="font-weight: 700; display: block; margin-bottom: 4px;">Seat-Hold Lock Duration (Minutes)</label>
+          <input type="number" class="search-input" value="10" style="width: 100%;">
+          <div style="font-size: 12px; color: #888; margin-top: 4px;">Default Redis TTL for checkout lock.</div>
+        </div>
+        <div>
+          <label style="font-weight: 700; display: block; margin-bottom: 4px;">Free Cancellation Window (Hours)</label>
+          <input type="number" class="search-input" value="12" style="width: 100%;">
+          <div style="font-size: 12px; color: #888; margin-top: 4px;">Classes cancelled &gt; 12h return credit automatically.</div>
+        </div>
+        <div>
+          <label style="font-weight: 700; display: block; margin-bottom: 4px;">Studio GSTIN Number</label>
+          <input type="text" class="search-input" value="29AABCE1234F1Z5" style="width: 100%;">
+          <div style="font-size: 12px; color: #888; margin-top: 4px;">Printed on automated tax invoices.</div>
+        </div>
+        <div>
+          <label style="font-weight: 700; display: block; margin-bottom: 4px;">Reformer Capacity (Room 1)</label>
+          <input type="number" class="search-input" value="12" style="width: 100%;">
+          <div style="font-size: 12px; color: #888; margin-top: 4px;">Maximum simultaneous confirmed bookings.</div>
+        </div>
+      </div>
+      <div style="margin-top: 24px;">
+        <button class="btn btn-primary" onclick="showToast('Settings saved successfully')">Save Settings</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Walk-in Modal -->
+<div class="modal-overlay" id="walkin-modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Walk-In Booking &amp; Check-In</h3>
+      <button class="modal-close" onclick="closeWalkInModal()">&times;</button>
+    </div>
+    <div style="margin-bottom: 12px;">
+      <label style="display: block; font-weight: 600; margin-bottom: 4px;">Member Name</label>
+      <input type="text" id="modal-name" class="search-input" style="width: 100%;" placeholder="e.g. Siddharth Rao">
+    </div>
+    <div style="margin-bottom: 12px;">
+      <label style="display: block; font-weight: 600; margin-bottom: 4px;">Phone Number (for OTP &amp; Invoice)</label>
+      <input type="tel" id="modal-phone" class="search-input" style="width: 100%;" placeholder="+91 98...">
+    </div>
+    <div style="margin-bottom: 16px;">
+      <label style="display: block; font-weight: 600; margin-bottom: 4px;">Pass Type</label>
+      <select class="search-input" style="width: 100%;">
+        <option>Single Class Drop-in (₹2,200)</option>
+        <option>First-Timer Intro Offer (₹1,500)</option>
+        <option>Use Existing Pack Balance</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="confirmWalkIn()">Confirm Booking &amp; Mark Checked In</button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast-msg"></div>
+
+<script>
+function switchTab(tabKey) {
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel-section').forEach(s => s.classList.remove('active'));
+
+  event.currentTarget.classList.add('active');
+  const target = document.getElementById('section-' + tabKey);
+  if (target) target.classList.add('active');
+}
+
+async function checkIn(id, name) {
+  const btn = document.getElementById('btn-' + id);
+  const status = document.getElementById('status-' + id);
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  btn.className = 'btn btn-sm btn-checked';
+  btn.innerText = '✓ Checked In';
+  btn.disabled = true;
+
+  if (status) {
+    status.className = 'status-pill status-confirmed';
+    status.innerText = 'Checked in (' + timeStr + ')';
+  }
+
+  showToast(name + ' checked in at ' + timeStr);
+  updateCheckinStat();
+
+  try {
+    await fetch('/api/admin/checkin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ bookingId: id })
+    });
+  } catch (err) {
+    console.log('Server sync status:', err.message);
+  }
+}
+
+function updateCheckinStat() {
+  const stat = document.getElementById('stat-checkin');
+  if (stat) {
+    const checked = document.querySelectorAll('.btn-checked').length;
+    stat.innerText = (35 + checked) + ' / 48';
+  }
+}
+
+function openWalkInModal() {
+  document.getElementById('walkin-modal').classList.add('open');
+}
+function closeWalkInModal() {
+  document.getElementById('walkin-modal').classList.remove('open');
+}
+
+async function confirmWalkIn() {
+  const name = document.getElementById('modal-name').value || 'Walk-in Member';
+  const phone = document.getElementById('modal-phone').value || '+91 99999 00000';
+  closeWalkInModal();
+  showToast(name + ' added to roster & checked in!');
+
+  try {
+    await fetch('/api/bookings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        memberName: name,
+        memberPhone: phone,
+        passName: 'Walk-In Drop-in',
+        paymentMethod: 'Front Desk POS'
+      })
+    });
+  } catch (e) {}
+}
+
+function sellItem(itemName, price) {
+  showToast('POS: Generated UPI QR & Card Terminal intent for ' + itemName + ' (₹' + price.toLocaleString('en-IN') + ')');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast-msg');
+  t.innerText = msg;
+  t.style.display = 'block';
+  setTimeout(() => { t.style.display = 'none'; }, 3500);
+}
+
+function filterRoster(query) {
+  const q = query.toLowerCase();
+  const rows = document.querySelectorAll('#roster-table tbody tr');
+  rows.forEach(r => {
+    const text = r.innerText.toLowerCase();
+    r.style.display = text.includes(q) ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>

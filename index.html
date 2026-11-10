@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>ENTHALPY — Home</title>
+<script src="assets/2c7f4c9f-b29e-4897-a1dd-907e285e1842.js"></script>
+<script src="assets/4a7bb0fb-ef5f-40ef-99af-b54dacd45b96.js"></script>
+<script src="assets/2ac995fe-f613-47da-bff5-3139b874b26e.js"></script>
+<style>/* ENTHALPY website — shared styles (brand guidelines v2.0) */
+:root{
+  --linen:#F5F1EA; --khaki:#D7C9B8; --camel:#B2967D; --cocoa:#7D5A44; --espresso:#4A342A;
+  --paper:#FBF9F5; --line:#D7C9B8;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:Manrope, 'Helvetica Neue', Arial, sans-serif;
+  --wrap:1320px; --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--linen);color:var(--espresso);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--espresso)} a:hover{color:var(--cocoa)}
+.site{background:var(--linen);color:var(--espresso);font-family:var(--sans);overflow:hidden;overflow:clip}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--pad)}
+.sec{padding-block:clamp(72px,9vw,128px)}
+.sec-tight{padding-block:clamp(48px,6vw,80px)}
+
+/* type */
+.ey{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cocoa)}
+.d1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6.4vw,92px);line-height:1;letter-spacing:-.012em;margin:0}
+.d2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,60px);line-height:1.04;letter-spacing:-.01em;margin:0}
+.d3{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.6vw,34px);line-height:1.12;margin:0}
+.d4{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.15;margin:0}
+.lead{font-size:clamp(17px,1.5vw,19px);line-height:1.6;margin:0;max-width:34em}
+.p{margin:0;font-size:15px;line-height:1.65}
+.sm{font-size:13px;line-height:1.5}
+.muted{color:var(--cocoa)}
+.it{font-style:italic}
+.num{font-family:var(--serif);font-size:15px;color:var(--cocoa);letter-spacing:.04em}
+
+/* section head */
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,56px)}
+.sh .l{display:flex;flex-direction:column;gap:16px;max-width:760px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;background:var(--espresso);color:var(--linen);border:1px solid var(--espresso);font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--cocoa);border-color:var(--cocoa);color:var(--linen)}
+.btn-o{background:transparent;color:var(--espresso)}
+.btn-o:hover{background:var(--espresso);color:var(--linen)}
+.btn-l{background:var(--linen);color:var(--espresso);border-color:var(--linen)}
+.btn-l:hover{background:var(--khaki);border-color:var(--khaki);color:var(--espresso)}
+.btn-sm{min-height:44px;padding:0 20px;font-size:12px}
+.lnk{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--espresso);border-bottom:1px solid currentColor;padding-bottom:4px;min-height:32px}
+.lnk:hover{color:var(--cocoa)}
+.arr{width:16px;height:10px;flex:none}
+
+/* tags */
+.tag{display:inline-flex;align-items:center;height:26px;padding:0 10px;border:1px solid var(--espresso);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.tag-f{background:var(--espresso);color:var(--linen)}
+.dots{display:inline-flex;gap:4px;vertical-align:middle}
+.dots i{width:7px;height:7px;border-radius:50%;border:1px solid var(--espresso);display:block}
+.dots i.on{background:var(--espresso)}
+
+/* photo placeholders (art direction until the shoot) */
+.ph{position:relative;background:var(--camel);overflow:hidden}
+.ph::after{content:"";position:absolute;inset:14px;border:1px solid rgba(245,241,234,.35);pointer-events:none}
+.ph .cap{position:absolute;left:28px;bottom:24px;right:28px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--linen);line-height:1.5}
+.ph.k{background:var(--khaki)} .ph.k .cap{color:var(--espresso)} .ph.k::after{border-color:rgba(74,52,42,.22)}
+.ph.c{background:var(--cocoa)} .ph.e{background:#5A4033}
+.r45{aspect-ratio:4/5} .r32{aspect-ratio:3/2} .r169{aspect-ratio:16/9} .r11{aspect-ratio:1/1} .r34{aspect-ratio:3/4} .r21{aspect-ratio:21/9}
+
+/* announcement + nav */
+.ann{background:var(--espresso);color:var(--linen);font-size:13px;text-align:center;padding:11px var(--pad)}
+.ann a{color:var(--linen);font-weight:600;margin-left:8px}
+.nav{background:var(--linen);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav .wrap{display:flex;align-items:center;gap:40px;min-height:84px}
+.nav .logo{height:26px;width:auto;flex:none}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:30px;flex:1}
+.nav ul a{text-decoration:none;font-size:14px;font-weight:500}
+.nav ul a.on{border-bottom:1px solid var(--espresso);padding-bottom:4px}
+.nav .act{display:flex;align-items:center;gap:22px}
+.nav .act a.login{font-size:14px;font-weight:500;text-decoration:none}
+.nav .menu{display:none;width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;align-items:center;justify-content:center}
+
+/* breadcrumbs */
+.crumb{font-size:13px;color:var(--cocoa);display:flex;gap:10px;padding-top:28px}
+.crumb a{color:var(--cocoa);text-decoration:none}
+
+/* grids */
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3vw,48px)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.4vw,36px)}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.hr{height:1px;background:var(--line);border:0;margin:0}
+
+/* class card */
+.cc{display:flex;flex-direction:column;gap:16px;text-decoration:none;color:var(--espresso)}
+.cc .meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px}
+.cc .name{font-family:var(--serif);font-size:28px;line-height:1.1;font-weight:500}
+
+/* session row */
+.srow{display:grid;grid-template-columns:110px minmax(0,1.6fr) minmax(0,1fr) 150px 170px;align-items:center;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+.srow .t{font-family:var(--serif);font-size:30px;line-height:1}
+.srow .cn{font-weight:600;font-size:16px}
+.srow .sp{font-size:13px;font-weight:600}
+.srow .sp.low{color:var(--cocoa)}
+.srow .act{justify-self:end}
+
+/* faq */
+details.q{border-top:1px solid var(--line)}
+details.q:last-child{border-bottom:1px solid var(--line)}
+details.q summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font-family:var(--serif);font-size:24px;line-height:1.2}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .pl{width:16px;height:16px;flex:none;position:relative}
+details.q summary .pl::before,details.q summary .pl::after{content:"";position:absolute;background:var(--espresso);left:0;top:7.5px;width:16px;height:1px}
+details.q summary .pl::after{transform:rotate(90deg)}
+details.q[open] summary .pl::after{transform:none}
+details.q .a{padding:0 0 26px;max-width:42em;font-size:15px}
+
+/* forms */
+.fld{display:flex;flex-direction:column;gap:8px}
+.fld label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.inp{height:52px;border:1px solid var(--espresso);background:transparent;padding:0 16px;font:inherit;font-size:15px;color:inherit}
+
+/* footer */
+.foot{background:var(--espresso);color:var(--linen)}
+.foot a{color:var(--linen);text-decoration:none}
+.foot a:hover{color:var(--khaki)}
+.foot .top{display:grid;grid-template-columns:1.4fr repeat(3,minmax(0,1fr));gap:40px;padding-block:88px 64px}
+.foot h4{margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--khaki)}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.foot .bot{border-top:1px solid #6A4E40;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:24px;font-size:12px;letter-spacing:.06em;color:var(--khaki)}
+
+/* responsive */
+@media (max-width:1100px){
+  .nav ul{display:none} .nav .menu{display:inline-flex} .nav .act a.login{display:none}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot .top{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .g2,.g3,.g4{grid-template-columns:minmax(0,1fr)}
+  .nav .wrap{min-height:68px;gap:16px} .nav .logo{height:22px} .nav .act .btn{min-height:44px;padding:0 16px}
+  .srow{grid-template-columns:72px minmax(0,1fr) auto;row-gap:6px}
+  .srow .t{font-size:24px} .srow .in,.srow .sp{grid-column:2} .srow .act{grid-column:3;grid-row:1 / span 3}
+  .foot .top{grid-template-columns:minmax(0,1fr)}
+  .hide-m{display:none !important}
+}
+
+/* ───────────────────────────────────────────────
+   MOTION LAYER — calm, physical, never decorative noise.
+   Pure CSS: scroll-driven where supported, static everywhere else.
+   Everything switches off for prefers-reduced-motion.
+   ─────────────────────────────────────────────── */
+:root{--ease:cubic-bezier(.22,.61,.36,1);--ease-out:cubic-bezier(.16,1,.3,1)}
+
+/* hover craft (works in every browser) */
+.btn{background-image:linear-gradient(var(--cocoa),var(--cocoa));background-repeat:no-repeat;background-size:0% 100%;background-position:0 0;transition:background-size .5s var(--ease-out),color .3s,border-color .3s}
+.btn:hover{background-image:linear-gradient(var(--cocoa),var(--cocoa));background-size:100% 100%;background-color:var(--espresso)}
+.btn-o{background-image:linear-gradient(var(--espresso),var(--espresso))}
+.btn-o:hover{background-image:linear-gradient(var(--espresso),var(--espresso));background-color:transparent;color:var(--linen)}
+.btn-l{background-image:linear-gradient(var(--khaki),var(--khaki))}
+.btn-l:hover{background-image:linear-gradient(var(--khaki),var(--khaki));background-color:var(--linen);color:var(--espresso)}
+/* expressive buttons: spring, shape-morph, magnetic pull (motion.js), cursor light, press ripple */
+.btn{position:relative;overflow:hidden;isolation:isolate;border-radius:var(--br,0px);
+  transform:translate(var(--mx,0px),var(--my,0px)) scale(var(--s,1));
+  transition:transform .6s cubic-bezier(.34,1.56,.64,1),border-radius .6s cubic-bezier(.34,1.56,.64,1),background-size .5s var(--ease-out),color .3s,border-color .3s;will-change:transform}
+.btn:hover{--s:1.045;--br:14px}
+.btn:active{--s:.94;--br:26px;transition-duration:.16s,.16s,.5s,.3s,.3s}
+.btn:focus-visible{outline:2px solid var(--espresso);outline-offset:3px}
+.btn::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;
+  background:radial-gradient(160px circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.28),rgba(255,255,255,0) 70%);transition:opacity .4s}
+.btn:hover::before{opacity:1}
+.btn-o::before{background:radial-gradient(160px circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.22),rgba(178,150,125,0) 70%)}
+.btn-l::before{background:radial-gradient(160px circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.7),rgba(255,255,255,0) 70%)}
+.btn::after{content:"";position:absolute;left:var(--rx,50%);top:var(--ry,50%);width:12px;height:12px;border-radius:50%;background:currentColor;opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(0)}
+.btn.rip::after{animation:rip .65s cubic-bezier(.16,1,.3,1)}
+@keyframes rip{0%{opacity:.28;transform:translate(-50%,-50%) scale(0)}100%{opacity:0;transform:translate(-50%,-50%) scale(36)}}
+.btn .arr{transition:transform .6s cubic-bezier(.34,1.56,.64,1)}
+.btn:hover .arr{transform:translateX(5px)}
+@media (hover:none){.btn:hover{--s:1;--br:0px}}
+.lnk .arr,.cc .arr{transition:transform .45s var(--ease-out)}
+.lnk:hover .arr{transform:translateX(6px)}
+.lnk{transition:color .3s,letter-spacing .45s var(--ease-out)}
+.nav ul a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:4px;transition:background-size .4s var(--ease-out)}
+.nav ul a:hover{background-size:100% 1px;color:var(--espresso)}
+.ph::after{transition:inset .7s var(--ease-out),border-color .5s}
+.cc:hover .ph::after,a.ph:hover::after,.m:hover .ph::after{inset:24px;border-color:rgba(245,241,234,.7)}
+.cc .name,.cc .d3{transition:color .3s}
+.cc:hover .name{color:var(--cocoa)}
+.srow{transition:background-color .35s,padding .35s var(--ease-out)}
+.srow:hover{background-color:rgba(215,201,184,.22)}
+details.q summary .pl::after{transition:transform .4s var(--ease-out)}
+details.q[open] .a{animation:qopen .5s var(--ease-out)}
+@keyframes qopen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.foot a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .4s var(--ease-out),color .3s}
+.foot a:hover{background-size:100% 1px}
+
+/* signature: the brand wave draws itself */
+.wave path{stroke-dasharray:1;stroke-dashoffset:0}
+
+/* page-load entrance */
+@media (prefers-reduced-motion:no-preference){
+  .nav{animation:navin .9s var(--ease-out) both}
+  @keyframes navin{from{transform:translateY(-100%)}to{transform:none}}
+  main > section:first-child .d1,main > header .d1,main .d1:first-of-type{animation:rise-in 1.1s var(--ease-out) .15s both}
+  @keyframes rise-in{from{opacity:0;transform:translateY(30px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+}
+
+/* scroll-driven layer */
+@supports (animation-timeline:view()){
+@media (prefers-reduced-motion:no-preference){
+  /* reading progress */
+  .site::before{content:"";position:fixed;left:0;top:0;height:2px;width:100%;background:var(--camel);transform-origin:0 50%;transform:scaleX(0);z-index:60;animation:prog linear both;animation-timeline:scroll(root)}
+  @keyframes prog{to{transform:scaleX(1)}}
+  /* nav docks as you scroll */
+  .nav{animation:navin .9s var(--ease-out) both,dock linear both;animation-timeline:auto,scroll(root);animation-range:normal,0 180px}
+  @keyframes dock{to{background:rgba(245,241,234,.92);box-shadow:0 12px 30px -18px rgba(74,52,42,.35);backdrop-filter:blur(10px)}}
+  .nav .wrap{animation:navtight linear both;animation-timeline:scroll(root);animation-range:0 180px}
+  @keyframes navtight{to{min-height:68px}}
+
+  /* elements rise into place as they enter */
+  .sh,.cc,.srow,.pi,details.q,.card,.m,
+  .ben > div,.std > div,.about > div,.myth > div,.bring > div,.tl > div,.arc > div,.pr > div,.am > div,
+  .lv > div,.vals > div,.pol > div,.terms > div,.who > div,.how > div,.facts > span,.feat,.ins,.links a,.ways a{
+    animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  :is(.g3,.g4,.team,.ben,.std,.myth,.bring,.tl,.arc,.pr,.am,.lv,.vals,.pol,.who,.how,.facts) > :nth-child(2){animation-range:entry 6% entry 62%}
+  :is(.g3,.g4,.team,.ben,.std,.myth,.bring,.tl,.arc,.pr,.am,.lv,.vals,.pol,.who,.how,.facts) > :nth-child(3){animation-range:entry 12% entry 68%}
+  :is(.g3,.g4,.team,.ben,.std,.myth,.bring,.tl,.arc,.pr,.am,.lv,.vals,.pol,.who,.how,.facts) > :nth-child(4){animation-range:entry 18% entry 74%}
+  :is(.g3,.g4,.team,.ben,.std,.myth,.bring,.tl,.arc,.pr,.am,.lv,.vals,.pol,.who,.how,.facts) > :nth-child(n+5){animation-range:entry 22% entry 78%}
+  @keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+
+  /* photographs unveil like a curtain, then settle */
+  .ph{animation:curtain linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+  @keyframes curtain{from{clip-path:inset(22% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+  .ph > img{animation:settle linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  @keyframes settle{from{transform:scale(1.12) translateY(-3%)}to{transform:scale(1) translateY(3%)}}
+
+  /* big serif headings drift up slightly slower than the page */
+  .d2{animation:drift linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+  @keyframes drift{from{opacity:.0;transform:translateY(46px)}to{opacity:1;transform:none}}
+
+  /* the wave line draws as it crosses the screen */
+  .wave path,.wavebig path{stroke-dashoffset:1;animation:draw linear both;animation-timeline:view();animation-range:entry 10% cover 55%}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .wave path,.wavebig path{stroke-dashoffset:0}
+}
+
+/* ───────── WOW LAYER ───────── */
+/* film grain: a tactile, printed-paper feel over everything */
+.site::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:70;background:url("assets/0ce55991-b3f1-48a4-accd-94b9d8c6d02c.png") repeat;background-size:180px;opacity:.6;mix-blend-mode:overlay}
+
+/* custom cursor: a quiet ring; becomes a "view" disc over cards and photographs */
+@media (hover:hover) and (pointer:fine){
+  .site{cursor:url("assets/664c5782-7254-4986-b57c-a7f43ab6e732.svg") 14 14,auto}
+  .site a,.site button,.site summary,.site label,.site select{cursor:url("assets/664c5782-7254-4986-b57c-a7f43ab6e732.svg") 14 14,pointer}
+  .site .cc,.site a.ph,.site .feat,.site .m,.site .path a,.site .hx-card,.site .gal .ph{cursor:url("assets/c41701eb-63be-409e-bb6a-cd86e78907b4.svg") 36 36,pointer}
+  .site input,.site textarea{cursor:text}
+}
+
+/* giant wordmark signs off every page */
+.foot{position:relative;overflow:hidden}
+.foot::after{content:"";display:block;height:clamp(56px,13.5vw,200px);margin:4px var(--pad) 0;background:url("assets/0f2d0ff3-51d6-41b4-904d-7b1d8fc3cba3.svg") center bottom/contain no-repeat;opacity:.14}
+@supports (animation-timeline:view()){@media (prefers-reduced-motion:no-preference){
+  .foot::after{animation:wm linear both;animation-timeline:view();animation-range:entry 0% entry 100%}
+  @keyframes wm{from{transform:translateY(60%);opacity:0}to{transform:none;opacity:.14}}
+}}
+
+/* split-word headline reveal (used on Home hero) */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.w > span{display:inline-block}
+@media (prefers-reduced-motion:no-preference){
+  .sl.on .w > span{animation:wup 1s cubic-bezier(.16,1,.3,1) calc(.85s + var(--i,0) * 70ms) both}
+  @keyframes wup{from{transform:translateY(105%)}to{transform:none}}
+}
+</style>
+<script src="assets/5bc7e8c5-1a49-4ab0-a3b2-909d89cce637.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/ea3cf585-92a1-4583-8610-7c1b0acb2eca.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/7d875b7a-4555-436f-88db-3f30ab69e89d.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/0be3d346-2e34-4acb-848e-deefd00eba87.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fd6abc33-2dbd-4e7b-8f99-9cd7f68396db.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/9b83923c-3ac2-499d-b488-c7f0159fb201.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/c0f1ca94-506f-43c4-8722-c9d5fdca0a5d.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/5fee64f6-1763-4045-85dc-548364131437.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/9fbb5cb5-b9ac-468b-9057-6a7771a494e1.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/8f9f7202-ee33-48bd-acd4-1c39c58f130e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/5b8c3e9d-99d3-48dc-b02f-e4f3d990d505.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/c0f1ca94-506f-43c4-8722-c9d5fdca0a5d.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/5fee64f6-1763-4045-85dc-548364131437.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/9fbb5cb5-b9ac-468b-9057-6a7771a494e1.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/8f9f7202-ee33-48bd-acd4-1c39c58f130e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/5b8c3e9d-99d3-48dc-b02f-e4f3d990d505.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/bb4cddd5-5734-474b-923e-2b30b124be78.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/d28afe95-1c8b-41a9-8ae7-e481cf5e88b2.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/8114a401-8dde-462d-b3d1-1f9f6657256c.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/62407b56-a196-4146-be9f-6ccfd09558e8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/519ea62d-2cb7-45ff-ae08-2c233a51d190.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/98d60aac-0218-4123-a532-02e8cbaef43d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/bb4cddd5-5734-474b-923e-2b30b124be78.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/d28afe95-1c8b-41a9-8ae7-e481cf5e88b2.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/8114a401-8dde-462d-b3d1-1f9f6657256c.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/62407b56-a196-4146-be9f-6ccfd09558e8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/519ea62d-2cb7-45ff-ae08-2c233a51d190.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/98d60aac-0218-4123-a532-02e8cbaef43d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/bb4cddd5-5734-474b-923e-2b30b124be78.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/d28afe95-1c8b-41a9-8ae7-e481cf5e88b2.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/8114a401-8dde-462d-b3d1-1f9f6657256c.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/62407b56-a196-4146-be9f-6ccfd09558e8.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/519ea62d-2cb7-45ff-ae08-2c233a51d190.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/98d60aac-0218-4123-a532-02e8cbaef43d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+a{color:#4A342A}a:hover{color:#7D5A44}
+.slider{position:relative;height:clamp(600px,56vw,820px);overflow:hidden;background:#4A342A;color:#F5F1EA}
+.sl{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility 0s linear .9s}
+.sl.on{opacity:1;visibility:visible;transition:opacity .9s ease}
+.sl .bg{position:absolute;inset:0;transform:scale(1.06);transition:transform 7s ease-out}
+.sl.on .bg{transform:scale(1)}
+.sl .bg::after{content:"";position:absolute;inset:0;background:rgba(58,40,32,.38)}
+.sl .shot{position:absolute;right:var(--pad);top:28px;max-width:360px;text-align:right;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,234,.75);z-index:1}
+.sl .in{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;gap:28px;padding-bottom:120px}
+.sl .in > *{transform:translateY(18px);opacity:0;transition:transform .8s ease .25s,opacity .8s ease .25s}
+.sl.on .in > *{transform:none;opacity:1}
+.sl .ey{color:#D7C9B8}
+.sl .d1{max-width:15ch;color:#F5F1EA}
+.sl .lead{color:#EDE6DB;max-width:32em}
+.btn-ol{background:transparent;color:#F5F1EA;border-color:#F5F1EA}
+.btn-ol:hover{background:#F5F1EA;color:#4A342A;border-color:#F5F1EA}
+.ctl{position:absolute;left:0;right:0;bottom:0;z-index:2;border-top:1px solid rgba(245,241,234,.25)}
+.ctl .wrap{display:flex;align-items:stretch;gap:0}
+.tab{flex:1;display:flex;flex-direction:column;gap:10px;padding:22px 24px 24px 0;border:0;background:transparent;color:rgba(245,241,234,.6);font:inherit;text-align:left;cursor:pointer;min-height:44px}
+.tab .lb{display:flex;gap:12px;align-items:baseline;font-size:13px;font-weight:600;letter-spacing:.06em}
+.tab .lb span{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;letter-spacing:0}
+.tab .bar{height:2px;background:rgba(245,241,234,.22);position:relative;overflow:hidden}
+.tab .bar i{position:absolute;inset:0;width:0;background:#F5F1EA;display:block}
+.tab.on{color:#F5F1EA}
+.tab.on .bar i{animation:fill 6.5s linear forwards}
+.paused .tab.on .bar i{animation-play-state:paused}
+@keyframes fill{from{width:0}to{width:100%}}
+.arrows{display:flex;gap:8px;align-items:center;padding-left:24px}
+.arrows button{width:48px;height:48px;border:1px solid rgba(245,241,234,.55);background:transparent;color:#F5F1EA;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.arrows button:hover{background:#F5F1EA;color:#4A342A}
+.count{font-family:'Cormorant Garamond',serif;font-size:22px;padding-right:8px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.sl,.sl .bg,.sl .in > *{transition:none}.tab.on .bar i{animation:none;width:100%}}
+.facts{display:flex;gap:28px;flex-wrap:wrap;border-bottom:1px solid #D7C9B8;padding-block:22px;font-size:13px}
+.facts span{display:flex;gap:10px;align-items:baseline}
+.path{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.path a{display:flex;flex-direction:column;justify-content:space-between;gap:56px;min-height:340px;padding:clamp(32px,4vw,64px);text-decoration:none}
+.phil{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(40px,6vw,120px)}
+.pi{display:grid;grid-template-columns:56px minmax(0,1fr);gap:20px;padding:28px 0;border-top:1px solid #6A4E40}
+.offer{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center}
+.studio{position:relative}
+.studio .card{position:absolute;right:var(--pad);bottom:clamp(24px,4vw,56px);background:#F5F1EA;padding:clamp(28px,3vw,44px);max-width:440px;display:flex;flex-direction:column;gap:18px}
+.ig{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.news{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:start}
+.wave{display:block;width:100%;height:60px}
+.wavebig{position:absolute;left:0;right:0;top:50%;width:100%;height:60%;transform:translateY(-50%);pointer-events:none;opacity:.9}
+.path a{position:relative;overflow:hidden;transition:background-color .5s}
+.path a > div:last-child{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.path a:hover > div:last-child{transform:translateY(-10px)}
+.path a .num{font-size:15px;transition:font-size .7s cubic-bezier(.16,1,.3,1)}
+.path a:hover .num{font-size:44px}
+.mq{overflow:hidden;border-block:1px solid #D7C9B8;padding-block:clamp(22px,3vw,40px);background:#F5F1EA}
+.mq-track{display:flex;align-items:center;width:max-content;animation:mq 50s linear infinite}
+.mq:hover .mq-track{animation-play-state:paused}
+.mq-track span{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(56px,8vw,128px);line-height:1;padding-inline:.32em;white-space:nowrap;color:#4A342A}
+.mq-track span.o{color:transparent;-webkit-text-stroke:1px #4A342A}
+.mq-track img{height:clamp(30px,4vw,56px);width:auto;flex:none;opacity:.85}
+@keyframes mq{to{transform:translateX(-50%)}}
+.live{animation:pulse 2s ease-out infinite;box-shadow:0 0 0 0 rgba(125,90,68,.5)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(125,90,68,.55)}100%{box-shadow:0 0 0 10px rgba(125,90,68,0)}}
+/* opening curtain */
+.intro{position:fixed;inset:0;z-index:100;background:#4A342A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;pointer-events:none;clip-path:inset(0 0 100% 0)}
+.intro-mark{height:72px;width:auto}
+.intro-line{width:180px;height:1px;background:#B2967D;display:block}
+.intro-tag{font-size:11px;font-weight:600;letter-spacing:.32em;color:#D7C9B8}
+@media (prefers-reduced-motion:no-preference){
+  .intro{animation:lift .75s cubic-bezier(.76,0,.24,1) 1.15s both}
+  @keyframes lift{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 0 100% 0)}}
+  .intro-mark{animation:markin 1s cubic-bezier(.16,1,.3,1) .1s both}
+  @keyframes markin{from{opacity:0;transform:translateY(16px) scale(.92);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+  .intro-line{transform-origin:0 50%;animation:linein .8s cubic-bezier(.65,0,.35,1) .35s both}
+  @keyframes linein{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .intro-tag{animation:fadein .6s ease .55s both}
+  @keyframes fadein{from{opacity:0}to{opacity:1}}
+}
+/* manifesto */
+.mf{padding-block:clamp(88px,11vw,168px);display:flex;flex-direction:column;gap:36px}
+.mf-t{margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.6vw,68px);line-height:1.12;letter-spacing:-.01em;max-width:22ch;max-width:1100px;color:#4A342A}
+@supports (animation-timeline:view()){@media (prefers-reduced-motion:no-preference){
+  .mf-t{view-timeline:--mf block}
+  .mf-t span{color:#D7C9B8;animation:ink linear both;animation-timeline:--mf;animation-range:cover calc(18% + var(--i) * 1.3%) cover calc(21% + var(--i) * 1.3%)}
+  @keyframes ink{to{color:#4A342A}}
+}}
+/* horizontal classes */
+.hx{padding-block:clamp(72px,9vw,128px) 0}
+.hx-pin{display:flex;flex-direction:column;gap:44px}
+.hx-track{display:flex;gap:28px;overflow-x:auto;padding:0 var(--pad) 56px;scroll-snap-type:x mandatory}
+.hx-card{flex:0 0 min(500px,82vw);display:flex;flex-direction:column;gap:16px;text-decoration:none;color:#4A342A;scroll-snap-align:start;position:relative}
+.hx-n{font-family:'Cormorant Garamond',serif;font-size:96px;line-height:.8;color:#B2967D;position:absolute;right:16px;top:-46px;z-index:2;transition:transform .7s cubic-bezier(.34,1.56,.64,1)}
+.hx-card:hover .hx-n{transform:translateY(-10px)}
+.hx-card:hover .d3{color:#7D5A44}
+.hx-m{display:flex;gap:12px;align-items:center}
+.hx-end{flex:0 0 min(420px,80vw);display:flex;flex-direction:column;justify-content:center;gap:18px;padding:40px;background:#D7C9B8;scroll-snap-align:start}
+@supports (animation-timeline:view()){@media (prefers-reduced-motion:no-preference) and (min-width:1000px){
+  .hx{height:2700px;padding:0;view-timeline:--hx block}
+  .hx-pin{position:sticky;top:0;height:900px;justify-content:center;overflow:hidden}
+  .hx-track{overflow:visible;width:max-content;padding-top:50px;scroll-snap-type:none;animation:hxmove linear both;animation-timeline:--hx;animation-range:contain 0% contain 100%}
+  @keyframes hxmove{to{transform:translateX(calc(-100% + 100vw))}}
+}}
+.studio .card{transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.studio:hover .card{transform:translateY(-8px)}
+@media (max-width:900px){
+  .phil,.news{grid-template-columns:minmax(0,1fr)}
+  .slider{height:640px}
+  .sl .in{padding-bottom:110px;gap:20px}
+  .sl .shot{display:none}
+  .tab .lb em{display:none}
+  .tab{padding-right:12px}
+  .arrows .count{display:none}
+  .path{grid-template-columns:minmax(0,1fr)}
+  .path a{min-height:260px}
+  .studio .card{position:static;max-width:none}
+  .offer{grid-template-columns:minmax(0,1fr)}
+  .ig{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .faqgrid,.voice{grid-template-columns:minmax(0,1fr) !important}
+}
+</style>
+</helmet>
+<div class="site">
+
+  <div class="intro" aria-hidden="true"><img class="intro-mark" src="assets/5f5722fa-12c2-4a3c-8a4a-9a19029b4cd2.svg" alt=""><span class="intro-line"></span><span class="intro-tag">Movement. Energy. Transformation.</span></div>
+
+  <div class="ann">New to ENTHALPY? [Intro offer for first-time members] <a href="new-here.html">See the offer</a></div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/e12f68b7-1f4a-4af1-8ba3-6a267d487573.svg" alt="ENTHALPY"></a>
+      <ul>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li><a href="new-here.html">New Here</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="#instructors">Instructors</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#journal">Journal</a></li>
+      </ul>
+      <div class="act">
+        <a class="login" href="#" href="account.html">Log in</a>
+        <a class="btn btn-sm" href="book-pass.html" href="book-pass.html" href="book-pass.html">Book a class</a>
+        <button class="menu" aria-label="Open menu"><svg width="24" height="14" sc-camel-view-box="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- S2 hero -->
+    <section class="{{ rootCls }}" aria-roledescription="carousel" aria-label="Highlights">
+      <div class="{{ c0 }}" role="group" aria-roledescription="slide" aria-label="1 of 4" aria-hidden="{{ h0 }}">
+        <div class="bg" style="background: #7D5A44"></div>
+        <span class="shot">Photo · Reformer, side light from a tall window. Member mid-movement, instructor cueing the ribs.</span>
+        <div class="wrap in">
+          <span class="ey">Movement. Energy. Transformation.</span>
+          <h1 class="d1" aria-label="Movement is the science of energy, balance and transformation."><span class="w" style="--i: 0" aria-hidden="true"><span>Movement</span></span> <span class="w" style="--i: 1" aria-hidden="true"><span>is</span></span> <span class="w" style="--i: 2" aria-hidden="true"><span>the</span></span> <span class="w" style="--i: 3" aria-hidden="true"><span>science</span></span> <span class="w" style="--i: 4" aria-hidden="true"><span>of</span></span> <span class="w" style="--i: 5" aria-hidden="true"><span class="it">energy,</span></span> <span class="w" style="--i: 6" aria-hidden="true"><span class="it">balance</span></span> <span class="w" style="--i: 7" aria-hidden="true"><span>and</span></span> <span class="w" style="--i: 8" aria-hidden="true"><span class="it">transformation.</span></span></h1>
+          <p class="lead">Reformer Pilates and movement training in [Area], [City]. Small classes, and instructors who explain the why behind every exercise.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap"><a class="btn btn-l" href="book-pass.html" href="book-pass.html" href="book-pass.html">Book a class</a><a class="btn btn-ol" href="new-here.html">New to Pilates? Start here</a></div>
+        </div>
+      </div>
+      <div class="{{ c1 }}" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="{{ h1 }}">
+        <div class="bg" style="background: #B2967D"></div>
+        <span class="shot">Photo · First-timer at the reformer, instructor kneeling beside them, both smiling</span>
+        <div class="wrap in">
+          <span class="ey">New to Pilates</span>
+          <h2 class="d1">Your first class, made simple.</h2>
+          <p class="lead">[Intro offer for first-time members]. Set up on the reformer by an instructor, with time for questions after.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap"><a class="btn btn-l" href="pricing.html">Claim the intro offer</a><a class="btn btn-ol" href="new-here.html">What to expect</a></div>
+        </div>
+      </div>
+      <div class="{{ c2 }}" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="{{ h2 }}">
+        <div class="bg" style="background: #5A4033"></div>
+        <span class="shot">Photo · Reformer Strength class, standing work on heavy springs, three members in a row</span>
+        <div class="wrap in">
+          <span class="ey">Classes</span>
+          <h2 class="d1">Four ways onto the reformer.</h2>
+          <p class="lead">Foundation, Flow, Strength and Advanced. Clear levels, so you always know where to start and when to move up.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap"><a class="btn btn-l" href="classes.html">Explore classes</a><a class="btn btn-ol" href="class-finder.html">Find my class</a></div>
+        </div>
+      </div>
+      <div class="{{ c3 }}" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="{{ h3 }}">
+        <div class="bg" style="background: #8C6E57"></div>
+        <span class="shot">Photo · The studio at morning light: oak floor, lime-washed walls, reformers in a row</span>
+        <div class="wrap in">
+          <span class="ey">The studio · [Area]</span>
+          <h2 class="d1">A calm, considered space.</h2>
+          <p class="lead">Natural materials, daylight and room to move. Showers, lockers and towels ready when you arrive.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap"><a class="btn btn-l" href="studio.html">Visit the studio</a><a class="btn btn-ol" href="gallery.html">See the gallery</a></div>
+        </div>
+      </div>
+
+      <div class="ctl">
+        <div class="wrap">
+          <button class="{{ t0 }}" sc-camel-on-click="{{ go0 }}" aria-label="Slide 1: Philosophy"><span class="lb"><span>01</span><em style="font-style: normal">Philosophy</em></span><span class="bar"><i></i></span></button>
+          <button class="{{ t1 }}" sc-camel-on-click="{{ go1 }}" aria-label="Slide 2: First class"><span class="lb"><span>02</span><em style="font-style: normal">Your first class</em></span><span class="bar"><i></i></span></button>
+          <button class="{{ t2 }}" sc-camel-on-click="{{ go2 }}" aria-label="Slide 3: Classes"><span class="lb"><span>03</span><em style="font-style: normal">Classes</em></span><span class="bar"><i></i></span></button>
+          <button class="{{ t3 }}" sc-camel-on-click="{{ go3 }}" aria-label="Slide 4: The studio"><span class="lb"><span>04</span><em style="font-style: normal">The studio</em></span><span class="bar"><i></i></span></button>
+          <div class="arrows">
+            <span class="count">{{ num }} / 04</span>
+            <button sc-camel-on-click="{{ prev }}" aria-label="Previous slide"><svg width="16" height="10" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M16 5H1M5 1L1 5l4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></button>
+            <button sc-camel-on-click="{{ toggle }}" aria-label="{{ pauseLabel }}">
+              <sc-if value="{{ paused }}" hint-placeholder-val="{{ false }}"><svg width="12" height="14" sc-camel-view-box="0 0 12 14" aria-hidden="true"><path d="M1 1l10 6-10 6z" fill="currentColor"></path></svg></sc-if>
+              <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}"><svg width="12" height="14" sc-camel-view-box="0 0 12 14" aria-hidden="true"><path d="M2 1v12M10 1v12" stroke="currentColor" stroke-width="2"></path></svg></sc-if>
+            </button>
+            <button sc-camel-on-click="{{ next }}" aria-label="Next slide"><svg width="16" height="10" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap facts">
+      <span><span class="num">01</span>Classes capped for real coaching</span>
+      <span><span class="num">02</span>For men and women</span>
+      <span><span class="num">03</span>First class to advanced</span>
+    </div>
+    <svg class="wave" sc-camel-view-box="0 0 1440 60" sc-camel-preserve-aspect-ratio="none" aria-hidden="true"><path sc-camel-path-length="1" d="M0 38 C 240 10, 480 10, 720 30 S 1200 58, 1440 24" fill="none" stroke="#B2967D" stroke-width="1"></path></svg>
+
+    <!-- S3 path chooser -->
+    <section class="wrap sec-tight">
+      <div class="path">
+        <a href="new-here.html" style="background: #D7C9B8; color: #4A342A">
+          <div style="display: flex; justify-content: space-between"><span class="ey" style="color: #4A342A">New to Pilates</span><span class="num" style="color: #4A342A">A</span></div>
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <h2 class="d2">Start with the fundamentals.</h2>
+            <p class="p" style="max-width: 30em">What a class looks like, what to wear, and the intro sessions built for your first weeks.</p>
+            <span class="lnk" style="align-self: flex-start">Start here <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></span>
+          </div>
+        </a>
+        <a href="class-finder.html" style="background: #4A342A; color: #F5F1EA">
+          <div style="display: flex; justify-content: space-between"><span class="ey" style="color: #D7C9B8">Experienced</span><span class="num" style="color: #D7C9B8">B</span></div>
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <h2 class="d2">Find your session.</h2>
+            <p class="p" style="max-width: 30em; color: #D7C9B8">Filter by class type, level, instructor and time, then book in a few taps.</p>
+            <span class="lnk" style="align-self: flex-start; color: #F5F1EA">Open class finder <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- manifesto: words ink in as you read -->
+    <section class="wrap mf">
+      <span class="ey">What we believe</span>
+      <p class="mf-t"><span style="--i: 0">We</span> <span style="--i: 1">believe</span> <span style="--i: 2">strength</span> <span style="--i: 3">is</span> <span style="--i: 4">built</span> <span style="--i: 5" class="it">quietly.</span> <span style="--i: 6">One</span> <span style="--i: 7">controlled</span> <span style="--i: 8">movement,</span> <span style="--i: 9">repeated</span> <span style="--i: 10">well,</span> <span style="--i: 11">until</span> <span style="--i: 12">the</span> <span style="--i: 13">body</span> <span style="--i: 14">learns</span> <span style="--i: 15">a</span> <span style="--i: 16">better</span> <span style="--i: 17">way</span> <span style="--i: 18">to</span> <span style="--i: 19">hold</span> <span style="--i: 20">itself.</span> <span style="--i: 21">That</span> <span style="--i: 22">is</span> <span style="--i: 23">the</span> <span style="--i: 24">science</span> <span style="--i: 25">of</span> <span style="--i: 26" class="it">energy,</span> <span style="--i: 27" class="it">balance</span> <span style="--i: 28">and</span> <span style="--i: 29" class="it">transformation.</span></p>
+      <div style="display: flex; align-items: center; gap: 18px"><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt="" style="height: 30px; width: auto"><span class="sm muted">The ENTHALPY method</span></div>
+    </section>
+
+    <!-- S4 philosophy -->
+    <section style="background: #4A342A; color: #F5F1EA; position: relative; overflow: hidden" class="sec">
+      <svg class="wavebig" sc-camel-view-box="0 0 1440 400" sc-camel-preserve-aspect-ratio="none" aria-hidden="true"><path sc-camel-path-length="1" d="M-20 260 C 200 120, 420 120, 640 220 S 1060 360, 1460 140" fill="none" stroke="#7D5A44" stroke-width="1.2"></path></svg>
+      <div class="wrap phil" style="position: relative">
+        <div style="display: flex; flex-direction: column; gap: 28px">
+          <span class="ey" style="color: #D7C9B8">Our philosophy</span>
+          <h2 class="d2">We treat the body as a system of energy, balance and strength.</h2>
+          <p class="lead" style="color: #D7C9B8">Enthalpy is the energy held inside a system. We think about the body the same way: what it stores, how it moves, and how training can change it for good.</p>
+          <a class="lnk" href="philosophy.html" style="color: #F5F1EA; align-self: flex-start">Our philosophy <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+        </div>
+        <div>
+          <div class="pi"><span class="num" style="color: #B2967D; font-size: 20px">01</span><div style="display: flex; flex-direction: column; gap: 8px"><h3 class="d3">Energy</h3><p class="p" style="color: #D7C9B8">Every movement begins as stored effort. We teach you to build it, direct it and release it with control.</p></div></div>
+          <div class="pi"><span class="num" style="color: #B2967D; font-size: 20px">02</span><div style="display: flex; flex-direction: column; gap: 8px"><h3 class="d3">Balance</h3><p class="p" style="color: #D7C9B8">Strength on both sides, front and back. Alignment comes before load, every time.</p></div></div>
+          <div class="pi" style="border-bottom: 1px solid #6A4E40"><span class="num" style="color: #B2967D; font-size: 20px">03</span><div style="display: flex; flex-direction: column; gap: 8px"><h3 class="d3">Transformation</h3><p class="p" style="color: #D7C9B8">Small, precise changes, repeated well. That is how a body changes, and stays changed.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- marquee band -->
+    <section class="mq" aria-label="Movement. Energy. Transformation. Balance.">
+      <div class="mq-track" aria-hidden="true">
+        <span>Movement</span><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt=""><span class="o">Energy</span><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt=""><span>Transformation</span><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt=""><span class="o">Balance</span><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt="">
+        <span>Movement</span><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt=""><span class="o">Energy</span><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt=""><span>Transformation</span><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt=""><span class="o">Balance</span><img src="assets/acfea355-af8b-49df-b2da-dd3cab65aee5.svg" alt="">
+      </div>
+    </section>
+
+    <!-- S5 classes -->
+    <section class="hx" aria-label="Classes">
+      <div class="hx-pin">
+        <div class="wrap sh" style="margin-bottom: 0">
+          <div class="l"><span class="ey">Classes · scroll to explore</span><h2 class="d2">Four ways onto the reformer.</h2></div>
+          <a class="lnk" href="classes.html">All classes <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+        </div>
+        <div class="hx-track">
+          <a class="hx-card" href="foundation-reformer.html"><span class="hx-n">01</span><div class="ph k" style="aspect-ratio: 4 / 3"><span class="cap">Photo · Footwork, first class</span></div><div class="hx-m"><span class="tag">Foundation</span><span class="sm">50 min · Reformer</span></div><span class="d3">Foundation Reformer</span><span class="p muted">Learn the machine, the breath and the five basics.</span></a>
+          <a class="hx-card" href="classes.html"><span class="hx-n">02</span><div class="ph" style="aspect-ratio: 4 / 3"><span class="cap">Photo · Long box series</span></div><div class="hx-m"><span class="tag">All levels</span><span class="sm">50 min · Reformer</span></div><span class="d3">Reformer Flow</span><span class="p muted">A full-body class with options at every level.</span></a>
+          <a class="hx-card" href="classes.html"><span class="hx-n">03</span><div class="ph c" style="aspect-ratio: 4 / 3"><span class="cap">Photo · Standing work, heavy spring</span></div><div class="hx-m"><span class="tag">Intermediate</span><span class="sm">55 min · Reformer</span></div><span class="d3">Reformer Strength</span><span class="p muted">Heavier springs, longer holds, more load.</span></a>
+          <a class="hx-card" href="classes.html"><span class="hx-n">04</span><div class="ph e" style="aspect-ratio: 4 / 3"><span class="cap">Photo · Advanced transitions</span></div><div class="hx-m"><span class="tag tag-f">Advanced</span><span class="sm">55 min · Reformer</span></div><span class="d3">Advanced Reformer</span><span class="p muted">Complex sequences for strong technique.</span></a>
+          <div class="hx-end"><span class="d2">Not sure where to start?</span><p class="p muted">Three questions, one recommendation.</p><a class="btn" href="class-finder.html">Find my class</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S6 live today -->
+    <section style="background: #FBF9F5" class="sec">
+      <div class="wrap">
+        <div class="sh">
+          <div class="l"><span class="ey" style="display: flex; align-items: center; gap: 10px"><i class="live" style="width: 8px; height: 8px; border-radius: 50%; background: #7D5A44; display: inline-block"></i>Live · Today at [Area]</span><h2 class="d2">Today at the studio.</h2></div>
+          <a class="lnk" href="timetable.html">Full timetable <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+        </div>
+        <div>
+          <div class="srow"><span class="t">07:00</span><span class="cn">Foundation Reformer</span><span class="in sm">[Instructor] · 50 min</span><span class="sp">4 spots left</span><span class="act"><a class="btn btn-sm" href="book-pass.html">Book</a></span></div>
+          <div class="srow"><span class="t">09:30</span><span class="cn">Reformer Flow</span><span class="in sm">[Instructor] · 50 min</span><span class="sp low">Last spot</span><span class="act"><a class="btn btn-sm" href="book-pass.html">Book</a></span></div>
+          <div class="srow"><span class="t">18:00</span><span class="cn">Reformer Strength</span><span class="in sm">[Instructor] · 55 min</span><span class="sp">Full · 3 waiting</span><span class="act"><a class="btn btn-sm btn-o" href="classes.html">Join waitlist</a></span></div>
+          <div class="srow" style="border-bottom: 1px solid #D7C9B8"><span class="t">19:30</span><span class="cn">Reformer Flow</span><span class="in sm">[Instructor] · 50 min</span><span class="sp">6 spots left</span><span class="act"><a class="btn btn-sm" href="book-pass.html">Book</a></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S7 intro offer -->
+    <section style="background: #B2967D">
+      <div class="wrap sec-tight offer">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <span class="ey" style="color: #4A342A">First-time members</span>
+          <h2 class="d2">Your first class, made simple.</h2>
+          <p class="p" style="max-width: 36em">[Intro offer, e.g. two Foundation sessions for ₹—]. Set up on the reformer by an instructor, with time for questions after.</p>
+        </div>
+        <a class="btn" href="new-here.html">Book an intro session</a>
+      </div>
+    </section>
+
+    <!-- S8 instructors -->
+    <section class="wrap sec" id="instructors">
+      <div class="sh">
+        <div class="l"><span class="ey">The team</span><h2 class="d2">Teachers first, then trainers.</h2><p class="lead">Every instructor is certified in reformer Pilates and trained in how the body moves, not just in how to count reps.</p></div>
+        <a class="lnk" href="#">Meet the team <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+      </div>
+      <div class="g4">
+        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><span class="cap">Portrait · natural light, Linen wall</span></div><span class="d4">[Instructor name]</span><span class="sm muted">[Lead instructor · specialism]</span></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><span class="cap">Portrait</span></div><span class="d4">[Instructor name]</span><span class="sm muted">[Specialism]</span></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><span class="cap">Portrait</span></div><span class="d4">[Instructor name]</span><span class="sm muted">[Specialism]</span></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><span class="cap">Portrait</span></div><span class="d4">[Instructor name]</span><span class="sm muted">[Specialism]</span></div>
+      </div>
+    </section>
+
+    <!-- S9 studio -->
+    <section class="studio" id="studio">
+      <div class="ph c r21" style="min-height: 420px"><span class="cap" style="right: auto; max-width: 420px">Photo · The studio at morning light: oak floor, lime-washed walls, reformers in a row</span></div>
+      <div class="card">
+        <span class="ey">The studio · [Area]</span>
+        <h2 class="d3">A calm, considered space.</h2>
+        <p class="p">Natural materials, daylight and room to move. Showers, lockers and towels are ready when you arrive.</p>
+        <a class="lnk" href="#" style="align-self: flex-start">Visit the studio <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+      </div>
+    </section>
+
+    <!-- S10 member voices -->
+    <section class="wrap sec">
+      <div class="voice" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 32px; max-width: 1080px">
+        <span class="ey" style="padding-top: 14px">Member voices</span>
+        <div style="display: flex; flex-direction: column; gap: 24px">
+          <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.18">"[A real member's words, shared with their permission after launch.]"</p>
+          <span class="sm">— [Member name], member since [month year]</span>
+          <div style="display: flex; gap: 8px" aria-label="Quote 1 of 3"><i style="width: 28px; height: 2px; background: #4A342A; display: block"></i><i style="width: 28px; height: 2px; background: #D7C9B8; display: block"></i><i style="width: 28px; height: 2px; background: #D7C9B8; display: block"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- S11 journal -->
+    <section style="background: #FBF9F5" class="sec" id="journal">
+      <div class="wrap">
+        <div class="sh">
+          <div class="l"><span class="ey">Journal</span><h2 class="d2">Notes on movement.</h2></div>
+          <a class="lnk" href="#">All articles <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+        </div>
+        <div class="g3">
+          <a class="cc" href="#"><div class="ph k r32"><span class="cap">Photo · Springs, close-up</span></div><span class="ey">The science</span><span class="name" style="font-size: 26px">Why the reformer uses springs, not weights</span><span class="sm muted">6 min read</span></a>
+          <a class="cc" href="#"><div class="ph r32"><span class="cap">Photo · Male member, plank</span></div><span class="ey">For everybody</span><span class="name" style="font-size: 26px">Pilates for men: the strength most training misses</span><span class="sm muted">5 min read</span></a>
+          <a class="cc" href="#"><div class="ph c r32"><span class="cap">Photo · Breath work, ribs</span></div><span class="ey">Technique</span><span class="name" style="font-size: 26px">What your instructor means by "knit the ribs"</span><span class="sm muted">4 min read</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- S12 FAQ -->
+    <section class="wrap sec">
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(32px, 6vw, 96px)" class="faqgrid">
+        <div style="display: flex; flex-direction: column; gap: 18px"><span class="ey">Questions</span><h2 class="d2">Before you book.</h2><a class="lnk" href="#" style="align-self: flex-start">All FAQs <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a></div>
+        <div>
+          <details class="q" open=""><summary>Do I need any experience?<span class="pl"></span></summary><div class="a">No. Foundation classes are built for complete beginners and for anyone returning after a break. Your instructor sets up the reformer with you before class starts.</div></details>
+          <details class="q"><summary>What should I wear?<span class="pl"></span></summary><div class="a">Fitted, comfortable clothing and grip socks. Loose clothing can catch on the springs and straps.</div></details>
+          <details class="q"><summary>How do cancellations work?<span class="pl"></span></summary><div class="a">Cancel free of charge up to [x] hours before class from your account. Late cancellations use the class credit. Full policy on the pricing page.</div></details>
+          <details class="q"><summary>Is it suitable for men?<span class="pl"></span></summary><div class="a">Yes. Reformer Pilates builds the deep strength, mobility and control that most gym training leaves out. Our classes are designed for every body.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- S13 newsletter + instagram -->
+    <section style="background: #D7C9B8" class="sec">
+      <div class="wrap news">
+        <div style="display: flex; flex-direction: column; gap: 22px">
+          <span class="ey" style="color: #4A342A">Newsletter</span>
+          <h2 class="d2">Notes on movement, once a month.</h2>
+          <p class="p" style="max-width: 32em">Technique, new classes and studio news. No more than one email a month.</p>
+          <form style="display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end">
+            <div class="fld" style="flex: 1 1 260px"><label for="em">Email address</label><input id="em" class="inp" type="email" placeholder="you@example.com"></div>
+            <button class="btn" type="button">Subscribe</button>
+          </form>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px">
+          <div style="display: flex; justify-content: space-between; align-items: baseline"><span class="ey" style="color: #4A342A">Instagram</span><a class="sm" href="#">@enthalpy.studio</a></div>
+          <div class="ig">
+            <div class="ph r11"></div><div class="ph c r11"></div><div class="ph e r11"></div><div class="ph r11"></div>
+            <div class="ph e r11"></div><div class="ph r11"></div><div class="ph c r11"></div><div class="ph r11"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="top">
+        <div style="display: flex; flex-direction: column; gap: 22px">
+          <img src="assets/3d3ad513-3df4-4cbc-855f-23f48d445d07.svg" alt="ENTHALPY" style="height: 28px; width: auto; align-self: flex-start">
+          <span style="font-size: 12px; font-weight: 500; letter-spacing: .3em; color: #D7C9B8">MOVEMENT. ENERGY. TRANSFORMATION.</span>
+          <span style="font-size: 14px; line-height: 1.7">[Studio address]<br>[Area], [City] [PIN]<br>[Opening hours]</span>
+        </div>
+        <div><h4>Studio</h4><ul><li><a href="#">About</a></li><li><a href="#">Philosophy</a></li><li><a href="#instructors">Instructors</a></li><li><a href="#studio">Gallery</a></li><li><a href="#journal">Journal</a></li></ul></div>
+        <div><h4>Book</h4><ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#">Memberships</a></li><li><a href="new-here.html">New Here</a></li></ul></div>
+        <div><h4>Help</h4><ul><li><a href="#">Contact</a></li><li><a href="#">FAQ</a></li><li><a href="#">Cancellation policy</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+      </div>
+      <div class="bot"><span>© 2026 ENTHALPY. All rights reserved.</span><span><a href="#">Instagram</a> · <a href="#">LinkedIn</a> · <a href="#">WhatsApp</a></span></div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:10200}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { i: 0, paused: false };
+    this.last = Date.now();
+  }
+  componentDidMount() {
+    var self = this;
+    try {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.setState({ paused: true }); }
+    } catch (e) {}
+    this.timer = setInterval(function () {
+      if (!self.state.paused && Date.now() - self.last >= 6500) {
+        self.last = Date.now();
+        self.setState({ i: (self.state.i + 1) % 4 });
+      }
+    }, 200);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  renderVals() {
+    var self = this, i = this.state.i, p = this.state.paused;
+    var go = function (k) { return function () { self.last = Date.now(); self.setState({ i: k }); }; };
+    return {
+      rootCls: p ? 'slider paused' : 'slider',
+      c0: i === 0 ? 'sl on' : 'sl', c1: i === 1 ? 'sl on' : 'sl', c2: i === 2 ? 'sl on' : 'sl', c3: i === 3 ? 'sl on' : 'sl',
+      h0: i === 0 ? 'false' : 'true', h1: i === 1 ? 'false' : 'true', h2: i === 2 ? 'false' : 'true', h3: i === 3 ? 'false' : 'true',
+      t0: i === 0 ? 'tab on' : 'tab', t1: i === 1 ? 'tab on' : 'tab', t2: i === 2 ? 'tab on' : 'tab', t3: i === 3 ? 'tab on' : 'tab',
+      go0: go(0), go1: go(1), go2: go(2), go3: go(3),
+      prev: go((i + 3) % 4), next: go((i + 1) % 4),
+      toggle: function () { self.last = Date.now(); self.setState({ paused: !p }); },
+      paused: p, playing: !p,
+      pauseLabel: p ? 'Play slideshow' : 'Pause slideshow',
+      num: '0' + (i + 1)
+    };
+  }
+}
+</script>
+
+
+</body></html>

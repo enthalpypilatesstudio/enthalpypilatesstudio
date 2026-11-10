@@ -1,0 +1,48 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve existing files and directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Map clean URLs to .html files if matching file exists
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([^/]+)/?$ $1.html [L]
+
+  # Clean URLs aliases
+  RewriteRule ^book/?$ book-pass.html [L]
+  RewriteRule ^classes/?$ classes.html [L]
+  RewriteRule ^timetable/?$ timetable.html [L]
+  RewriteRule ^pricing/?$ pricing.html [L]
+  RewriteRule ^memberships/?$ memberships.html [L]
+  RewriteRule ^about/?$ about.html [L]
+  RewriteRule ^studio/?$ studio.html [L]
+  RewriteRule ^gallery/?$ gallery.html [L]
+  RewriteRule ^journal/?$ journal.html [L]
+  RewriteRule ^contact/?$ contact.html [L]
+  RewriteRule ^account/?$ account.html [L]
+  RewriteRule ^admin/?$ admin.html [L]
+
+  # 404 handler
+  ErrorDocument 404 /404.html
+</IfModule>
+
+# Browser Caching & Performance
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType text/css "access plus 1 month"
+</IfModule>
+
+# Gzip Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
