@@ -23,6 +23,7 @@ app.use(express.json());
 // In-memory state
 const { dates, sessions } = generateSessions();
 const holds = new Map();
+const waitlistSubmissions = [];
 const bookings = [
   {
     id: 'ENT-2026-9041',
@@ -309,6 +310,41 @@ app.post('/api/admin/checkin', (req, res) => {
   res.json({ success: true, booking: b });
 });
 
+// 7. Pre-Launch Waitlist Endpoint
+app.post('/api/waitlist', (req, res) => {
+  const { name, phone, email, goal, preferredTime, source } = req.body;
+  if (!name || !phone || !email) {
+    return res.status(400).json({ error: 'Name, phone, and email are required' });
+  }
+  const founderId = `ENT-FOUNDER-${101 + waitlistSubmissions.length}`;
+  const record = {
+    founderId,
+    name,
+    phone,
+    email,
+    goal: goal || 'Athletic Core Strength & Conditioning',
+    preferredTime: preferredTime || 'Early Morning',
+    source: source || 'Pre-Launch Waitlist',
+    registeredAt: new Date().toISOString()
+  };
+  waitlistSubmissions.push(record);
+  console.log(`[WAITLIST] New Founding 50 Member: ${name} (${phone}) - ID: ${founderId}`);
+  res.status(201).json({
+    success: true,
+    founderId,
+    message: 'Welcome to the ENTHALPY Founding 50!',
+    record
+  });
+});
+
+app.get('/api/waitlist', (req, res) => {
+  res.json({
+    total: waitlistSubmissions.length,
+    remainingFoundingSlots: Math.max(0, 50 - waitlistSubmissions.length),
+    waitlist: waitlistSubmissions
+  });
+});
+
 // ── STATIC ASSETS & WEBSITE PAGES ──
 const rootPath = path.join(__dirname, '..');
 const assetsPath = path.join(rootPath, 'assets');
@@ -323,6 +359,9 @@ app.use('/assets', express.static(assetsPath, {
 const cleanRoutes = {
   '/': 'index.html',
   '/new-here': 'new-here.html',
+  '/pilates-for-men': 'pilates-for-men.html',
+  '/pilates-for-women': 'pilates-for-women.html',
+  '/first-visit': 'first-visit.html',
   '/classes': 'classes.html',
   '/foundation-reformer': 'foundation-reformer.html',
   '/timetable': 'timetable.html',

@@ -274,6 +274,7 @@ details.q[open] .a{animation:qopen .5s var(--ease-out)}
 }
 </style>
 <script src="assets/228f8810-ba58-4c79-b614-1eae0cbbc421.js"></script>
+<link rel="stylesheet" href="assets/prelaunch-waitlist.css">
 </head>
 <body>
 <x-dc>
@@ -589,10 +590,27 @@ a{color:#4A342A}a:hover{color:#7D5A44}
 </style>
 </helmet>
 <div class="site">
+  <div class="prelaunch-banner">
+    <span class="badge">Pre-Launch Waitlist</span>
+    <span>Opening Soon in Koramangala, Bengaluru · Join the Founding 50 for 20% Lifetime Membership Discount</span>
+    <a href="#waitlist" class="btn-inline open-waitlist-modal">Join VIP Waitlist &rarr;</a>
+  </div>
   <header class="nav"><div class="wrap">
     <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/1194003f-b8f0-4abf-b151-87f28af49f73.svg" alt="ENTHALPY"></a>
-    <ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="new-here.html">New Here</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="instructors.html">Instructors</a></li><li><a class="on" href="studio.html">Studio</a></li><li><a href="journal.html">Journal</a></li></ul>
-    <div class="act"><a class="login" href="book-pass.html" href="account.html">Log in</a><a class="btn btn-sm" href="book-pass.html" href="book-pass.html" href="book-pass.html">Book a class</a><button class="menu" aria-label="Open menu"><svg width="24" height="14" sc-camel-view-box="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button></div>
+    <ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li>
+        <li class="nav-dropdown">
+          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
+            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
+            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
+            <li><a href="first-visit.html">First Visit Guide</a></li>
+          </ul>
+        </li><li><a href="pricing.html">Pricing</a></li><li><a href="instructors.html">Instructors</a></li><li><a class="on" href="studio.html">Studio</a></li><li><a href="journal.html">Journal</a></li></ul>
+    <div class="act">
+        <button class="btn btn-sm open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
+        <button class="menu" aria-label="Open menu"><svg width="24" height="14" sc-camel-view-box="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button>
+      </div>
   </div></header>
 
   <main>
@@ -603,11 +621,11 @@ a{color:#4A342A}a:hover{color:#7D5A44}
 
     <section class="wrap">
       <div class="mos">
-        <div class="ph" style="grid-column: span 8; aspect-ratio: 16 / 10"><span class="cap">Photo · Reformer room, morning light</span></div>
+        <div class="ph" style="grid-column: span 8; aspect-ratio: 16 / 10"><img src="assets/img_hero_studio.jpg" alt="ENTHALPY Reformer Studio Bengaluru" style="width:100%;height:100%;object-fit:cover;display:block"></div>
         <div class="ph k" style="grid-column: span 4"><span class="cap">Photo · Reception, oak counter</span></div>
         <div class="ph c" style="grid-column: span 4; aspect-ratio: 4 / 5"><span class="cap">Photo · Changing room detail</span></div>
-        <div class="ph e" style="grid-column: span 4; aspect-ratio: 4 / 5"><span class="cap">Photo · Springs and straps, close-up</span></div>
-        <div class="ph k" style="grid-column: span 4; aspect-ratio: 4 / 5"><span class="cap">Photo · Towels, water, quiet corner</span></div>
+        <div class="ph e" style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="assets/img_class_footwork.jpg" alt="Reformer Movement Alignment" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div class="ph k" style="grid-column: span 4; aspect-ratio: 4 / 5"><img src="assets/img_class_plank.jpg" alt="Reformer Strength Work" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       </div>
       <div style="display: flex; justify-content: flex-end; padding-top: 20px"><a class="lnk" href="gallery.html">View the full gallery <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a></div>
     </section>
@@ -653,7 +671,16 @@ a{color:#4A342A}a:hover{color:#7D5A44}
     <div class="top">
       <div style="display: flex; flex-direction: column; gap: 22px"><img src="assets/d19c4a6d-72b6-44b6-99f3-58a8caec81ea.svg" alt="ENTHALPY" style="height: 28px; width: auto; align-self: flex-start"><span style="font-size: 12px; font-weight: 500; letter-spacing: .3em; color: #D7C9B8">MOVEMENT. ENERGY. TRANSFORMATION.</span><span style="font-size: 14px; line-height: 1.7">[Studio address]<br>[Area], [City] [PIN]<br>[Opening hours]</span></div>
       <div><h4>Studio</h4><ul><li><a href="about.html">About</a></li><li><a href="philosophy.html">Philosophy</a></li><li><a href="instructors.html">Instructors</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="journal.html">Journal</a></li></ul></div>
-      <div><h4>Book</h4><ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="memberships.html">Memberships</a></li><li><a href="new-here.html">New Here</a></li></ul></div>
+      <div><h4>Book</h4><ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="memberships.html">Memberships</a></li>
+        <li class="nav-dropdown">
+          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
+            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
+            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
+            <li><a href="first-visit.html">First Visit Guide</a></li>
+          </ul>
+        </li></ul></div>
       <div><h4>Help</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQ</a></li><li><a href="cancellation-policy.html">Cancellation policy</a></li><li><a href="cancellation-policy.html">Privacy</a></li><li><a href="pricing.html">Terms</a></li></ul></div>
     </div>
     <div class="bot"><span>© 2026 ENTHALPY. All rights reserved.</span><span><a href="#">Instagram</a> · <a href="#">LinkedIn</a> · <a href="#">WhatsApp</a></span></div>
@@ -667,4 +694,5 @@ class Component extends DCLogic {
 </script>
 
 
+<script src="assets/prelaunch-waitlist.js"></script>
 </body></html>

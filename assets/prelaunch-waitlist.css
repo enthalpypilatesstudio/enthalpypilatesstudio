@@ -1,0 +1,221 @@
+/* ENTHALPY — Pre-Launch Waitlist & Educational Navigation Styling */
+
+/* Dropdown Menu in Navigation */
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.nav-dropdown-toggle .arr-dd {
+  font-size: 10px;
+  transition: transform .25s ease;
+}
+.nav-dropdown:hover .nav-dropdown-toggle .arr-dd,
+.nav-dropdown:focus-within .nav-dropdown-toggle .arr-dd {
+  transform: rotate(180deg);
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: -20px;
+  min-width: 260px;
+  background: var(--linen, #F5F1EA);
+  border: 1px solid var(--line, #D7C9B8);
+  box-shadow: 0 16px 36px rgba(74, 52, 42, 0.12);
+  padding: 8px 0;
+  list-style: none;
+  flex-direction: column;
+  gap: 0;
+  z-index: 999;
+  border-radius: 4px;
+}
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 36px;
+  width: 10px;
+  height: 10px;
+  background: var(--linen, #F5F1EA);
+  border-left: 1px solid var(--line, #D7C9B8);
+  border-top: 1px solid var(--line, #D7C9B8);
+  transform: rotate(45deg);
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: flex;
+  animation: ddFadeIn .2s ease-out;
+}
+@keyframes ddFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dropdown-menu li {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.dropdown-menu a {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 22px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--espresso, #4A342A) !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  background: transparent !important;
+  border-bottom: 1px solid rgba(215, 201, 184, 0.35) !important;
+  transition: background .2s, color .2s;
+}
+.dropdown-menu li:last-child a {
+  border-bottom: none !important;
+}
+.dropdown-menu a:hover {
+  background: var(--khaki, #D7C9B8) !important;
+  color: var(--espresso, #4A342A) !important;
+}
+
+/* Pre-Launch VIP Banner */
+.prelaunch-banner {
+  background: linear-gradient(90deg, #4A342A 0%, #5A4033 100%);
+  color: #F5F1EA;
+  padding: 14px var(--pad, 24px);
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: .04em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(215, 201, 184, 0.25);
+}
+.prelaunch-banner .badge {
+  background: #D7C9B8;
+  color: #4A342A;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.prelaunch-banner a.btn-inline {
+  color: #F5F1EA;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+/* VIP Founding Preview Lock Card */
+.locked-preview-card {
+  border: 1px solid var(--line, #D7C9B8);
+  background: var(--paper, #FBF9F5);
+  padding: clamp(32px, 5vw, 48px);
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.locked-preview-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--espresso, #4A342A);
+  color: var(--linen, #F5F1EA);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.preview-blur-box {
+  filter: blur(3px);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+  transition: all .3s;
+}
+
+/* Modal Overlay & Card */
+.wl-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 52, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+.wl-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.wl-modal-card {
+  background: #F5F1EA;
+  color: #4A342A;
+  width: 100%;
+  max-width: 540px;
+  border: 1px solid #D7C9B8;
+  padding: clamp(28px, 4vw, 44px);
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(20px);
+  transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.wl-modal-overlay.active .wl-modal-card {
+  transform: translateY(0);
+}
+.wl-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: transparent;
+  border: 0;
+  font-size: 28px;
+  line-height: 1;
+  color: #4A342A;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wl-modal-close:hover {
+  background: rgba(215, 201, 184, 0.5);
+}
+.wl-perk-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0 22px;
+}
+.wl-perk-pill {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  padding: 5px 10px;
+  background: #E8E2D7;
+  color: #4A342A;
+  border-radius: 2px;
+}

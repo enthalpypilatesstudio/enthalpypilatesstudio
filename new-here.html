@@ -274,6 +274,7 @@ details.q[open] .a{animation:qopen .5s var(--ease-out)}
 }
 </style>
 <script src="assets/a0659cc6-6b21-494a-a6e1-c58b2f31ae7c.js"></script>
+<link rel="stylesheet" href="assets/prelaunch-waitlist.css">
 </head>
 <body>
 <x-dc>
@@ -605,21 +606,34 @@ a{color:#4A342A}a:hover{color:#7D5A44}
 </helmet>
 <div class="site">
 
+  <div class="prelaunch-banner">
+    <span class="badge">Pre-Launch Waitlist</span>
+    <span>Opening Soon in Koramangala, Bengaluru · Join the Founding 50 for 20% Lifetime Membership Discount</span>
+    <a href="#waitlist" class="btn-inline open-waitlist-modal">Join VIP Waitlist &rarr;</a>
+  </div>
   <header class="nav">
     <div class="wrap">
       <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/8e4eaf0b-0653-4e97-a73c-40ffdcae03a1.svg" alt="ENTHALPY"></a>
       <ul>
         <li><a href="classes.html">Classes</a></li>
         <li><a href="timetable.html">Timetable</a></li>
-        <li><a class="on" href="new-here.html">New Here</a></li>
+        
+        <li class="nav-dropdown">
+          <a href="new-here.html" class="nav-dropdown-toggle on">New Here <span class="arr-dd">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
+            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
+            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
+            <li><a href="first-visit.html">First Visit Guide</a></li>
+          </ul>
+        </li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="#">Instructors</a></li>
         <li><a href="#">Studio</a></li>
         <li><a href="#">Journal</a></li>
       </ul>
       <div class="act">
-        <a class="login" href="#" href="account.html">Log in</a>
-        <a class="btn btn-sm" href="book-pass.html" href="book-pass.html" href="book-pass.html">Book a class</a>
+        <button class="btn btn-sm open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
         <button class="menu" aria-label="Open menu"><svg width="24" height="14" sc-camel-view-box="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button>
       </div>
     </div>
@@ -632,11 +646,11 @@ a{color:#4A342A}a:hover{color:#7D5A44}
         <h1 class="d1">Everything you need before your first class.</h1>
         <p class="lead">Five short steps: what Pilates is, whether it suits you, which class to book, what to bring and how your first visit works.</p>
         <div style="display: flex; gap: 14px; flex-wrap: wrap">
-          <a class="btn" href="book-pass.html">Book an intro session</a>
+          <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()">Join Founding 50 Waitlist</button>
           <a class="btn btn-o" href="#what">Read the guide</a>
         </div>
       </div>
-      <div class="ph k r45"><span class="cap">Photo · Instructor welcoming a first-timer at the reformer, both smiling, nothing posed</span></div>
+      <div class="ph k r45"><img src="assets/img_class_footwork.jpg" alt="Instructor welcoming a first-timer on reformer" style="width:100%;height:100%;object-fit:cover;display:block"></div>
     </section>
 
     <nav class="steps" aria-label="Guide steps">
@@ -767,7 +781,16 @@ a{color:#4A342A}a:hover{color:#7D5A44}
           <span style="font-size: 14px; line-height: 1.7">[Studio address]<br>[Area], [City] [PIN]<br>[Opening hours]</span>
         </div>
         <div><h4>Studio</h4><ul><li><a href="#">About</a></li><li><a href="#">Philosophy</a></li><li><a href="#">Instructors</a></li><li><a href="#">Gallery</a></li><li><a href="#">Journal</a></li></ul></div>
-        <div><h4>Book</h4><ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#">Memberships</a></li><li><a href="new-here.html">New Here</a></li></ul></div>
+        <div><h4>Book</h4><ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#">Memberships</a></li>
+        <li class="nav-dropdown">
+          <a href="new-here.html" class="nav-dropdown-toggle on">New Here <span class="arr-dd">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
+            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
+            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
+            <li><a href="first-visit.html">First Visit Guide</a></li>
+          </ul>
+        </li></ul></div>
         <div><h4>Help</h4><ul><li><a href="#">Contact</a></li><li><a href="#">FAQ</a></li><li><a href="#">Cancellation policy</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
       </div>
       <div class="bot"><span>© 2026 ENTHALPY. All rights reserved.</span><span><a href="#">Instagram</a> · <a href="#">LinkedIn</a> · <a href="#">WhatsApp</a></span></div>
@@ -782,4 +805,5 @@ class Component extends DCLogic {
 </script>
 
 
+<script src="assets/prelaunch-waitlist.js"></script>
 </body></html>

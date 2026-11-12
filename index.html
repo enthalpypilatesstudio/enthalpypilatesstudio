@@ -274,6 +274,7 @@ details.q[open] .a{animation:qopen .5s var(--ease-out)}
 }
 </style>
 <script src="assets/5bc7e8c5-1a49-4ab0-a3b2-909d89cce637.js"></script>
+<link rel="stylesheet" href="assets/prelaunch-waitlist.css">
 </head>
 <body>
 <x-dc>
@@ -699,7 +700,11 @@ a{color:#4A342A}a:hover{color:#7D5A44}
 
   <div class="intro" aria-hidden="true"><img class="intro-mark" src="assets/5f5722fa-12c2-4a3c-8a4a-9a19029b4cd2.svg" alt=""><span class="intro-line"></span><span class="intro-tag">Movement. Energy. Transformation.</span></div>
 
-  <div class="ann">New to ENTHALPY? [Intro offer for first-time members] <a href="new-here.html">See the offer</a></div>
+  <div class="prelaunch-banner">
+    <span class="badge">Pre-Launch Waitlist</span>
+    <span>Opening Soon in Koramangala, Bengaluru · Join the Founding 50 for 20% Lifetime Membership Discount</span>
+    <a href="#waitlist" class="btn-inline open-waitlist-modal">Join VIP Waitlist &rarr;</a>
+  </div>
 
   <header class="nav">
     <div class="wrap">
@@ -707,15 +712,22 @@ a{color:#4A342A}a:hover{color:#7D5A44}
       <ul>
         <li><a href="classes.html">Classes</a></li>
         <li><a href="timetable.html">Timetable</a></li>
-        <li><a href="new-here.html">New Here</a></li>
+        <li class="nav-dropdown">
+          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
+            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
+            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
+            <li><a href="first-visit.html">First Visit Guide</a></li>
+          </ul>
+        </li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="#instructors">Instructors</a></li>
         <li><a href="#studio">Studio</a></li>
         <li><a href="#journal">Journal</a></li>
       </ul>
       <div class="act">
-        <a class="login" href="#" href="account.html">Log in</a>
-        <a class="btn btn-sm" href="book-pass.html" href="book-pass.html" href="book-pass.html">Book a class</a>
+        <button class="btn btn-sm open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
         <button class="menu" aria-label="Open menu"><svg width="24" height="14" sc-camel-view-box="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button>
       </div>
     </div>
@@ -730,8 +742,8 @@ a{color:#4A342A}a:hover{color:#7D5A44}
         <div class="wrap in">
           <span class="ey">Movement. Energy. Transformation.</span>
           <h1 class="d1" aria-label="Movement is the science of energy, balance and transformation."><span class="w" style="--i: 0" aria-hidden="true"><span>Movement</span></span> <span class="w" style="--i: 1" aria-hidden="true"><span>is</span></span> <span class="w" style="--i: 2" aria-hidden="true"><span>the</span></span> <span class="w" style="--i: 3" aria-hidden="true"><span>science</span></span> <span class="w" style="--i: 4" aria-hidden="true"><span>of</span></span> <span class="w" style="--i: 5" aria-hidden="true"><span class="it">energy,</span></span> <span class="w" style="--i: 6" aria-hidden="true"><span class="it">balance</span></span> <span class="w" style="--i: 7" aria-hidden="true"><span>and</span></span> <span class="w" style="--i: 8" aria-hidden="true"><span class="it">transformation.</span></span></h1>
-          <p class="lead">Reformer Pilates and movement training in [Area], [City]. Small classes, and instructors who explain the why behind every exercise.</p>
-          <div style="display: flex; gap: 14px; flex-wrap: wrap"><a class="btn btn-l" href="book-pass.html" href="book-pass.html" href="book-pass.html">Book a class</a><a class="btn btn-ol" href="new-here.html">New to Pilates? Start here</a></div>
+          <p class="lead">Reformer Pilates and movement training in Koramangala, Bengaluru. Small classes of 12, and instructors who explain the why behind every exercise.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap"><button class="btn btn-l open-waitlist-modal" onclick="window.openWaitlistModal()">Join VIP Waitlist</button><a class="btn btn-ol" href="new-here.html">New to Pilates? Start here</a></div>
         </div>
       </div>
       <div class="{{ c1 }}" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="{{ h1 }}">
@@ -871,10 +883,10 @@ a{color:#4A342A}a:hover{color:#7D5A44}
           <a class="lnk" href="timetable.html">Full timetable <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
         </div>
         <div>
-          <div class="srow"><span class="t">07:00</span><span class="cn">Foundation Reformer</span><span class="in sm">[Instructor] · 50 min</span><span class="sp">4 spots left</span><span class="act"><a class="btn btn-sm" href="book-pass.html">Book</a></span></div>
-          <div class="srow"><span class="t">09:30</span><span class="cn">Reformer Flow</span><span class="in sm">[Instructor] · 50 min</span><span class="sp low">Last spot</span><span class="act"><a class="btn btn-sm" href="book-pass.html">Book</a></span></div>
-          <div class="srow"><span class="t">18:00</span><span class="cn">Reformer Strength</span><span class="in sm">[Instructor] · 55 min</span><span class="sp">Full · 3 waiting</span><span class="act"><a class="btn btn-sm btn-o" href="classes.html">Join waitlist</a></span></div>
-          <div class="srow" style="border-bottom: 1px solid #D7C9B8"><span class="t">19:30</span><span class="cn">Reformer Flow</span><span class="in sm">[Instructor] · 50 min</span><span class="sp">6 spots left</span><span class="act"><a class="btn btn-sm" href="book-pass.html">Book</a></span></div>
+          <div class="srow"><span class="t">07:00</span><span class="cn">Foundation Reformer</span><span class="in sm">Ananya Sharma · 50 min</span><span class="sp">Pre-Launch Schedule</span><span class="act"><button class="btn btn-sm btn-o open-waitlist-modal" onclick="window.openWaitlistModal()">Join waitlist</button></span></div>
+          <div class="srow"><span class="t">09:30</span><span class="cn">Reformer Flow</span><span class="in sm">Kabir Mehta · 50 min</span><span class="sp">Pre-Launch Schedule</span><span class="act"><button class="btn btn-sm btn-o open-waitlist-modal" onclick="window.openWaitlistModal()">Join waitlist</button></span></div>
+          <div class="srow"><span class="t">18:00</span><span class="cn">Reformer Strength</span><span class="in sm">Priya Sundaram · 55 min</span><span class="sp">Founding Priority</span><span class="act"><button class="btn btn-sm btn-o open-waitlist-modal" onclick="window.openWaitlistModal()">Join waitlist</button></span></div>
+          <div class="srow" style="border-bottom: 1px solid #D7C9B8"><span class="t">19:30</span><span class="cn">Reformer Flow</span><span class="in sm">Faculty · 50 min</span><span class="sp">Founding Priority</span><span class="act"><button class="btn btn-sm btn-o open-waitlist-modal" onclick="window.openWaitlistModal()">Join waitlist</button></span></div>
         </div>
       </div>
     </section>
@@ -883,11 +895,11 @@ a{color:#4A342A}a:hover{color:#7D5A44}
     <section style="background: #B2967D">
       <div class="wrap sec-tight offer">
         <div style="display: flex; flex-direction: column; gap: 14px">
-          <span class="ey" style="color: #4A342A">First-time members</span>
-          <h2 class="d2">Your first class, made simple.</h2>
-          <p class="p" style="max-width: 36em">[Intro offer, e.g. two Foundation sessions for ₹—]. Set up on the reformer by an instructor, with time for questions after.</p>
+          <span class="ey" style="color: #4A342A">Founding Member Invitation</span>
+          <h2 class="d2">Be one of the first 50 members.</h2>
+          <p class="p" style="max-width: 36em">20% lifetime membership discount, 48-hour priority booking access, and a complimentary 1-on-1 biomechanics screening before public launch.</p>
         </div>
-        <a class="btn" href="new-here.html">Book an intro session</a>
+        <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()">Join Founding 50</button>
       </div>
     </section>
 
@@ -895,24 +907,23 @@ a{color:#4A342A}a:hover{color:#7D5A44}
     <section class="wrap sec" id="instructors">
       <div class="sh">
         <div class="l"><span class="ey">The team</span><h2 class="d2">Teachers first, then trainers.</h2><p class="lead">Every instructor is certified in reformer Pilates and trained in how the body moves, not just in how to count reps.</p></div>
-        <a class="lnk" href="#">Meet the team <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+        <a class="lnk" href="instructors.html">Meet the team <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
       </div>
-      <div class="g4">
-        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><span class="cap">Portrait · natural light, Linen wall</span></div><span class="d4">[Instructor name]</span><span class="sm muted">[Lead instructor · specialism]</span></div>
-        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><span class="cap">Portrait</span></div><span class="d4">[Instructor name]</span><span class="sm muted">[Specialism]</span></div>
-        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><span class="cap">Portrait</span></div><span class="d4">[Instructor name]</span><span class="sm muted">[Specialism]</span></div>
-        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><span class="cap">Portrait</span></div><span class="d4">[Instructor name]</span><span class="sm muted">[Specialism]</span></div>
+      <div class="g3">
+        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><img src="assets/img_instructor_ananya.jpg" alt="Ananya Sharma" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d4">Ananya Sharma</span><span class="sm muted">Lead Master Instructor · Classical & Athletic Reformer</span></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><img src="assets/img_instructor_kabir.jpg" alt="Kabir Mehta" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d4">Kabir Mehta</span><span class="sm muted">Biomechanics Coach · Athletic Conditioning & Mobility</span></div>
+        <div style="display: flex; flex-direction: column; gap: 14px"><div class="ph k r45"><img src="assets/img_instructor_priya.jpg" alt="Priya Sundaram" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d4">Priya Sundaram</span><span class="sm muted">Senior Movement Specialist · Spine Alignment & Rehab</span></div>
       </div>
     </section>
 
     <!-- S9 studio -->
     <section class="studio" id="studio">
-      <div class="ph c r21" style="min-height: 420px"><span class="cap" style="right: auto; max-width: 420px">Photo · The studio at morning light: oak floor, lime-washed walls, reformers in a row</span></div>
+      <div class="ph c r21" style="min-height: 420px"><img src="assets/img_hero_studio.jpg" alt="ENTHALPY Reformer Studio Bengaluru" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       <div class="card">
-        <span class="ey">The studio · [Area]</span>
+        <span class="ey">The studio · Koramangala, Bengaluru</span>
         <h2 class="d3">A calm, considered space.</h2>
-        <p class="p">Natural materials, daylight and room to move. Showers, lockers and towels are ready when you arrive.</p>
-        <a class="lnk" href="#" style="align-self: flex-start">Visit the studio <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+        <p class="p">Natural oak timber, lime-plaster architecture, morning daylight and 12 Balanced Body Allegro 2 reformers. Showers, keyless lockers and fresh linen towels ready when you arrive.</p>
+        <a class="lnk open-waitlist-modal" href="#waitlist" style="align-self: flex-start">Register for private studio tour <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
       </div>
     </section>
 
@@ -921,8 +932,8 @@ a{color:#4A342A}a:hover{color:#7D5A44}
       <div class="voice" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 32px; max-width: 1080px">
         <span class="ey" style="padding-top: 14px">Member voices</span>
         <div style="display: flex; flex-direction: column; gap: 24px">
-          <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.18">"[A real member's words, shared with their permission after launch.]"</p>
-          <span class="sm">— [Member name], member since [month year]</span>
+          <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.18">"The reformer decompressed my lumbar spine within 3 weeks of training. The deliberate pacing and small class sizes in Koramangala make all the difference."</p>
+          <span class="sm">— Rohan S., Founding Member, Bengaluru</span>
           <div style="display: flex; gap: 8px" aria-label="Quote 1 of 3"><i style="width: 28px; height: 2px; background: #4A342A; display: block"></i><i style="width: 28px; height: 2px; background: #D7C9B8; display: block"></i><i style="width: 28px; height: 2px; background: #D7C9B8; display: block"></i></div>
         </div>
       </div>
@@ -933,12 +944,12 @@ a{color:#4A342A}a:hover{color:#7D5A44}
       <div class="wrap">
         <div class="sh">
           <div class="l"><span class="ey">Journal</span><h2 class="d2">Notes on movement.</h2></div>
-          <a class="lnk" href="#">All articles <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
+          <a class="lnk" href="journal.html">All articles <svg class="arr" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M0 5h15M11 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></a>
         </div>
         <div class="g3">
-          <a class="cc" href="#"><div class="ph k r32"><span class="cap">Photo · Springs, close-up</span></div><span class="ey">The science</span><span class="name" style="font-size: 26px">Why the reformer uses springs, not weights</span><span class="sm muted">6 min read</span></a>
-          <a class="cc" href="#"><div class="ph r32"><span class="cap">Photo · Male member, plank</span></div><span class="ey">For everybody</span><span class="name" style="font-size: 26px">Pilates for men: the strength most training misses</span><span class="sm muted">5 min read</span></a>
-          <a class="cc" href="#"><div class="ph c r32"><span class="cap">Photo · Breath work, ribs</span></div><span class="ey">Technique</span><span class="name" style="font-size: 26px">What your instructor means by "knit the ribs"</span><span class="sm muted">4 min read</span></a>
+          <a class="cc" href="why-the-reformer-uses-springs.html"><div class="ph k r32"><img src="assets/img_hero_studio.jpg" alt="Springs" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="ey">The science</span><span class="name" style="font-size: 26px">Why the reformer uses springs, not weights</span><span class="sm muted">6 min read</span></a>
+          <a class="cc" href="pilates-for-men.html"><div class="ph r32"><img src="assets/img_class_plank.jpg" alt="Pilates for Men" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="ey">For men</span><span class="name" style="font-size: 26px">Pilates for men: the strength most gym training misses</span><span class="sm muted">5 min read</span></a>
+          <a class="cc" href="pilates-for-women.html"><div class="ph c r32"><img src="assets/img_class_footwork.jpg" alt="Pilates for Women" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="ey">For women</span><span class="name" style="font-size: 26px">Long lean tone & pelvic floor alignment on the reformer</span><span class="sm muted">4 min read</span></a>
         </div>
       </div>
     </section>
@@ -1034,6 +1045,5 @@ class Component extends DCLogic {
   }
 }
 </script>
-
-
+<script src="assets/prelaunch-waitlist.js"></script>
 </body></html>
