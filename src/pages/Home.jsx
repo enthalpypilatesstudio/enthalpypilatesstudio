@@ -6,10 +6,10 @@ export default function Home({ navigate, onSelectSession }) {
 
   const heroSlides = [
     {
-      eyebrow: 'Reformer Pilates · Bengaluru',
+      eyebrow: 'Reformer Pilates · Defence Colony, New Delhi',
       title: 'Movement. Energy. Transformation.',
-      desc: 'A calm, architectural sanctuary engineered for the science of Pilates. 12 Balanced Body Allegro 2 reformers, lime-washed walls, and master-level coaching.',
-      cta: 'Book an Intro Class',
+      desc: 'A calm, architectural sanctuary engineered for the science of Pilates. 12 Balanced Body Allegro 2 reformers, lime-washed walls, and master-level coaching for men and women.',
+      cta: 'Join Pre-Launch Waitlist',
       action: () => navigate('new-here')
     },
     {

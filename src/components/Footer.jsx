@@ -94,10 +94,10 @@ export default function Footer({ navigate }) {
               Studio Location
             </div>
             <div style={{ fontSize: '13px', lineHeight: '1.7', color: 'rgba(245, 241, 234, 0.75)' }}>
-              12th Main Road, 4th Block,<br />
-              Koramangala, Bengaluru 560034<br />
-              <span style={{ color: 'var(--khaki)' }}>Mon – Sun: 06:30 AM – 08:30 PM</span><br />
-              WhatsApp: +91 98450 12345
+              Defence Colony, New Delhi<br />
+              (Full address announced prior to opening)<br />
+              <span style={{ color: 'var(--khaki)' }}>Daily: 06:30 AM – 09:00 PM</span><br />
+              WhatsApp: +91 95899 92237 · admin@enthalpypilatesstudio.com
             </div>
             <div style={{ marginTop: '16px' }}>
               <button

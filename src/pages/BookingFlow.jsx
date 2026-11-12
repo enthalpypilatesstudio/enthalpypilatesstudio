@@ -439,7 +439,7 @@ export default function BookingFlow({ session, navigate }) {
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
               <span style={{ color: '#777', fontSize: '13px' }}>Studio Location:</span>
-              <span style={{ fontSize: '13px', textAlign: 'right' }}>Room 1 · 12th Main, Koramangala</span>
+              <span style={{ fontSize: '13px', textAlign: 'right' }}>Room 1 · Defence Colony, New Delhi</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '12px', borderTop: '1px solid var(--line)' }}>
               <span style={{ color: '#777', fontSize: '13px' }}>Cancellation Policy:</span>

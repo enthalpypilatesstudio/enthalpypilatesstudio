@@ -158,7 +158,7 @@ export const products = [
 
 export const studioSettings = {
   studioName: 'ENTHALPY Reformer Pilates & Movement',
-  location: '12th Main Road, 4th Block, Koramangala, Bengaluru, Karnataka 560034',
+  location: 'Defence Colony, New Delhi',
   phone: '+91 80 4920 1800',
   whatsapp: '+91 98450 12345',
   email: 'hello@enthalpy.studio',

@@ -1,7 +1,7 @@
 # ENTHALPY — Reformer Pilates & Movement Platform
 **Production React + Node.js Platform with Exact High-Fidelity Design**
 
-Built strictly to the approved brand design bundles and technical build brief for **ENTHALPY** — a premium reformer Pilates studio in Koramangala, Bengaluru.
+Built strictly to the approved brand design bundles and technical build brief for **ENTHALPY** — a premium reformer Pilates studio in Defence Colony, New Delhi for men and women. Contact: +91 95899 92237 · admin@enthalpypilatesstudio.com
 
 ---
 

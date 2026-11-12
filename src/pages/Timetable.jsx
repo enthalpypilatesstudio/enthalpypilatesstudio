@@ -38,7 +38,7 @@ export default function Timetable({ navigate, onSelectSession }) {
   return (
     <div className="wrap sec animate-fade">
       <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
-        <div className="eyebrow">Studio Schedule · Koramangala</div>
+        <div className="eyebrow">Studio Schedule · Defence Colony, New Delhi</div>
         <h1 className="heading-lg">Interactive Timetable</h1>
         <p className="lead-p">
           Every session is strictly capped at 12 reformers. Real-time availability updates live with active waitlists.

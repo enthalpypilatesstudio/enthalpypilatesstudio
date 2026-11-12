@@ -15,7 +15,7 @@ export default function Studio({ navigate }) {
         <div className="eyebrow">The Studio Environment</div>
         <h1 className="heading-lg">Sanctuary Built for Movement</h1>
         <p className="lead-p">
-          Located in central Koramangala, ENTHALPY was designed from the ground up as an antidote to frantic gym environments. Calm light, oak timber floors, and breathable space.
+          Located in Defence Colony, New Delhi, ENTHALPY was designed from the ground up as an antidote to frantic gym environments. Calm light, oak timber floors, and breathable space for men and women.
         </p>
       </div>
 
