@@ -615,18 +615,10 @@ td:first-child{font-weight:600}
   <header class="nav">
     <div class="wrap">
       <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/0f917f7d-03d5-4945-9e08-57eac3b79c82.svg" alt="ENTHALPY"></a>
-      <ul>
+            <ul>
         <li><a href="classes.html">Classes</a></li>
         <li><a href="timetable.html">Timetable</a></li>
-        <li class="nav-dropdown">
-          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
-            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
-            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
-            <li><a href="first-visit.html">First Visit Guide</a></li>
-          </ul>
-        </li>
+        <li><a href="new-here.html">New Here</a></li>
         <li><a class="on" href="pricing.html">Pricing</a></li>
         <li><a href="studio.html">Studio</a></li>
         <li><a href="instructors.html">Instructors</a></li>
@@ -640,95 +632,110 @@ td:first-child{font-weight:600}
   </header>
 
   <main>
-    <section class="wrap stack" style="padding-block: clamp(48px, 6vw, 96px) clamp(36px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px; align-items: end">
-      <div style="display: flex; flex-direction: column; gap: 24px"><span class="ey">Pricing</span><h1 class="d1">Simple, transparent pricing.</h1></div>
-      <div style="display: flex; flex-direction: column; gap: 22px">
-        <p class="lead">Pay per class, save with a pack, or make it a practice with a membership. All prices include GST.</p>
-        <div class="seg" role="tablist" aria-label="Pricing type"><button class="on" role="tab" aria-selected="true">Group classes</button><button role="tab">Privates &amp; duets</button></div>
+    <section class="wrap stack" style="padding-block: clamp(48px, 6vw, 96px) clamp(32px, 4vw, 48px); display: flex; flex-direction: column; gap: 24px; text-align: center; max-width: 860px; margin: 0 auto">
+      <span class="ey" style="color: #7D5A44;">Defence Colony, New Delhi · Opening Soon</span>
+      <h1 class="d1">Pricing &amp; Memberships Opening Soon</h1>
+      <p class="lead" style="margin: 0 auto;">Transparent session rates, flexible multi-class packs, and unlimited monthly practice memberships. Register on the priority waitlist to receive opening package options and exclusive early enrollment.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
+        <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()">Join Pre-Launch Waitlist</button>
+        <a class="btn btn-o" href="classes.html">View Classes</a>
       </div>
     </section>
 
-    <section class="wrap">
-      <div style="background: #B2967D; padding: clamp(28px, 4vw, 48px); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; border-radius: 4px;">
-        <div style="display: flex; flex-direction: column; gap: 8px">
-          <span class="ey" style="color: #4A342A">Defence Colony, New Delhi</span>
-          <span class="d3">Pre-Launch Waitlist Priority</span>
-          <span class="sm">Register on our waitlist to be the first to receive membership packs & opening schedules.</span>
-        </div>
-        <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
-      </div>
-    </section>
-
+    <!-- Upcoming Pricing Tiers Grid -->
     <section class="wrap sec-tight">
       <div class="cards">
-        <div class="pc">
-          <span class="ey">Drop-in</span>
-          <span class="pr" style="font-size:24px;">Coming Soon</span>
-          <span class="sm muted">One class · valid [x] days</span>
-          <ul><li>Any group class</li><li>Book [x] days ahead</li></ul>
-          <a class="btn btn-o" href="#">Buy</a>
+        <div class="pc" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 36px 28px; display: flex; flex-direction: column; gap: 14px;">
+          <span class="ey">Single Session</span>
+          <span class="d3" style="color: #4A342A;">Drop-In Reformer</span>
+          <span class="sm muted">1 Class · Opening Soon</span>
+          <ul style="list-style: none; padding: 0; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+            <li>✓ Any group reformer class</li>
+            <li>✓ Capped at 12 reformers</li>
+            <li>✓ All levels &amp; foundation</li>
+          </ul>
+          <div style="margin-top: auto; padding-top: 16px;">
+            <button class="btn btn-o open-waitlist-modal" onclick="window.openWaitlistModal()" style="width: 100%;">Join Waitlist</button>
+          </div>
         </div>
-        <div class="pc">
-          <span class="ey">5-class pack</span>
-          <span class="pr" style="font-size:24px;">Coming Soon</span>
-          <span class="sm muted">₹— per class · valid [x] days</span>
-          <ul><li>Any group class</li><li>Book [x] days ahead</li><li>Use at your own pace</li></ul>
-          <a class="btn btn-o" href="#">Buy</a>
+
+        <div class="pc" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 36px 28px; display: flex; flex-direction: column; gap: 14px;">
+          <span class="ey">Flexible Pack</span>
+          <span class="d3" style="color: #4A342A;">5-Class Pack</span>
+          <span class="sm muted">Flexible Pace · Opening Soon</span>
+          <ul style="list-style: none; padding: 0; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+            <li>✓ Great for 1–2 classes / week</li>
+            <li>✓ Valid for all class formats</li>
+            <li>✓ Use at your own schedule</li>
+          </ul>
+          <div style="margin-top: auto; padding-top: 16px;">
+            <button class="btn btn-o open-waitlist-modal" onclick="window.openWaitlistModal()" style="width: 100%;">Join Waitlist</button>
+          </div>
         </div>
-        <div class="pc hl">
-          <span style="position: absolute; top: 0; right: 0; background: #B2967D; color: #4A342A; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 6px 12px">Most chosen</span>
-          <span class="ey" style="color: #D7C9B8">10-class pack</span>
-          <span class="pr" style="font-size:24px;">Coming Soon</span>
-          <span class="sm" style="color: #D7C9B8">₹— per class · valid [x] days</span>
-          <ul><li>Any group class</li><li>Book [x] days ahead</li><li>Lower price per class</li></ul>
-          <a class="btn btn-l" href="#">Buy</a>
+
+        <div class="pc hl" style="background: #4A342A; color: #F5F1EA; border: 1px solid #4A342A; padding: 36px 28px; display: flex; flex-direction: column; gap: 14px; position: relative;">
+          <span style="position: absolute; top: 0; right: 0; background: #D7C9B8; color: #4A342A; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 6px 14px;">Popular</span>
+          <span class="ey" style="color: #D7C9B8;">Transformation Pack</span>
+          <span class="d3" style="color: #F5F1EA;">10-Class Pack</span>
+          <span class="sm" style="color: #D7C9B8;">Consistent Progress · Opening Soon</span>
+          <ul style="list-style: none; padding: 0; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #F5F1EA;">
+            <li>✓ Optimal for 2–3 classes / week</li>
+            <li>✓ Priority reformer booking</li>
+            <li>✓ Measurable strength &amp; tone</li>
+          </ul>
+          <div style="margin-top: auto; padding-top: 16px;">
+            <button class="btn btn-l open-waitlist-modal" onclick="window.openWaitlistModal()" style="width: 100%;">Join Waitlist</button>
+          </div>
         </div>
-        <div class="pc">
-          <span class="ey">Membership</span>
-          <span class="pr">₹—<small>/ month</small></span>
-          <span class="sm muted">From · renews monthly</span>
-          <ul><li>Lowest price per class</li><li>Priority booking</li><li>Waitlist priority</li><li>Freeze [x] times a year</li></ul>
-          <a class="btn" href="#">See plans</a>
+
+        <div class="pc" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 36px 28px; display: flex; flex-direction: column; gap: 14px;">
+          <span class="ey">Dedicated Practice</span>
+          <span class="d3" style="color: #4A342A;">Monthly Membership</span>
+          <span class="sm muted">Regular Training · Opening Soon</span>
+          <ul style="list-style: none; padding: 0; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+            <li>✓ Lowest rate per session</li>
+            <li>✓ 48-hour advance booking window</li>
+            <li>✓ Complimentary freeze privileges</li>
+          </ul>
+          <div style="margin-top: auto; padding-top: 16px;">
+            <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()" style="width: 100%;">Join Waitlist</button>
+          </div>
         </div>
       </div>
-      <p class="sm muted" style="margin-top: 16px">Prices are placeholders until the studio confirms them. Pay by UPI, card or net banking. GST invoice on every purchase.</p>
     </section>
 
+    <!-- Embedded Waitlist Form Section -->
     <section class="wrap sec">
-      <div class="sh"><div class="l"><span class="ey">Compare</span><h2 class="d2">Which option suits you?</h2></div></div>
-      <div class="tbl">
-        <sc-raw-table>
-          <sc-raw-thead><sc-raw-tr><sc-raw-th scope="col"></sc-raw-th><sc-raw-th scope="col">Drop-in</sc-raw-th><sc-raw-th scope="col">Packs</sc-raw-th><sc-raw-th scope="col">Membership</sc-raw-th></sc-raw-tr></sc-raw-thead>
-          <sc-raw-tbody>
-            <sc-raw-tr><sc-raw-td>Price per class</sc-raw-td><sc-raw-td>Highest</sc-raw-td><sc-raw-td>Lower</sc-raw-td><sc-raw-td>Lowest</sc-raw-td></sc-raw-tr>
-            <sc-raw-tr><sc-raw-td>Booking window</sc-raw-td><sc-raw-td>[x] days</sc-raw-td><sc-raw-td>[x] days</sc-raw-td><sc-raw-td>Priority, [x] days</sc-raw-td></sc-raw-tr>
-            <sc-raw-tr><sc-raw-td>Waitlist priority</sc-raw-td><sc-raw-td>—</sc-raw-td><sc-raw-td>—</sc-raw-td><sc-raw-td>Yes</sc-raw-td></sc-raw-tr>
-            <sc-raw-tr><sc-raw-td>Freeze</sc-raw-td><sc-raw-td>—</sc-raw-td><sc-raw-td>—</sc-raw-td><sc-raw-td>[x] per year</sc-raw-td></sc-raw-tr>
-            <sc-raw-tr><sc-raw-td>Best for</sc-raw-td><sc-raw-td>Trying a class</sc-raw-td><sc-raw-td>1–2 classes a week</sc-raw-td><sc-raw-td>3+ classes a week</sc-raw-td></sc-raw-tr>
-          </sc-raw-tbody>
-        </sc-raw-table>
-      </div>
-    </section>
-
-    <section style="background: #FBF9F5" class="sec">
-      <div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
-        <div class="sh" style="margin: 0"><div class="l"><span class="ey">Policies, in plain words</span><h2 class="d2">Fair to you, fair to the class.</h2></div><a class="lnk" href="#">Full cancellation policy</a></div>
-        <div class="pol">
-          <div><span class="d4">Cancel</span><span class="p">Free up to [x] hours before class, from your account.</span></div>
-          <div><span class="d4">Late cancel or no-show</span><span class="p">The class credit is used [or a fee of ₹— applies].</span></div>
-          <div><span class="d4">Expiry</span><span class="p">Packs are valid for [x] days from the date of purchase.</span></div>
+      <div style="background: #4A342A; color: #F5F1EA; padding: clamp(36px, 6vw, 64px); border-radius: 4px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <span class="ey" style="color: #D7C9B8;">Priority Pricing Notification</span>
+          <h2 class="d2" style="color: #F5F1EA; margin: 0;">Be the First to Know Official Rates.</h2>
+          <p class="p" style="color: #D7C9B8; margin: 0; line-height: 1.6;">When ENTHALPY Defence Colony opens, waitlist members will receive priority booking access and first selection of opening class packs before general release.</p>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px; font-size: 13px; color: #F5F1EA;">
+            <div>✓ No advance deposit or financial commitment</div>
+            <div>✓ Official rates released directly to your WhatsApp / Email</div>
+            <div>✓ GST invoice and clear terms on every booking</div>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="wrap sec">
-      <div class="stack" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(32px, 6vw, 96px)">
-        <div style="display: flex; flex-direction: column; gap: 18px"><span class="ey">Pricing questions</span><h2 class="d2">Good to know.</h2></div>
-        <div>
-          <details class="q" open=""><summary>Can I share a pack?<span class="pl"></span></summary><div class="a">[Studio to decide: packs are personal, or can be shared with one named partner.]</div></details>
-          <details class="q"><summary>Which payment methods do you accept?<span class="pl"></span></summary><div class="a">UPI, debit and credit cards, and net banking. Memberships renew through UPI AutoPay or a saved card.</div></details>
-          <details class="q"><summary>Do you offer GST invoices?<span class="pl"></span></summary><div class="a">Yes. A GST invoice is emailed with every purchase, and you can download it from your account.</div></details>
-          <details class="q"><summary>Do you have corporate plans?<span class="pl"></span></summary><div class="a">Yes. Write to us for team packs and on-site sessions.</div></details>
+        <div style="background: #F5F1EA; color: #4A342A; padding: 28px; border-radius: 4px;">
+          <h3 class="d4" style="margin: 0 0 8px; color: #4A342A;">Join the Pricing Waitlist</h3>
+          <p class="sm muted" style="margin: 0 0 16px;">Receive opening membership notifications for Defence Colony, New Delhi.</p>
+          <form onsubmit="window.handleWaitlistSubmit(event)" style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="fld">
+              <label for="pr-name" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">Full Name *</label>
+              <input type="text" id="pr-name" name="name" class="inp" required placeholder="Your full name" style="height: 44px; border: 1px solid #4A342A; background: transparent; padding: 0 12px; font-family: inherit; font-size: 14px;">
+            </div>
+            <div class="fld">
+              <label for="pr-phone" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">WhatsApp / Mobile *</label>
+              <input type="tel" id="pr-phone" name="phone" class="inp" required placeholder="+91 95899 92237" style="height: 44px; border: 1px solid #4A342A; background: transparent; padding: 0 12px; font-family: inherit; font-size: 14px;">
+            </div>
+            <div class="fld">
+              <label for="pr-email" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">Email Address *</label>
+              <input type="email" id="pr-email" name="email" class="inp" required placeholder="name@domain.com" style="height: 44px; border: 1px solid #4A342A; background: transparent; padding: 0 12px; font-family: inherit; font-size: 14px;">
+            </div>
+            <button type="submit" class="btn" style="min-height: 48px; width: 100%; margin-top: 6px;">Register on Waitlist</button>
+          </form>
         </div>
       </div>
     </section>
@@ -744,15 +751,7 @@ td:first-child{font-weight:600}
         </div>
         <div><h4>Studio</h4><ul><li><a href="#">About</a></li><li><a href="#">Philosophy</a></li><li><a href="#">Instructors</a></li><li><a href="#">Gallery</a></li><li><a href="#">Journal</a></li></ul></div>
         <div><h4>Book</h4><ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#">Memberships</a></li>
-        <li class="nav-dropdown">
-          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
-            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
-            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
-            <li><a href="first-visit.html">First Visit Guide</a></li>
-          </ul>
-        </li></ul></div>
+        <li><a href="new-here.html">New Here</a></li></ul></div>
         <div><h4>Help</h4><ul><li><a href="#">Contact</a></li><li><a href="#">FAQ</a></li><li><a href="#">Cancellation policy</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
       </div>
       <div class="bot"><span>© 2026 ENTHALPY. All rights reserved.</span><span>Instagram · LinkedIn · WhatsApp: +91 95899 92237 · admin@enthalpypilatesstudio.com</span></div>

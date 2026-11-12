@@ -1,89 +1,27 @@
 /* ENTHALPY — Pre-Launch Waitlist & Educational Navigation Styling */
 
-/* Dropdown Menu in Navigation */
-.nav-dropdown {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-.nav-dropdown-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-}
-.nav-dropdown-toggle .arr-dd {
-  font-size: 10px;
-  transition: transform .25s ease;
-}
-.nav-dropdown:hover .nav-dropdown-toggle .arr-dd,
-.nav-dropdown:focus-within .nav-dropdown-toggle .arr-dd,
-.nav-dropdown.active .nav-dropdown-toggle .arr-dd {
-  transform: rotate(180deg);
-}
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 14px);
-  left: -20px;
-  min-width: 260px;
-  background: var(--linen, #F5F1EA);
-  border: 1px solid var(--line, #D7C9B8);
-  box-shadow: 0 16px 36px rgba(74, 52, 42, 0.12);
-  padding: 8px 0;
-  list-style: none;
-  flex-direction: column;
-  gap: 0;
-  z-index: 999;
-  border-radius: 4px;
-}
-.dropdown-menu::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 36px;
-  width: 10px;
-  height: 10px;
-  background: var(--linen, #F5F1EA);
-  border-left: 1px solid var(--line, #D7C9B8);
-  border-top: 1px solid var(--line, #D7C9B8);
-  transform: rotate(45deg);
-}
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu,
-.nav-dropdown.active .dropdown-menu {
+/* Standard Navigation Links */
+.nav ul {
   display: flex;
-  animation: ddFadeIn .2s ease-out;
-}
-@keyframes ddFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.dropdown-menu li {
-  width: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-.dropdown-menu a {
-  display: flex !important;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 22px !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  color: var(--espresso, #4A342A) !important;
-  text-decoration: none !important;
-  white-space: nowrap;
-  background: transparent !important;
-  border-bottom: 1px solid rgba(215, 201, 184, 0.35) !important;
-  transition: background .2s, color .2s;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.dropdown-menu li:last-child a {
-  border-bottom: none !important;
+.nav ul a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--espresso, #4A342A);
+  transition: color .2s;
+  padding-bottom: 4px;
 }
-.dropdown-menu a:hover {
-  background: var(--khaki, #D7C9B8) !important;
-  color: var(--espresso, #4A342A) !important;
+.nav ul a:hover {
+  color: var(--cocoa, #7D5A44);
+}
+.nav ul a.on {
+  border-bottom: 1.5px solid var(--espresso, #4A342A);
 }
 
 /* Pre-Launch VIP Banner */
@@ -182,6 +120,16 @@
   font-size: 14px;
   line-height: 1.6;
   color: #5A4033;
+}
+
+/* Embedded Waitlist Section on Pre-Launch Pages */
+.embedded-waitlist-section {
+  background: #FAF7F2;
+  border: 1px solid #D7C9B8;
+  padding: clamp(32px, 5vw, 56px);
+  max-width: 760px;
+  margin: 40px auto;
+  box-shadow: 0 16px 40px rgba(74, 52, 42, 0.06);
 }
 
 /* Modal Overlay & Card */
@@ -288,8 +236,8 @@ body.mobile-nav-open {
   position: fixed;
   top: 0;
   right: 0;
-  width: 360px;
-  max-width: 88vw;
+  width: 340px;
+  max-width: 86vw;
   height: 100vh;
   height: 100dvh;
   background: #4A342A;
@@ -364,7 +312,7 @@ body.mobile-nav-open {
   justify-content: space-between;
   padding: 16px 0;
   font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1.2;
   color: #F5F1EA;
   text-decoration: none;
@@ -381,40 +329,8 @@ body.mobile-nav-open {
   transform: translateX(4px);
 }
 .mobile-nav-link .chev {
-  font-size: 18px;
+  font-size: 16px;
   color: #B2967D;
-  transition: transform .25s ease;
-}
-
-/* Mobile Accordion Submenu for New Here */
-.mobile-nav-accordion.open .chev {
-  transform: rotate(180deg);
-}
-.mobile-nav-sub {
-  list-style: none;
-  margin: 0;
-  padding: 0 0 16px 14px;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-}
-.mobile-nav-sub.open {
-  display: flex;
-}
-.mobile-nav-sub li a {
-  display: block;
-  font-family: var(--sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
-  font-size: 14px;
-  font-weight: 500;
-  color: #D7C9B8;
-  text-decoration: none;
-  padding: 6px 0;
-  transition: color .2s, padding-left .2s;
-}
-.mobile-nav-sub li a:hover,
-.mobile-nav-sub li a:active {
-  color: #FFFFFF;
-  padding-left: 4px;
 }
 
 /* Drawer Bottom Actions & Studio Details */

@@ -103,17 +103,7 @@
       <ul class="mobile-nav-links">
         <li><a class="mobile-nav-link" href="classes.html" onclick="window.closeMobileMenu()"><span>Classes</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="timetable.html" onclick="window.closeMobileMenu()"><span>Timetable</span><span class="chev">&rsaquo;</span></a></li>
-        <li>
-          <button type="button" class="mobile-nav-link mobile-nav-accordion" id="mobile-nav-acc-btn" aria-expanded="false" onclick="window.toggleMobileAccordion(event)">
-            <span>New Here</span><span class="chev">&blacktriangledown;</span>
-          </button>
-          <ul class="mobile-nav-sub" id="mobile-nav-sub">
-            <li><a href="new-here.html" onclick="window.closeMobileMenu()">What is Reformer Pilates?</a></li>
-            <li><a href="pilates-for-men.html" onclick="window.closeMobileMenu()">Reformer for Men</a></li>
-            <li><a href="pilates-for-women.html" onclick="window.closeMobileMenu()">Reformer for Women</a></li>
-            <li><a href="first-visit.html" onclick="window.closeMobileMenu()">First Visit Guide</a></li>
-          </ul>
-        </li>
+        <li><a class="mobile-nav-link" href="new-here.html" onclick="window.closeMobileMenu()"><span>New Here</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="pricing.html" onclick="window.closeMobileMenu()"><span>Pricing</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="studio.html" onclick="window.closeMobileMenu()"><span>Studio</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="instructors.html" onclick="window.closeMobileMenu()"><span>Instructors</span><span class="chev">&rsaquo;</span></a></li>
@@ -171,24 +161,6 @@
     }
   };
 
-  window.toggleMobileAccordion = function (e) {
-    if (e && e.preventDefault) e.preventDefault();
-    const btn = document.getElementById('mobile-nav-acc-btn');
-    const sub = document.getElementById('mobile-nav-sub');
-    if (btn && sub) {
-      const isOpen = sub.classList.contains('open');
-      if (isOpen) {
-        sub.classList.remove('open');
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        sub.classList.add('open');
-        btn.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    }
-  };
-
   // 4. Open / Close Waitlist Modal
   window.openWaitlistModal = function (e) {
     if (e && e.preventDefault) e.preventDefault();
@@ -213,17 +185,18 @@
   // 5. Handle Form Submission
   window.handleWaitlistSubmit = async function (e) {
     e.preventDefault();
-    const btn = document.getElementById('wl-submit-btn');
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
     if (btn) {
       btn.innerText = 'Registering on Waitlist...';
       btn.disabled = true;
     }
 
-    const name = document.getElementById('wl-name')?.value || '';
-    const phone = document.getElementById('wl-phone')?.value || '';
-    const email = document.getElementById('wl-email')?.value || '';
-    const goal = document.getElementById('wl-goal')?.value || '';
-    const time = document.getElementById('wl-time')?.value || '';
+    const name = form.querySelector('#wl-name')?.value || form.querySelector('input[name="name"]')?.value || '';
+    const phone = form.querySelector('#wl-phone')?.value || form.querySelector('input[name="phone"]')?.value || '';
+    const email = form.querySelector('#wl-email')?.value || form.querySelector('input[name="email"]')?.value || '';
+    const goal = form.querySelector('#wl-goal')?.value || form.querySelector('select[name="goal"]')?.value || '';
+    const time = form.querySelector('#wl-time')?.value || form.querySelector('select[name="time"]')?.value || '';
 
     const payload = { name, phone, email, goal, preferredTime: time, source: window.location.pathname };
 
@@ -246,6 +219,12 @@
   };
 
   function showSuccess(code) {
+    injectWaitlistModal();
+    const modal = document.getElementById('waitlist-modal');
+    if (modal) {
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+    }
     const formBox = document.getElementById('wl-form-container');
     const successBox = document.getElementById('wl-success-container');
     const codeEl = document.getElementById('wl-founder-code');
@@ -282,33 +261,6 @@
         window.openWaitlistModal();
         return;
       }
-
-      // Desktop / Touch Dropdown toggle
-      const ddToggle = e.target.closest('.nav-dropdown-toggle');
-      if (ddToggle) {
-        const dd = ddToggle.closest('.nav-dropdown');
-        if (dd) {
-          // If touch device or click, toggle dropdown
-          const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-          if (isTouch || window.innerWidth > 1100) {
-            // Prevent immediate jump if dropdown has subpages
-            if (dd.classList.contains('active')) {
-              dd.classList.remove('active');
-            } else {
-              e.preventDefault();
-              // close any other dropdowns
-              document.querySelectorAll('.nav-dropdown.active').forEach(d => d.classList.remove('active'));
-              dd.classList.add('active');
-            }
-          }
-        }
-        return;
-      }
-
-      // Click outside dropdown closes it
-      if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown.active').forEach(d => d.classList.remove('active'));
-      }
     });
 
     // Close on backdrop click for waitlist modal
@@ -324,7 +276,6 @@
       if (e.key === 'Escape') {
         window.closeWaitlistModal();
         window.closeMobileMenu();
-        document.querySelectorAll('.nav-dropdown.active').forEach(d => d.classList.remove('active'));
       }
     });
   }

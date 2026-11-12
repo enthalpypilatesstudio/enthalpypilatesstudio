@@ -622,18 +622,10 @@ a{color:#4A342A}a:hover{color:#7D5A44}
   <header class="nav">
     <div class="wrap">
       <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/4d2587c8-b9c0-45eb-830d-2040875c853f.svg" alt="ENTHALPY"></a>
-      <ul>
+            <ul>
         <li><a href="classes.html">Classes</a></li>
         <li><a class="on" href="timetable.html">Timetable</a></li>
-        <li class="nav-dropdown">
-          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
-            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
-            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
-            <li><a href="first-visit.html">First Visit Guide</a></li>
-          </ul>
-        </li>
+        <li><a href="new-here.html">New Here</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="studio.html">Studio</a></li>
         <li><a href="instructors.html">Instructors</a></li>
@@ -647,92 +639,94 @@ a{color:#4A342A}a:hover{color:#7D5A44}
   </header>
 
   <main>
-    <section class="wrap" style="padding-top: 32px;">
-      <div class="locked-preview-card">
-        <span class="locked-preview-badge">Waitlist Member Schedule Preview</span>
-        <h2 class="d3" style="margin-bottom: 8px;">ENTHALPY Defence Colony Official Schedule Opens Soon</h2>
-        <p class="p muted" style="max-width: 600px; margin: 0 auto 20px;">
-          Browse our sample weekly timetable below. Every session is strictly capped at 12 reformers. Register on the Pre-Launch waitlist for 48-hour priority booking access and priority booking access before public launch.
-        </p>
+    <section class="wrap stack" style="padding-block: clamp(48px, 6vw, 96px) clamp(32px, 4vw, 48px); display: flex; flex-direction: column; gap: 24px; text-align: center; max-width: 860px; margin: 0 auto">
+      <span class="ey" style="color: #7D5A44;">Defence Colony, New Delhi · Opening Soon</span>
+      <h1 class="d1">Timetable &amp; Schedule Opening Soon</h1>
+      <p class="lead" style="margin: 0 auto;">Our Defence Colony studio is currently preparing for launch. We will operate 7 days a week with early morning, mid-day, evening, and weekend sessions. Every class is strictly capped at 12 reformers for personalized instructor cues.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
         <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()">Join Pre-Launch Waitlist</button>
-      </div>
-    </section>
-    <section class="wrap" style="padding-block: clamp(40px, 5vw, 72px) 28px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
-      <div style="display: flex; flex-direction: column; gap: 16px"><span class="ey">Timetable Preview · Defence Colony, New Delhi</span><h1 class="d1">This week at the studio.</h1></div>
-      <p class="p muted" style="max-width: 32em">Schedule preview for our upcoming Defence Colony studio. All classes capped at 12 reformers. Join our waitlist for first access to book reformers when dates open.</p>
-    </section>
-
-    <section class="wrap">
-      <div class="tools">
-        <div class="seg" role="group" aria-label="View"><button class="on">Week</button><button>List</button></div>
-        <div class="wk"><button aria-label="Previous week">‹</button><span style="font-weight: 600; font-size: 14px; min-width: 120px; text-align: center">12 – 18 Jan</span><button aria-label="Next week">›</button></div>
-        <span style="flex: 1"></span>
-        <button class="fb">Class type ▾</button>
-        <button class="fb">Level ▾</button>
-        <button class="fb">Instructor ▾</button>
-        <button class="fb">Time of day ▾</button>
-        <a class="sm" href="#" style="font-weight: 600">Clear</a>
+        <a class="btn btn-o" href="classes.html">Explore Classes</a>
       </div>
     </section>
 
-    <section class="wrap" style="padding-block: 28px 40px">
-      <div class="scroll">
-        <div class="grid">
-          <div class="col">
-            <div class="dh today"><span>Mon · Today</span><b>12</b></div>
-            <a class="s sel" href="foundation-reformer.html" style="overflow: visible"><span class="tm">07:00</span><span class="nm">Foundation Reformer</span><span class="ins">[Instructor]</span><span class="st">Join Waitlist</span>
-              <span class="pop" role="dialog" aria-label="Session details">
-                <span class="ey" style="color: #D7C9B8">Mon 12 · 07:00</span>
-                <span class="d4">Foundation Reformer</span>
-                <span class="sm" style="color: #D7C9B8">[Instructor] · 50 min · Foundation</span>
-                <span style="display: flex; justify-content: space-between; border-top: 1px solid #6A4E40; padding-top: 12px; font-size: 13px"><span>4 of [n] spots</span><span>1 credit or ₹[—]</span></span>
-                <span class="btn btn-l">Book</span>
-                <span class="sm" style="text-decoration: underline; color: #F5F1EA">Class details</span>
-              </span>
-            </a>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">09:30</span><span class="nm">Reformer Flow</span><span class="ins">[Instructor]</span><span class="st" style="color: #7D5A44">Last spot</span></a>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">18:00</span><span class="nm">Reformer Strength</span><span class="ins">[Instructor]</span><span class="st">Join Waitlist</span></a>
-          </div>
-          <div class="col">
-            <div class="dh"><span>Tue</span><b>13</b></div>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">07:00</span><span class="nm">Reformer Flow</span><span class="ins">[Instructor]</span><span class="st">Join Waitlist</span></a>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">12:30</span><span class="nm">Foundation Reformer</span><span class="ins">[Instructor]</span><span class="st">3 spots left</span></a>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">19:00</span><span class="nm">Advanced Reformer</span><span class="ins">[Instructor]</span><span class="st">2 spots left</span></a>
-          </div>
-          <div class="col">
-            <div class="dh"><span>Wed</span><b>14</b></div>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">07:00</span><span class="nm">Reformer Strength</span><span class="ins">[Instructor]</span><span class="st">5 spots left</span></a>
-            <div class="s cx"><span class="tm">09:30</span><span class="nm">Reformer Flow</span><span class="ins">[Instructor]</span><span class="st">Cancelled</span></div>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">18:00</span><span class="nm">Reformer Flow</span><span class="ins">[Instructor]</span><span class="st">Join Waitlist</span></a>
-          </div>
-          <div class="col">
-            <div class="dh"><span>Thu</span><b>15</b></div>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">07:00</span><span class="nm">Foundation Reformer</span><span class="ins">[Instructor]</span><span class="st">Join Waitlist</span></a>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">18:30</span><span class="nm">Intro to Reformer</span><span class="ins">[Instructor]</span><span class="st" style="color: #7D5A44">Last spot</span></a>
-          </div>
-          <div class="col">
-            <div class="dh"><span>Fri</span><b>16</b></div>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">07:00</span><span class="nm">Reformer Flow</span><span class="ins">[Instructor]</span><span class="st">Join Waitlist</span></a>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">17:30</span><span class="nm">Reformer Strength</span><span class="ins">[Instructor]</span><span class="st">Join Waitlist</span></a>
-          </div>
-          <div class="col">
-            <div class="dh"><span>Sat</span><b>17</b></div>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">08:00</span><span class="nm">Reformer Flow</span><span class="ins">[Instructor]</span><span class="st">3 spots left</span></a>
-            <a class="s open-waitlist-modal" href="#waitlist"><span class="tm">10:00</span><span class="nm">Intro to Reformer</span><span class="ins">[Instructor]</span><span class="st">Join Waitlist</span></a>
-          </div>
-          <div class="col">
-            <div class="dh"><span>Sun</span><b>18</b></div>
-            <div class="opens"><b style="color: #4A342A">Not open yet</b>Bookings open Fri 16 at 18:00.</div>
-          </div>
+    <!-- Schedule Windows Grid -->
+    <section class="wrap sec-tight">
+      <div class="sh">
+        <div class="l">
+          <span class="ey">Planned Daily Time Windows</span>
+          <h2 class="d2">Engineered around your daily rhythm.</h2>
+        </div>
+      </div>
+
+      <div class="g4" style="gap: 24px;">
+        <div class="card" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px;">
+          <span class="ey" style="color: #7D5A44;">Dawn · 6:30 AM – 8:30 AM</span>
+          <h3 class="d4" style="margin: 0;">Early Morning Activation</h3>
+          <p class="p sm muted" style="margin: 0;">Spine mobilization, cardiovascular core flow, and athletic awakenings before the city begins.</p>
+          <span class="tag" style="align-self: flex-start; margin-top: auto;">Mon – Sun</span>
+        </div>
+
+        <div class="card" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px;">
+          <span class="ey" style="color: #7D5A44;">Mid-Day · 10:00 AM – 1:00 PM</span>
+          <h3 class="d4" style="margin: 0;">Postural Alignment</h3>
+          <p class="p sm muted" style="margin: 0;">Focused foundation drills, joint decompression, and lean sculpting during quiet daylight hours.</p>
+          <span class="tag" style="align-self: flex-start; margin-top: auto;">Daily</span>
+        </div>
+
+        <div class="card" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px;">
+          <span class="ey" style="color: #7D5A44;">Evening · 5:30 PM – 8:00 PM</span>
+          <h3 class="d4" style="margin: 0;">Decompression &amp; Power</h3>
+          <p class="p sm muted" style="margin: 0;">High-load spring resistance, desk-strain relief for shoulders and lower backs, and strength holds.</p>
+          <span class="tag" style="align-self: flex-start; margin-top: auto;">Mon – Fri</span>
+        </div>
+
+        <div class="card" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px;">
+          <span class="ey" style="color: #7D5A44;">Weekend · 8:00 AM – 1:30 PM</span>
+          <h3 class="d4" style="margin: 0;">Weekend Intensive</h3>
+          <p class="p sm muted" style="margin: 0;">Extended flow practices, beginner masterclasses, and athletic conditioning sessions.</p>
+          <span class="tag" style="align-self: flex-start; margin-top: auto;">Sat &amp; Sun</span>
         </div>
       </div>
     </section>
 
-    <section class="wrap" style="padding-bottom: clamp(56px, 7vw, 104px); display: flex; flex-direction: column; gap: 36px">
-      <div class="leg"><span><i style="background: #FBF9F5"></i>Available</span><span><i style="background: #D7C9B8"></i>Full · join the waitlist</span><span><i style="border-style: dashed; border-color: #B2967D"></i>Cancelled</span><span><i style="background: #4A342A; border-color: #4A342A"></i>Intro session for first-timers</span></div>
-      <div style="background: #D7C9B8; padding: clamp(24px, 3vw, 40px); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap">
-        <div style="display: flex; flex-direction: column; gap: 8px"><span class="ey" style="color: #4A342A">First visit?</span><span class="d3">Start with a session marked Intro.</span></div>
-        <a class="btn" href="index.html">Read the first-visit guide</a>
+    <!-- Embedded Waitlist Form Section -->
+    <section class="wrap sec">
+      <div style="background: #4A342A; color: #F5F1EA; padding: clamp(36px, 6vw, 64px); border-radius: 4px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <span class="ey" style="color: #D7C9B8;">Priority Schedule Access</span>
+          <h2 class="d2" style="color: #F5F1EA; margin: 0;">Reserve Your Preferred Time Window.</h2>
+          <p class="p" style="color: #D7C9B8; margin: 0; line-height: 1.6;">Because each class is limited to just 12 reformers, priority booking is granted first to registered waitlist members. You will receive private booking links 48 hours before official schedule launch.</p>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px; font-size: 13px; color: #F5F1EA;">
+            <div>✓ Maximum 12 reformers per session — zero overcrowding</div>
+            <div>✓ Select your preferred daily time slot below</div>
+            <div>✓ Priority WhatsApp notification when timetable goes live</div>
+          </div>
+        </div>
+
+        <div style="background: #F5F1EA; color: #4A342A; padding: 28px; border-radius: 4px;">
+          <h3 class="d4" style="margin: 0 0 8px; color: #4A342A;">Join Timetable Priority</h3>
+          <p class="sm muted" style="margin: 0 0 16px;">We will notify you immediately once booking dates open in Defence Colony.</p>
+          <form onsubmit="window.handleWaitlistSubmit(event)" style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="fld">
+              <label for="tt-name" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">Full Name *</label>
+              <input type="text" id="tt-name" name="name" class="inp" required placeholder="Your full name" style="height: 44px; border: 1px solid #4A342A; background: transparent; padding: 0 12px; font-family: inherit; font-size: 14px;">
+            </div>
+            <div class="fld">
+              <label for="tt-phone" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">WhatsApp / Mobile *</label>
+              <input type="tel" id="tt-phone" name="phone" class="inp" required placeholder="+91 95899 92237" style="height: 44px; border: 1px solid #4A342A; background: transparent; padding: 0 12px; font-family: inherit; font-size: 14px;">
+            </div>
+            <div class="fld">
+              <label for="tt-time" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">Preferred Time Window</label>
+              <select id="tt-time" name="time" class="inp" style="height: 44px; border: 1px solid #4A342A; background: #F5F1EA; padding: 0 12px; font-family: inherit; font-size: 13px;">
+                <option value="Early Morning (6:30 AM – 8:30 AM)">Early Morning (6:30 AM – 8:30 AM)</option>
+                <option value="Mid-Day (10:00 AM – 1:00 PM)">Mid-Day (10:00 AM – 1:00 PM)</option>
+                <option value="Evening (5:30 PM – 8:00 PM)">Evening (5:30 PM – 8:00 PM)</option>
+                <option value="Weekends (Saturday & Sunday)">Weekends (Saturday & Sunday)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn" style="min-height: 48px; width: 100%; margin-top: 6px;">Register on Waitlist</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -747,15 +741,7 @@ a{color:#4A342A}a:hover{color:#7D5A44}
         </div>
         <div><h4>Studio</h4><ul><li><a href="#">About</a></li><li><a href="#">Philosophy</a></li><li><a href="#">Instructors</a></li><li><a href="#">Gallery</a></li><li><a href="#">Journal</a></li></ul></div>
         <div><h4>Book</h4><ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#">Memberships</a></li>
-        <li class="nav-dropdown">
-          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
-            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
-            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
-            <li><a href="first-visit.html">First Visit Guide</a></li>
-          </ul>
-        </li></ul></div>
+        <li><a href="new-here.html">New Here</a></li></ul></div>
         <div><h4>Help</h4><ul><li><a href="#">Contact</a></li><li><a href="#">FAQ</a></li><li><a href="#">Cancellation policy</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
       </div>
       <div class="bot"><span>© 2026 ENTHALPY. All rights reserved.</span><span>Instagram · LinkedIn · WhatsApp: +91 95899 92237 · admin@enthalpypilatesstudio.com</span></div>
