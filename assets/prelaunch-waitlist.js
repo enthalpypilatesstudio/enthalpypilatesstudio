@@ -86,7 +86,110 @@
     document.body.insertAdjacentHTML('beforeend', modalHtml);
   }
 
-  // 2. Open / Close functions on window
+  // 2. Build and Inject Mobile Navigation Drawer
+  function injectMobileNav() {
+    if (document.getElementById('mobile-nav-drawer')) return;
+
+    const drawerHtml = `
+    <div id="mobile-nav-backdrop" class="mobile-nav-backdrop" aria-hidden="true"></div>
+    <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true" role="dialog">
+      <div class="mobile-nav-header">
+        <a href="index.html" aria-label="ENTHALPY Home" onclick="window.closeMobileMenu()">
+          <img class="mobile-nav-logo" src="assets/4062cf8f-9648-48a4-bfa4-c32fb8024892.svg" alt="ENTHALPY">
+        </a>
+        <button id="mobile-nav-close" class="mobile-nav-close" aria-label="Close navigation" onclick="window.closeMobileMenu()">&times;</button>
+      </div>
+
+      <ul class="mobile-nav-links">
+        <li><a class="mobile-nav-link" href="classes.html" onclick="window.closeMobileMenu()"><span>Classes</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="timetable.html" onclick="window.closeMobileMenu()"><span>Timetable</span><span class="chev">&rsaquo;</span></a></li>
+        <li>
+          <button type="button" class="mobile-nav-link mobile-nav-accordion" id="mobile-nav-acc-btn" aria-expanded="false" onclick="window.toggleMobileAccordion(event)">
+            <span>New Here</span><span class="chev">&blacktriangledown;</span>
+          </button>
+          <ul class="mobile-nav-sub" id="mobile-nav-sub">
+            <li><a href="new-here.html" onclick="window.closeMobileMenu()">What is Reformer Pilates?</a></li>
+            <li><a href="pilates-for-men.html" onclick="window.closeMobileMenu()">Reformer for Men</a></li>
+            <li><a href="pilates-for-women.html" onclick="window.closeMobileMenu()">Reformer for Women</a></li>
+            <li><a href="first-visit.html" onclick="window.closeMobileMenu()">First Visit Guide</a></li>
+          </ul>
+        </li>
+        <li><a class="mobile-nav-link" href="pricing.html" onclick="window.closeMobileMenu()"><span>Pricing</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="studio.html" onclick="window.closeMobileMenu()"><span>Studio</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="instructors.html" onclick="window.closeMobileMenu()"><span>Instructors</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="journal.html" onclick="window.closeMobileMenu()"><span>Journal</span><span class="chev">&rsaquo;</span></a></li>
+      </ul>
+
+      <div class="mobile-nav-footer">
+        <button type="button" class="mobile-nav-btn open-waitlist-modal" onclick="window.closeMobileMenu(); window.openWaitlistModal();">
+          Join Waitlist
+        </button>
+
+        <div class="mobile-nav-contact">
+          <div style="font-weight: 600; color: #F5F1EA; font-size: 14px;">Defence Colony, New Delhi</div>
+          <div style="font-size: 12px; color: #B2967D;">Reformer Pilates for Men &amp; Women · Opening Soon</div>
+          <a href="tel:+919589992237"><span>📞</span> +91 95899 92237</a>
+          <a href="https://wa.me/919589992237?text=Hi%20ENTHALPY%20Studio%2C%20I%20would%20like%20to%20know%20more%20about%20the%20Defence%20Colony%20waitlist." target="_blank" rel="noopener"><span>💬</span> WhatsApp Studio</a>
+          <a href="mailto:admin@enthalpypilatesstudio.com"><span>✉️</span> admin@enthalpypilatesstudio.com</a>
+        </div>
+
+        <div class="mobile-nav-tagline">MOVEMENT · ENERGY · TRANSFORMATION</div>
+      </div>
+    </aside>`;
+
+    document.body.insertAdjacentHTML('beforeend', drawerHtml);
+  }
+
+  // 3. Open / Close Mobile Navigation
+  window.openMobileMenu = function (e) {
+    if (e && e.preventDefault) e.preventDefault();
+    injectMobileNav();
+    const drawer = document.getElementById('mobile-nav-drawer');
+    const backdrop = document.getElementById('mobile-nav-backdrop');
+    if (drawer && backdrop) {
+      drawer.classList.add('active');
+      drawer.setAttribute('aria-hidden', 'false');
+      backdrop.classList.add('active');
+      backdrop.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('mobile-nav-open');
+      const menuBtn = document.querySelector('.nav .menu, button[aria-label="Open menu"]');
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  window.closeMobileMenu = function () {
+    const drawer = document.getElementById('mobile-nav-drawer');
+    const backdrop = document.getElementById('mobile-nav-backdrop');
+    if (drawer && backdrop) {
+      drawer.classList.remove('active');
+      drawer.setAttribute('aria-hidden', 'true');
+      backdrop.classList.remove('active');
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('mobile-nav-open');
+      const menuBtn = document.querySelector('.nav .menu, button[aria-label="Open menu"]');
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  };
+
+  window.toggleMobileAccordion = function (e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const btn = document.getElementById('mobile-nav-acc-btn');
+    const sub = document.getElementById('mobile-nav-sub');
+    if (btn && sub) {
+      const isOpen = sub.classList.contains('open');
+      if (isOpen) {
+        sub.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        sub.classList.add('open');
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+  };
+
+  // 4. Open / Close Waitlist Modal
   window.openWaitlistModal = function (e) {
     if (e && e.preventDefault) e.preventDefault();
     injectWaitlistModal();
@@ -107,7 +210,7 @@
     }
   };
 
-  // 3. Handle Form Submission
+  // 5. Handle Form Submission
   window.handleWaitlistSubmit = async function (e) {
     e.preventDefault();
     const btn = document.getElementById('wl-submit-btn');
@@ -151,20 +254,64 @@
     if (codeEl) codeEl.innerText = code;
   }
 
-  // 4. Attach event listeners
-  document.addEventListener('DOMContentLoaded', function () {
+  // 6. Global Event Listeners & Delegation
+  function initEvents() {
     injectWaitlistModal();
+    injectMobileNav();
 
-    // Delegate clicks to open-waitlist-modal
+    // Hamburger button click delegation
     document.addEventListener('click', function (e) {
-      const target = e.target.closest('.open-waitlist-modal, a[href="#waitlist"], button[data-waitlist]');
-      if (target) {
+      const menuTrigger = e.target.closest('.nav .menu, button[aria-label="Open menu"], .menu');
+      if (menuTrigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.openMobileMenu();
+        return;
+      }
+
+      // Backdrop click to close mobile nav
+      if (e.target.id === 'mobile-nav-backdrop') {
+        window.closeMobileMenu();
+        return;
+      }
+
+      // Waitlist modal open buttons
+      const wlTrigger = e.target.closest('.open-waitlist-modal, a[href="#waitlist"], button[data-waitlist]');
+      if (wlTrigger) {
         e.preventDefault();
         window.openWaitlistModal();
+        return;
+      }
+
+      // Desktop / Touch Dropdown toggle
+      const ddToggle = e.target.closest('.nav-dropdown-toggle');
+      if (ddToggle) {
+        const dd = ddToggle.closest('.nav-dropdown');
+        if (dd) {
+          // If touch device or click, toggle dropdown
+          const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+          if (isTouch || window.innerWidth > 1100) {
+            // Prevent immediate jump if dropdown has subpages
+            if (dd.classList.contains('active')) {
+              dd.classList.remove('active');
+            } else {
+              e.preventDefault();
+              // close any other dropdowns
+              document.querySelectorAll('.nav-dropdown.active').forEach(d => d.classList.remove('active'));
+              dd.classList.add('active');
+            }
+          }
+        }
+        return;
+      }
+
+      // Click outside dropdown closes it
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown.active').forEach(d => d.classList.remove('active'));
       }
     });
 
-    // Close on backdrop click
+    // Close on backdrop click for waitlist modal
     const modal = document.getElementById('waitlist-modal');
     if (modal) {
       modal.addEventListener('click', function (e) {
@@ -172,13 +319,19 @@
       });
     }
 
-    // Close on Escape key
+    // Close on Escape key for both modal & mobile drawer
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') window.closeWaitlistModal();
+      if (e.key === 'Escape') {
+        window.closeWaitlistModal();
+        window.closeMobileMenu();
+        document.querySelectorAll('.nav-dropdown.active').forEach(d => d.classList.remove('active'));
+      }
     });
-  });
+  }
 
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    injectWaitlistModal();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEvents);
+  } else {
+    initEvents();
   }
 })();

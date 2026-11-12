@@ -329,6 +329,7 @@ details.q[open] .a{animation:qopen .5s var(--ease-out)}
   .bkrow > :last-child{grid-column:2}
 }
 </style>
+  <link rel="stylesheet" href="assets/prelaunch-waitlist.css">
 </head>
 <body>
 <x-dc>
@@ -652,7 +653,23 @@ textarea.inp{height:110px;padding-top:14px;resize:vertical}
 <div class="site">
   <header class="nav"><div class="wrap">
     <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/d55c1c64-f3eb-4734-add3-68e8e59ddd8e.svg" alt="ENTHALPY"></a>
-    <ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="new-here.html">New Here</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="instructors.html">Instructors</a></li><li><a href="studio.html">Studio</a></li><li><a href="journal.html">Journal</a></li></ul>
+    <ul>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li class="nav-dropdown">
+          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
+            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
+            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
+            <li><a href="first-visit.html">First Visit Guide</a></li>
+          </ul>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="studio.html">Studio</a></li>
+        <li><a href="instructors.html">Instructors</a></li>
+        <li><a href="journal.html">Journal</a></li>
+      </ul>
     <div class="act"><a class="login" href="account.html" style="display: inline-flex; align-items: center; gap: 10px"><span style="width: 32px; height: 32px; border-radius: 50%; background: #D7C9B8; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">[AB]</span>[First name]</a><a class="btn btn-sm" href="book-pass.html" href="book-pass.html" href="book-pass.html">Book a class</a><button class="menu" aria-label="Open menu"><svg width="24" height="14" sc-camel-view-box="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button></div>
   </div></header>
 
@@ -709,4 +726,5 @@ class Component extends DCLogic {
 </script>
 
 
+  <script src="assets/prelaunch-waitlist.js"></script>
 </body></html>

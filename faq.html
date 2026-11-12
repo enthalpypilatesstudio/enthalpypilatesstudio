@@ -274,6 +274,7 @@ details.q[open] .a{animation:qopen .5s var(--ease-out)}
 }
 </style>
 <script src="assets/8a0192c2-8876-4c45-812c-2f957118c405.js"></script>
+  <link rel="stylesheet" href="assets/prelaunch-waitlist.css">
 </head>
 <body>
 <x-dc>
@@ -592,7 +593,23 @@ a{color:#4A342A}a:hover{color:#7D5A44}
 <div class="site">
   <header class="nav"><div class="wrap">
     <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/c9c8dd35-3858-4526-a7e2-5c7d3e89e8f2.svg" alt="ENTHALPY"></a>
-    <ul><li><a href="classes.html">Classes</a></li><li><a href="timetable.html">Timetable</a></li><li><a href="new-here.html">New Here</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="instructors.html">Instructors</a></li><li><a href="studio.html">Studio</a></li><li><a href="journal.html">Journal</a></li></ul>
+    <ul>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li class="nav-dropdown">
+          <a href="new-here.html" class="nav-dropdown-toggle">New Here <span class="arr-dd">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="new-here.html">What is Reformer Pilates?</a></li>
+            <li><a href="pilates-for-men.html">Reformer for Men</a></li>
+            <li><a href="pilates-for-women.html">Reformer for Women</a></li>
+            <li><a href="first-visit.html">First Visit Guide</a></li>
+          </ul>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="studio.html">Studio</a></li>
+        <li><a href="instructors.html">Instructors</a></li>
+        <li><a href="journal.html">Journal</a></li>
+      </ul>
     <div class="act"><button class="btn btn-sm open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button><button class="menu" aria-label="Open menu"><svg width="24" height="14" sc-camel-view-box="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button></div>
   </div></header>
 
@@ -663,4 +680,5 @@ class Component extends DCLogic {
 </script>
 
 
+  <script src="assets/prelaunch-waitlist.js"></script>
 </body></html>

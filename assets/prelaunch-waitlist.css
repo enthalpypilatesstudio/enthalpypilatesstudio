@@ -17,7 +17,8 @@
   transition: transform .25s ease;
 }
 .nav-dropdown:hover .nav-dropdown-toggle .arr-dd,
-.nav-dropdown:focus-within .nav-dropdown-toggle .arr-dd {
+.nav-dropdown:focus-within .nav-dropdown-toggle .arr-dd,
+.nav-dropdown.active .nav-dropdown-toggle .arr-dd {
   transform: rotate(180deg);
 }
 .dropdown-menu {
@@ -49,7 +50,8 @@
   transform: rotate(45deg);
 }
 .nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown.active .dropdown-menu {
   display: flex;
   animation: ddFadeIn .2s ease-out;
 }
@@ -88,64 +90,98 @@
 .prelaunch-banner {
   background: linear-gradient(90deg, #4A342A 0%, #5A4033 100%);
   color: #F5F1EA;
-  padding: 14px var(--pad, 24px);
-  text-align: center;
+  padding: 12px var(--pad, 20px);
   font-size: 13px;
-  letter-spacing: .04em;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  border-bottom: 1px solid rgba(215, 201, 184, 0.25);
+  border-bottom: 1px solid rgba(215, 201, 184, 0.2);
 }
-.prelaunch-banner .badge {
+.prelaunch-banner .badge-pill {
   background: #D7C9B8;
   color: #4A342A;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: .12em;
-  text-transform: uppercase;
   padding: 3px 8px;
+  text-transform: uppercase;
   border-radius: 2px;
 }
 .prelaunch-banner a.btn-inline {
-  color: #F5F1EA;
+  color: #D7C9B8;
   font-weight: 600;
   text-decoration: underline;
-  cursor: pointer;
-  margin-left: 6px;
+  text-underline-offset: 4px;
+  transition: color .2s;
+}
+.prelaunch-banner a.btn-inline:hover {
+  color: #FFFFFF;
 }
 
-/* VIP Founding Preview Lock Card */
-.locked-preview-card {
-  border: 1px solid var(--line, #D7C9B8);
-  background: var(--paper, #FBF9F5);
-  padding: clamp(32px, 5vw, 48px);
-  margin-bottom: 40px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+/* Waitlist Card Highlights */
+.wl-highlight-box {
+  background: #E8E2D7;
+  border-left: 3px solid #7D5A44;
+  padding: 18px 22px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
-.locked-preview-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  background: var(--espresso, #4A342A);
-  color: var(--linen, #F5F1EA);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
+.wl-highlight-box h4 {
+  margin: 0;
+  font-family: var(--serif, serif);
+  font-size: 19px;
+  color: #4A342A;
 }
-.preview-blur-box {
-  filter: blur(3px);
-  opacity: 0.55;
-  pointer-events: none;
-  user-select: none;
-  transition: all .3s;
+.wl-highlight-box p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #5A4033;
+}
+
+/* Educational Cards */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+.edu-card {
+  background: #FAF7F2;
+  border: 1px solid #D7C9B8;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.edu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(74, 52, 42, 0.08);
+}
+.edu-card .icon-num {
+  font-family: var(--serif, serif);
+  font-size: 26px;
+  color: #7D5A44;
+  font-style: italic;
+}
+.edu-card h3 {
+  margin: 0;
+  font-family: var(--serif, serif);
+  font-size: 22px;
+  line-height: 1.2;
+  color: #4A342A;
+}
+.edu-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5A4033;
 }
 
 /* Modal Overlay & Card */
@@ -220,3 +256,225 @@
   border-radius: 2px;
 }
 
+/* ─────────────────────────────────────────────────────────────
+   MOBILE DRAWER & NAVIGATION SYSTEM
+   ───────────────────────────────────────────────────────────── */
+
+/* Lock body scrolling when mobile menu is active */
+body.mobile-nav-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+/* Backdrop overlay */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 20, 15, 0.68);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s cubic-bezier(.16, 1, .3, 1), visibility .35s;
+}
+.mobile-nav-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Slide-Out Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  max-width: 88vw;
+  height: 100vh;
+  height: 100dvh;
+  background: #4A342A;
+  color: #F5F1EA;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(105%);
+  transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+  box-shadow: -15px 0 45px rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.mobile-nav-drawer.active {
+  transform: translateX(0);
+}
+
+/* Drawer Top Bar */
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+  border-bottom: 1px solid rgba(215, 201, 184, 0.15);
+  background: #4A342A;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.mobile-nav-logo {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+.mobile-nav-close {
+  background: transparent;
+  border: 1px solid rgba(245, 241, 234, 0.3);
+  color: #F5F1EA;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  transition: background .2s, border-color .2s, transform .2s;
+  padding: 0;
+}
+.mobile-nav-close:hover,
+.mobile-nav-close:active {
+  background: rgba(245, 241, 234, 0.15);
+  border-color: #F5F1EA;
+  transform: scale(1.05);
+}
+
+/* Drawer Navigation Links */
+.mobile-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 12px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav-links > li {
+  border-bottom: 1px solid rgba(215, 201, 184, 0.14);
+}
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 26px;
+  line-height: 1.2;
+  color: #F5F1EA;
+  text-decoration: none;
+  transition: color .2s, transform .2s;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  color: #D7C9B8;
+  transform: translateX(4px);
+}
+.mobile-nav-link .chev {
+  font-size: 18px;
+  color: #B2967D;
+  transition: transform .25s ease;
+}
+
+/* Mobile Accordion Submenu for New Here */
+.mobile-nav-accordion.open .chev {
+  transform: rotate(180deg);
+}
+.mobile-nav-sub {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 16px 14px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+.mobile-nav-sub.open {
+  display: flex;
+}
+.mobile-nav-sub li a {
+  display: block;
+  font-family: var(--sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: #D7C9B8;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color .2s, padding-left .2s;
+}
+.mobile-nav-sub li a:hover,
+.mobile-nav-sub li a:active {
+  color: #FFFFFF;
+  padding-left: 4px;
+}
+
+/* Drawer Bottom Actions & Studio Details */
+.mobile-nav-footer {
+  margin-top: auto;
+  padding: 24px 26px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top: 1px solid rgba(215, 201, 184, 0.15);
+  background: rgba(0, 0, 0, 0.12);
+}
+.mobile-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  background: #F5F1EA;
+  color: #4A342A !important;
+  font-family: var(--sans, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #F5F1EA;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 2px;
+  transition: background .2s, transform .2s;
+}
+.mobile-nav-btn:hover,
+.mobile-nav-btn:active {
+  background: #FFFFFF;
+  transform: translateY(-2px);
+}
+.mobile-nav-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: #D7C9B8;
+  line-height: 1.5;
+}
+.mobile-nav-contact a {
+  color: #F5F1EA;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color .2s;
+}
+.mobile-nav-contact a:hover {
+  color: #FFFFFF;
+}
+.mobile-nav-tagline {
+  font-size: 10px;
+  letter-spacing: .25em;
+  color: rgba(215, 201, 184, 0.6);
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 6px;
+}
