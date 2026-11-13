@@ -613,44 +613,57 @@ a{color:#4A342A}a:hover{color:#7D5A44}
   </div></header>
 
   <main>
-    <section class="wrap stack" style="padding-block: clamp(56px, 7vw, 104px) clamp(40px, 5vw, 64px); display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px; align-items: end">
-      <div style="display: flex; flex-direction: column; gap: 24px"><span class="ey">Instructors</span><h1 class="d1">Teachers first, then trainers.</h1></div>
-      <p class="lead">Every ENTHALPY instructor is certified in reformer Pilates and trained in anatomy and movement. They will tell you why, not just what.</p>
+    <section class="wrap stack" style="padding-block: clamp(56px, 7vw, 104px) clamp(32px, 4vw, 48px); display: flex; flex-direction: column; gap: 24px; text-align: center; max-width: 860px; margin: 0 auto">
+      <span class="ey" style="color: #7D5A44;">Defence Colony, New Delhi · Coming Soon</span>
+      <h1 class="d1">Our Instructors Coming Soon</h1>
+      <p class="lead" style="margin: 0 auto;">Certified master practitioners in classical and athletic reformer Pilates, biomechanics, and postural restoration. Register on our waitlist to be notified first when instructor-led sessions and private 1:1 assessments open in Defence Colony.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
+        <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()">Join Pre-Launch Waitlist</button>
+      </div>
     </section>
 
-    <section class="wrap" style="padding-bottom: clamp(72px, 9vw, 128px)">
-      <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-block: 20px; border-block: 1px solid #D7C9B8; margin-bottom: 48px" role="toolbar" aria-label="Filter instructors">
-        <button class="tag tag-f" style="height: 44px; padding: 0 18px; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .12em">All</button>
-        <button class="tag" style="height: 44px; padding: 0 18px; background: transparent; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .12em; color: #4A342A">Reformer</button>
-        <button class="tag" style="height: 44px; padding: 0 18px; background: transparent; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .12em; color: #4A342A">Rehab</button>
-        <button class="tag" style="height: 44px; padding: 0 18px; background: transparent; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .12em; color: #4A342A">Pre &amp; post-natal</button>
-        <button class="tag" style="height: 44px; padding: 0 18px; background: transparent; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .12em; color: #4A342A">Privates</button>
-      </div>
+    <!-- Faculty Portraits -->
+    <section class="wrap" style="padding-bottom: clamp(48px, 6vw, 72px)">
       <div class="team" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
-        <div class="m"><div class="ph k r45"><img src="assets/img_instructor_ananya.jpg" alt="Ananya Sharma" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d3">Ananya Sharma</span><span class="sm muted">Lead Master Instructor · Classical & Athletic Reformer</span><span class="tags"><span class="tag">Reformer</span><span class="tag">Athletic Flow</span></span></div>
-        <div class="m"><div class="ph k r45"><img src="assets/img_instructor_kabir.jpg" alt="Kabir Mehta" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d3">Kabir Mehta</span><span class="sm muted">Biomechanics Lead · Athletic Conditioning & Mobility</span><span class="tags"><span class="tag">Reformer</span><span class="tag">Strength</span></span></div>
-        <div class="m"><div class="ph k r45"><img src="assets/img_instructor_priya.jpg" alt="Priya Sundaram" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d3">Priya Sundaram</span><span class="sm muted">Senior Movement Specialist · Pre/Post-Natal & Spine Rehab</span><span class="tags"><span class="tag">Rehab</span><span class="tag">Pre & Post-Natal</span></span></div>
+        <div class="m"><div class="ph k r45"><img src="assets/img_instructor_ananya.jpg" alt="Ananya Sharma" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d3">Ananya Sharma</span><span class="sm muted">Lead Master Instructor · Classical &amp; Athletic Reformer</span><span class="tags"><span class="tag">Reformer</span><span class="tag">Athletic Flow</span></span></div>
+        <div class="m"><div class="ph k r45"><img src="assets/img_instructor_kabir.jpg" alt="Kabir Mehta" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d3">Kabir Mehta</span><span class="sm muted">Biomechanics Lead · Athletic Conditioning &amp; Mobility</span><span class="tags"><span class="tag">Reformer</span><span class="tag">Strength</span></span></div>
+        <div class="m"><div class="ph k r45"><img src="assets/img_instructor_priya.jpg" alt="Priya Sundaram" style="width:100%;height:100%;object-fit:cover;display:block"></div><span class="d3">Priya Sundaram</span><span class="sm muted">Senior Movement Specialist · Pre/Post-Natal &amp; Spine Rehab</span><span class="tags"><span class="tag">Rehab</span><span class="tag">Pre &amp; Post-Natal</span></span></div>
       </div>
     </section>
 
-    <section style="background: #FBF9F5" class="sec">
-      <div class="wrap" style="display: flex; flex-direction: column; gap: 44px">
-        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px"><span class="ey">Our standard</span><h2 class="d2">What every instructor brings.</h2></div>
-        <div class="std">
-          <div><span class="num">01</span><span class="d4">Certified training</span><span class="p muted">A recognised comprehensive reformer certification. [Studio to list accepted bodies.]</span></div>
-          <div><span class="num">02</span><span class="d4">Anatomy first</span><span class="p muted">Instructors understand how the body works, so they can adapt any exercise for you.</span></div>
-          <div><span class="num">03</span><span class="d4">Ongoing study</span><span class="p muted">Regular in-house training keeps teaching consistent across every class.</span></div>
+    <!-- Embedded Waitlist Form Section -->
+    <section class="wrap sec" style="padding-top: 0;">
+      <div style="background: #4A342A; color: #F5F1EA; padding: clamp(36px, 6vw, 64px); border-radius: 4px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <span class="ey" style="color: #D7C9B8;">Opening in Defence Colony, New Delhi</span>
+          <h2 class="d2" style="color: #F5F1EA; margin: 0;">Train with Our Founding Faculty.</h2>
+          <p class="p" style="color: #D7C9B8; margin: 0; line-height: 1.6;">Our master instructors work closely with every participant in our 12-reformer studio room. Join the waitlist for private session priority and group class early access.</p>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px; font-size: 13px; color: #F5F1EA;">
+            <div>✓ Maximum 12 reformers per instructor session</div>
+            <div>✓ Classical precision &amp; modern athletic conditioning</div>
+            <div>✓ Priority WhatsApp notification when schedules go live</div>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section style="background: #4A342A; color: #F5F1EA" class="sec-tight">
-      <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap">
-        <div style="display: flex; flex-direction: column; gap: 10px">
-          <span class="ey" style="color: #D7C9B8">Opening Soon in Defence Colony, New Delhi</span>
-          <span class="d3">Train with Our Founding Faculty</span>
+        <div style="background: #F5F1EA; color: #4A342A; padding: 28px; border-radius: 4px;">
+          <h3 class="d4" style="margin: 0 0 8px; color: #4A342A;">Join Instructor Waitlist</h3>
+          <p class="sm muted" style="margin: 0 0 16px;">Opening Soon in Defence Colony, New Delhi</p>
+          <form onsubmit="window.handleWaitlistSubmit(event)" style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="fld">
+              <label for="ins-name" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">Full Name *</label>
+              <input type="text" id="ins-name" name="name" class="inp" required placeholder="Your full name" style="height: 44px; border: 1px solid #4A342A; background: transparent; padding: 0 12px; font-family: inherit; font-size: 14px;">
+            </div>
+            <div class="fld">
+              <label for="ins-phone" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">WhatsApp / Mobile *</label>
+              <input type="tel" id="ins-phone" name="phone" class="inp" required placeholder="+91 95899 92237" style="height: 44px; border: 1px solid #4A342A; background: transparent; padding: 0 12px; font-family: inherit; font-size: 14px;">
+            </div>
+            <div class="fld">
+              <label for="ins-email" style="font-size: 11px; font-weight: 700; text-transform: uppercase;">Email Address *</label>
+              <input type="email" id="ins-email" name="email" class="inp" required placeholder="name@domain.com" style="height: 44px; border: 1px solid #4A342A; background: transparent; padding: 0 12px; font-family: inherit; font-size: 14px;">
+            </div>
+            <button type="submit" class="btn" style="min-height: 48px; width: 100%; margin-top: 6px;">Register on Waitlist</button>
+          </form>
         </div>
-        <button class="btn btn-l open-waitlist-modal" onclick="window.openWaitlistModal()" style="background: #F5F1EA; color: #4A342A; border-color: #F5F1EA;">Join Waitlist</button>
       </div>
     </section>
   </main>
