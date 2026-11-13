@@ -112,9 +112,8 @@
         <a href="pricing.html" onclick="window.closeMobileMenu()"><span>Pricing</span><span class="n">04</span></a>
         <a href="instructors.html" onclick="window.closeMobileMenu()"><span>Instructors</span><span class="n">05</span></a>
         <a href="studio.html" onclick="window.closeMobileMenu()"><span>Studio</span><span class="n">06</span></a>
-        <a href="journal.html" onclick="window.closeMobileMenu()"><span>Journal</span><span class="n">07</span></a>
-        <a href="about.html" onclick="window.closeMobileMenu()"><span>About</span><span class="n">08</span></a>
-        <a href="philosophy.html" onclick="window.closeMobileMenu()"><span>Philosophy</span><span class="n">09</span></a>
+        <a href="about.html" onclick="window.closeMobileMenu()"><span>About</span><span class="n">07</span></a>
+        <a href="philosophy.html" onclick="window.closeMobileMenu()"><span>Philosophy</span><span class="n">08</span></a>
       </nav>
 
       <div class="mobile-nav-quick-links">

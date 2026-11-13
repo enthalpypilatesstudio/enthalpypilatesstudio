@@ -637,6 +637,28 @@ body.mobile-nav-open {
   .nav .wrap {
     min-height: 76px !important;
     padding-inline: 40px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .nav ul {
+    display: none !important;
+  }
+  .nav .act {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 16px !important;
+  }
+  .nav .act .btn {
+    order: 1 !important;
+  }
+  .nav .menu {
+    display: inline-flex !important;
+    order: 2 !important;
+    margin-left: 8px !important;
   }
   .nav .logo {
     height: 24px !important;
@@ -736,34 +758,48 @@ body.mobile-nav-open {
     font-size: 11px !important;
   }
 
-  /* Header & Navigation */
+  /* Header & Navigation — Fixed logo left, hamburger menu right */
   .nav .wrap {
     min-height: 64px !important;
     padding-inline: 20px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
     gap: 12px !important;
   }
   .nav .logo {
     height: 20px !important;
     width: auto !important;
+    flex-shrink: 0 !important;
   }
   .nav ul {
     display: none !important;
   }
-  .nav .menu {
-    display: inline-flex !important;
-    width: 44px !important;
-    height: 44px !important;
-    align-items: center;
-    justify-content: center;
-  }
   .nav .act {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
     gap: 10px !important;
+    flex-shrink: 0 !important;
   }
   .nav .act .btn {
     min-height: 40px !important;
     padding: 0 14px !important;
     font-size: 11px !important;
     letter-spacing: .1em !important;
+    order: 1 !important;
+  }
+  .nav .menu {
+    display: inline-flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    order: 2 !important;
+    margin-left: 4px !important;
+    flex-shrink: 0 !important;
   }
 
   /* Single Column Stacking for Grids */
