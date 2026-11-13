@@ -101,13 +101,18 @@
       </div>
 
       <ul class="mobile-nav-links">
+        <li><a class="mobile-nav-link" href="index.html" onclick="window.closeMobileMenu()"><span>Home</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="classes.html" onclick="window.closeMobileMenu()"><span>Classes</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="timetable.html" onclick="window.closeMobileMenu()"><span>Timetable</span><span class="chev">&rsaquo;</span></a></li>
-        <li><a class="mobile-nav-link" href="new-here.html" onclick="window.closeMobileMenu()"><span>New Here</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="pricing.html" onclick="window.closeMobileMenu()"><span>Pricing</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="studio.html" onclick="window.closeMobileMenu()"><span>Studio</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="instructors.html" onclick="window.closeMobileMenu()"><span>Instructors</span><span class="chev">&rsaquo;</span></a></li>
         <li><a class="mobile-nav-link" href="journal.html" onclick="window.closeMobileMenu()"><span>Journal</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="new-here.html" onclick="window.closeMobileMenu()"><span>New Here</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="about.html" onclick="window.closeMobileMenu()"><span>About</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="philosophy.html" onclick="window.closeMobileMenu()"><span>Philosophy</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="faq.html" onclick="window.closeMobileMenu()"><span>FAQs</span><span class="chev">&rsaquo;</span></a></li>
+        <li><a class="mobile-nav-link" href="contact.html" onclick="window.closeMobileMenu()"><span>Contact</span><span class="chev">&rsaquo;</span></a></li>
       </ul>
 
       <div class="mobile-nav-footer">
