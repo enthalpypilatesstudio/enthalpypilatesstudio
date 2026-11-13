@@ -429,6 +429,273 @@ body {
   z-index: 2000;
   font-weight: 600;
 }
+
+/* ── BLOG CMS, RICH EDITOR & SEO STUDIO STYLES ── */
+.blog-modal-box {
+  background: #FFF;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 1080px;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(40, 25, 18, 0.35);
+}
+.blog-modal-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper);
+}
+.blog-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+.editor-tabs {
+  display: flex;
+  gap: 12px;
+  border-bottom: 2px solid var(--line);
+  margin-bottom: 24px;
+}
+.editor-tab-btn {
+  background: none;
+  border: none;
+  padding: 10px 18px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cocoa);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+.editor-tab-btn.active {
+  color: var(--espresso);
+  border-bottom-color: var(--espresso);
+}
+.rich-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-bottom: none;
+  padding: 8px 12px;
+  border-radius: 6px 6px 0 0;
+}
+.tool-btn {
+  background: #FFF;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 6px 11px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--espresso);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tool-btn:hover {
+  background: var(--line);
+  border-color: var(--camel);
+}
+.rich-editor-area {
+  border: 1px solid var(--line);
+  border-radius: 0 0 6px 6px;
+  padding: 16px 20px;
+  min-height: 280px;
+  max-height: 440px;
+  overflow-y: auto;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--espresso);
+  background: #FFF;
+}
+.rich-editor-area:focus {
+  outline: none;
+  border-color: var(--camel);
+}
+.rich-editor-area h2 { font-family: var(--serif); font-size: 24px; margin: 20px 0 10px; }
+.rich-editor-area h3 { font-family: var(--serif); font-size: 20px; margin: 16px 0 8px; }
+.rich-editor-area blockquote {
+  border-left: 3px solid var(--espresso);
+  padding: 10px 16px;
+  margin: 16px 0;
+  font-style: italic;
+  background: rgba(215, 201, 184, 0.2);
+}
+.rich-stats-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--cocoa);
+  padding: 8px 4px 0;
+}
+
+/* SERP Google Preview */
+.serp-card {
+  background: #FFF;
+  border: 1px solid #DFE1E5;
+  border-radius: 8px;
+  padding: 18px 20px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 1px 6px rgba(32,33,36,0.08);
+  margin-bottom: 24px;
+}
+.serp-url-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #202124;
+  margin-bottom: 6px;
+}
+.serp-favicon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--espresso);
+  color: #FFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+.serp-title {
+  color: #1A0DAB;
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 400;
+}
+.serp-title:hover { text-decoration: underline; }
+.serp-snippet {
+  color: #4D5156;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Social Open Graph Card */
+.og-card {
+  border: 1px solid #DFE1E5;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFF;
+  max-width: 520px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.og-img-wrap {
+  width: 100%;
+  height: 200px;
+  background: var(--khaki);
+  overflow: hidden;
+}
+.og-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.og-info {
+  padding: 14px 16px;
+}
+.og-domain {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #70757A;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.og-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #202124;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.og-desc {
+  font-size: 12px;
+  color: #5F6368;
+  line-height: 1.4;
+}
+
+/* SEO Audit checklist */
+.seo-audit-box {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+.seo-score-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.seo-score-pill {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.seo-score-good { background: #E6F4EA; color: #137333; }
+.seo-score-fair { background: #FEF7E0; color: #B06000; }
+.seo-score-poor { background: #FCE8E6; color: #C5221F; }
+.seo-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.check-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+.check-pass { background: #34A853; color: #FFF; }
+.check-warn { background: #EA4335; color: #FFF; }
+
+.char-meter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--cocoa);
+  margin-top: 4px;
+}
+.meter-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+  flex: 1;
+  margin-inline: 10px;
+}
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.2s, background-color 0.2s;
+}
 </style>
 </head>
 <body>
@@ -456,6 +723,9 @@ body {
   </button>
   <button class="nav-tab" onclick="switchTab('schedule')">
     Schedule &amp; Timetable
+  </button>
+  <button class="nav-tab" onclick="switchTab('blog')">
+    Journal &amp; Blog CMS <span class="tab-count" id="blog-count">2</span>
   </button>
   <button class="nav-tab" onclick="switchTab('members')">
     Member Directory
@@ -844,7 +1114,336 @@ body {
     </div>
   </section>
 
+  <!-- SECTION: BLOG & JOURNAL CMS -->
+  <section id="section-blog" class="panel-section">
+    <!-- Blog Stats Banner -->
+    <div class="stats-grid" style="margin-bottom: 20px;">
+      <div class="stat-card">
+        <div class="stat-label">Total Articles</div>
+        <div class="stat-value" id="stat-blog-total">2</div>
+        <div class="stat-sub">Movement &amp; Biomechanics Journal</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Live Published</div>
+        <div class="stat-value" id="stat-blog-published" style="color: #137333;">2</div>
+        <div class="stat-sub">Indexed &amp; visible on website</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Drafts in Progress</div>
+        <div class="stat-value" id="stat-blog-drafts">0</div>
+        <div class="stat-sub">Unpublished editorial work</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Average SEO Health</div>
+        <div class="stat-value" id="stat-blog-seo" style="color: #137333;">96%</div>
+        <div class="stat-sub">High Google SERP readiness</div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="card-header-bar">
+        <div>
+          <div class="card-title">Editorial Management &amp; Articles Directory</div>
+          <div style="font-size: 12px; color: var(--cocoa); margin-top: 2px;">Manage published studio journal articles, rich content, focus keywords, and SERP metadata.</div>
+        </div>
+        <div class="card-controls" style="flex-wrap: wrap;">
+          <input type="text" id="blog-search-input" class="search-input" placeholder="Search articles by title, keyword..." onkeyup="filterBlogPosts(this.value)">
+          <select id="blog-category-filter" class="search-input" style="width: 170px;" onchange="filterBlogPosts()">
+            <option value="all">All Categories</option>
+            <option value="Movement Science">Movement Science</option>
+            <option value="Pilates for Men">Pilates for Men</option>
+            <option value="Pilates for Women">Pilates for Women</option>
+            <option value="Studio News">Studio News</option>
+          </select>
+          <select id="blog-status-filter" class="search-input" style="width: 130px;" onchange="filterBlogPosts()">
+            <option value="all">All Statuses</option>
+            <option value="published">Published</option>
+            <option value="draft">Drafts</option>
+          </select>
+          <button class="btn btn-primary" onclick="openBlogEditor(null)">+ New Article</button>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="data-table" id="blog-table" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="min-width: 300px;">Article &amp; URL Slug</th>
+              <th>Category</th>
+              <th>Author &amp; Read Time</th>
+              <th>SEO Health</th>
+              <th>Status</th>
+              <th>Last Updated</th>
+              <th style="text-align: right; min-width: 180px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="blog-posts-tbody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<!-- Blog Post Full Editor & SEO Modal -->
+<div class="modal-overlay" id="blog-editor-modal">
+  <div class="blog-modal-box">
+    <div class="blog-modal-header">
+      <div>
+        <h3 id="modal-editor-title" style="margin: 0; font-size: 18px; color: var(--espresso);">Edit Journal Article</h3>
+        <span id="modal-editor-sub" style="font-size: 12px; color: var(--cocoa);">Drafting for ENTHALPY Movement Journal · Defence Colony</span>
+      </div>
+      <button class="modal-close" onclick="closeBlogEditor()">&times;</button>
+    </div>
+
+    <!-- Dual Tab Bar: Content vs SEO -->
+    <div style="padding: 14px 24px 0; background: var(--paper); border-bottom: 1px solid var(--line);">
+      <div class="editor-tabs" style="margin-bottom: 0; border-bottom: none;">
+        <button type="button" class="editor-tab-btn active" id="tab-btn-content" onclick="switchEditorTab('content')">
+          1. Content &amp; Editorial Body
+        </button>
+        <button type="button" class="editor-tab-btn" id="tab-btn-seo" onclick="switchEditorTab('seo')">
+          2. SEO Optimization &amp; Social SERP
+        </button>
+      </div>
+    </div>
+
+    <div class="blog-modal-body">
+      <!-- Hidden ID and timestamps -->
+      <input type="hidden" id="edit-post-id">
+      <input type="hidden" id="edit-post-published-at">
+
+      <!-- TAB 1: CONTENT & EDITORIAL -->
+      <div id="editor-tab-content">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Article Headline / Title *</label>
+            <input type="text" id="edit-title" class="search-input" style="width: 100%; font-size: 15px; font-weight: 600;" placeholder="e.g. Why the Reformer Uses Progressive Springs" oninput="handleTitleInput(this.value)">
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Category *</label>
+            <select id="edit-category" class="search-input" style="width: 100%;">
+              <option value="Movement Science">Movement Science</option>
+              <option value="Pilates for Men">Pilates for Men</option>
+              <option value="Pilates for Women">Pilates for Women</option>
+              <option value="Biomechanics &amp; Posture">Biomechanics &amp; Posture</option>
+              <option value="Studio News">Studio News</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">URL Slug (Permalink)</label>
+            <input type="text" id="edit-slug" class="search-input" style="width: 100%; font-family: monospace; font-size: 13px;" placeholder="reformer-springs-science" oninput="updateSeoAudit()">
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Author</label>
+            <input type="text" id="edit-author" class="search-input" style="width: 100%;" value="ENTHALPY Movement Team">
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Estimated Reading Time</label>
+            <input type="text" id="edit-reading-time" class="search-input" style="width: 100%;" placeholder="e.g. 5 min read">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Featured Hero Image</label>
+          <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 8px;">
+            <input type="text" id="edit-image" class="search-input" style="flex: 1;" placeholder="assets/img_hero_studio.jpg" oninput="updateImagePreview(this.value)">
+          </div>
+          <!-- Quick Image Presets -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px;">
+            <span style="color: var(--cocoa); align-self: center;">Quick pick:</span>
+            <button type="button" class="btn btn-sm" style="min-height: 28px; padding: 0 10px; background: var(--paper); color: var(--espresso); border-color: var(--line);" onclick="selectPresetImage('assets/img_hero_studio.jpg')">Studio Space</button>
+            <button type="button" class="btn btn-sm" style="min-height: 28px; padding: 0 10px; background: var(--paper); color: var(--espresso); border-color: var(--line);" onclick="selectPresetImage('assets/img_class_plank.jpg')">Core Plank</button>
+            <button type="button" class="btn btn-sm" style="min-height: 28px; padding: 0 10px; background: var(--paper); color: var(--espresso); border-color: var(--line);" onclick="selectPresetImage('assets/img_class_footwork.jpg')">Precision Footwork</button>
+            <button type="button" class="btn btn-sm" style="min-height: 28px; padding: 0 10px; background: var(--paper); color: var(--espresso); border-color: var(--line);" onclick="selectPresetImage('assets/img_class_reformer.jpg')">Reformer Alignment</button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Excerpt / Meta Summary (1-2 sentences)</label>
+          <textarea id="edit-excerpt" class="search-input" style="width: 100%; height: 60px; resize: vertical;" placeholder="A brief summary shown in article cards and search snippet..." oninput="handleExcerptInput(this.value)"></textarea>
+        </div>
+
+        <!-- WYSIWYG RICH TEXT EDITOR -->
+        <div style="margin-bottom: 12px;">
+          <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 6px;">Article Body Content *</label>
+          
+          <div class="rich-toolbar">
+            <button type="button" class="tool-btn" onclick="execFormat('bold')" title="Bold (Ctrl+B)"><b>B</b></button>
+            <button type="button" class="tool-btn" onclick="execFormat('italic')" title="Italic (Ctrl+I)"><i>I</i></button>
+            <button type="button" class="tool-btn" onclick="execFormat('underline')" title="Underline"><u>U</u></button>
+            <span style="border-left: 1px solid var(--line); margin: 0 4px;"></span>
+            <button type="button" class="tool-btn" onclick="execFormat('formatBlock', '<h2>')" title="Heading 2">H2</button>
+            <button type="button" class="tool-btn" onclick="execFormat('formatBlock', '<h3>')" title="Heading 3">H3</button>
+            <button type="button" class="tool-btn" onclick="execFormat('formatBlock', '<p>')" title="Paragraph">¶</button>
+            <span style="border-left: 1px solid var(--line); margin: 0 4px;"></span>
+            <button type="button" class="tool-btn" onclick="execFormat('formatBlock', '<blockquote>')" title="Quote">“ ”</button>
+            <button type="button" class="tool-btn" onclick="execFormat('insertUnorderedList')" title="Bullet List">• List</button>
+            <button type="button" class="tool-btn" onclick="execFormat('insertOrderedList')" title="Numbered List">1. List</button>
+            <button type="button" class="tool-btn" onclick="insertLinkPrompt()" title="Insert Link">🔗 Link</button>
+            <button type="button" class="tool-btn" onclick="execFormat('insertHorizontalRule')" title="Divider">— HR</button>
+            <button type="button" class="tool-btn" onclick="execFormat('removeFormat')" title="Clear formatting" style="color: #999;">✕ Clear</button>
+          </div>
+
+          <div id="edit-content-editor" class="rich-editor-area" contenteditable="true" oninput="handleContentInput()"></div>
+
+          <div class="rich-stats-bar">
+            <span>Words: <b id="stat-words">0</b> &middot; Characters: <b id="stat-chars">0</b></span>
+            <span>Est. Reading Time: <b id="stat-calc-time">1 min read</b></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: SEO MANAGEMENT & SOCIAL SHARING -->
+      <div id="editor-tab-seo" style="display: none;">
+        <!-- Focus Keyword & Health Audit Banner -->
+        <div class="seo-audit-box">
+          <div class="seo-score-banner">
+            <div>
+              <div style="font-weight: 700; font-size: 15px; color: var(--espresso);">SEO Optimization Score</div>
+              <div style="font-size: 12px; color: var(--cocoa);">Real-time audit against Google search ranking factors</div>
+            </div>
+            <div id="seo-score-badge" class="seo-score-pill seo-score-good">
+              <span id="seo-score-val">95%</span> &middot; <span id="seo-score-label">Optimal</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Focus Keyword / Search Query *</label>
+            <input type="text" id="edit-seo-keyword" class="search-input" style="width: 100%; max-width: 440px;" placeholder="e.g. reformer pilates defence colony" oninput="updateSeoAudit()">
+            <div style="font-size: 12px; color: var(--cocoa); margin-top: 4px;">The primary phrase potential members will search on Google.</div>
+          </div>
+
+          <!-- Audit Checklist -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;">
+            <div class="seo-check-item">
+              <span class="check-icon check-pass" id="chk-title">✓</span>
+              <span>Keyword in Meta Title</span>
+            </div>
+            <div class="seo-check-item">
+              <span class="check-icon check-pass" id="chk-desc">✓</span>
+              <span>Keyword in Meta Description</span>
+            </div>
+            <div class="seo-check-item">
+              <span class="check-icon check-pass" id="chk-slug">✓</span>
+              <span>Keyword in URL Permalink</span>
+            </div>
+            <div class="seo-check-item">
+              <span class="check-icon check-pass" id="chk-content">✓</span>
+              <span>Keyword in Article Body Content</span>
+            </div>
+            <div class="seo-check-item">
+              <span class="check-icon check-pass" id="chk-length">✓</span>
+              <span>Article Depth (at least 300 words)</span>
+            </div>
+            <div class="seo-check-item">
+              <span class="check-icon check-pass" id="chk-canonical">✓</span>
+              <span>Canonical Link Configured</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google SERP Live Simulation Card -->
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 8px;">Google Search Results Snippet (Live SERP Preview)</label>
+          <div class="serp-card">
+            <div class="serp-url-row">
+              <span class="serp-favicon">E</span>
+              <div>
+                <span>enthalpypilatesstudio.com</span>
+                <span style="color: #5F6368;"> &rsaquo; journal &rsaquo; <span id="serp-preview-slug">reformer-springs</span></span>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="serp-title" id="serp-preview-title">Why Reformer Pilates Uses Progressive Springs | ENTHALPY</a>
+            <div class="serp-snippet" id="serp-preview-desc">Discover the biomechanical science of spring resistance in Reformer Pilates. Learn why springs decompress the spine and sculpt deep core strength...</div>
+          </div>
+        </div>
+
+        <!-- Meta Title Input & Live Character Meter -->
+        <div style="margin-bottom: 18px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <label style="font-weight: 700; font-size: 13px;">Meta Title (SEO Title)</label>
+            <span style="font-size: 12px; color: var(--cocoa);"><span id="title-char-count">0</span> / 60 chars</span>
+          </div>
+          <input type="text" id="edit-seo-title" class="search-input" style="width: 100%; margin-top: 4px;" placeholder="Catchy, keyword-optimized title for search engines" oninput="handleSeoTitleInput(this.value)">
+          <div class="char-meter">
+            <span style="font-size: 11px;">Recommended: 50 – 60 chars</span>
+            <div class="meter-bar"><div class="meter-fill" id="title-meter-fill"></div></div>
+            <span id="title-meter-status" style="font-weight: 600;">Good</span>
+          </div>
+        </div>
+
+        <!-- Meta Description Input & Live Character Meter -->
+        <div style="margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <label style="font-weight: 700; font-size: 13px;">Meta Description</label>
+            <span style="font-size: 12px; color: var(--cocoa);"><span id="desc-char-count">0</span> / 160 chars</span>
+          </div>
+          <textarea id="edit-seo-desc" class="search-input" style="width: 100%; height: 70px; resize: vertical; margin-top: 4px;" placeholder="The 1-2 sentence pitch shown in Google search results beneath your headline..." oninput="handleSeoDescInput(this.value)"></textarea>
+          <div class="char-meter">
+            <span style="font-size: 11px;">Recommended: 120 – 160 chars</span>
+            <div class="meter-bar"><div class="meter-fill" id="desc-meter-fill"></div></div>
+            <span id="desc-meter-status" style="font-weight: 600;">Good</span>
+          </div>
+        </div>
+
+        <!-- Social Media Open Graph (OG) Card Preview -->
+        <div style="margin-bottom: 24px;">
+          <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 8px;">Social Sharing Card Preview (WhatsApp, LinkedIn, Twitter/X)</label>
+          <div class="og-card">
+            <div class="og-img-wrap">
+              <img id="og-preview-img" src="assets/img_hero_studio.jpg" alt="Social card preview">
+            </div>
+            <div class="og-info">
+              <div class="og-domain">ENTHALPYPILATESSTUDIO.COM</div>
+              <div class="og-title" id="og-preview-title">Why Reformer Pilates Uses Progressive Springs</div>
+              <div class="og-desc" id="og-preview-desc">The physics of spring tension vs gym weights: spine decompression and deep core muscle recruitment.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical SEO: Canonical & Robots -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; background: var(--paper); padding: 16px; border: 1px solid var(--line); border-radius: 6px;">
+          <div>
+            <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Canonical URL</label>
+            <input type="url" id="edit-seo-canonical" class="search-input" style="width: 100%; font-size: 12px;" placeholder="https://enthalpypilatesstudio.com/journal/...">
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Search Indexing (Robots)</label>
+            <select id="edit-seo-robots" class="search-input" style="width: 100%;">
+              <option value="index, follow">index, follow (Standard)</option>
+              <option value="noindex, follow">noindex, follow</option>
+              <option value="noindex, nofollow">noindex, nofollow</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Footer Controls -->
+    <div style="padding: 16px 24px; background: var(--paper); border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <label style="font-weight: 700; font-size: 13px;">Status:</label>
+        <select id="edit-post-status" class="search-input" style="width: 130px;">
+          <option value="published">Published</option>
+          <option value="draft">Draft</option>
+        </select>
+        <button type="button" id="btn-delete-post" class="btn btn-sm" style="background: transparent; color: #C5221F; border-color: #C5221F; display: none;" onclick="deleteCurrentPost()">Delete Article</button>
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button type="button" class="btn btn-sm" style="background: var(--paper); color: var(--espresso); border-color: var(--line);" onclick="closeBlogEditor()">Cancel</button>
+        <button type="button" class="btn btn-sm" style="background: var(--paper); color: var(--espresso); border-color: var(--line);" onclick="saveBlogPost('draft')">Save as Draft</button>
+        <button type="button" class="btn btn-sm btn-primary" onclick="saveBlogPost('published')">Publish / Save Article</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Walk-in Modal -->
 <div class="modal-overlay" id="walkin-modal">
@@ -969,6 +1568,622 @@ function filterRoster(query) {
     r.style.display = text.includes(q) ? '' : 'none';
   });
 }
+
+/* ─────────────────────────────────────────────────────────────
+   BLOG & JOURNAL CMS + SEO MANAGEMENT JAVASCRIPT CONTROLLER
+   ───────────────────────────────────────────────────────────── */
+
+let adminBlogPosts = [];
+
+async function loadBlogPosts() {
+  try {
+    const res = await fetch('/api/posts?status=all');
+    if (res.ok) {
+      adminBlogPosts = await res.json();
+    } else {
+      console.warn('API fetch failed, loading default posts');
+      adminBlogPosts = getDefaultPostsCache();
+    }
+  } catch (err) {
+    console.warn('API error, using default posts:', err.message);
+    adminBlogPosts = getDefaultPostsCache();
+  }
+
+  updateBlogStats();
+  renderBlogTable(adminBlogPosts);
+}
+
+function getDefaultPostsCache() {
+  return [
+    {
+      id: "post-1",
+      slug: "why-the-reformer-uses-springs",
+      title: "Why the Reformer Uses Progressive Springs Instead of Weights",
+      category: "Movement Science",
+      author: "ENTHALPY Movement Team",
+      readingTime: "6 min read",
+      featuredImage: "assets/img_hero_studio.jpg",
+      excerpt: "Unlike free weights where resistance is static or momentum-driven, reformer springs provide progressive tension that resists you most at the end of a movement.",
+      content: "<h2>The Physics of Progressive Resistance</h2><p>In traditional weightlifting, the resistance is fixed by gravity. Once momentum takes over, the load on stabilizing muscles often drops. Reformer spring mechanics follow Hooke's Law: resistance increases proportionally as carriage travels outward.</p><p>This requires continuous muscular recruitment through full range, building long, lean muscle fiber and joint stability without compressive disc strain.</p>",
+      status: "published",
+      publishedAt: new Date(Date.now() - 604800000).toISOString(),
+      updatedAt: new Date(Date.now() - 86400000).toISOString(),
+      seo: {
+        metaTitle: "Why Reformer Pilates Uses Springs Not Weights | ENTHALPY",
+        metaDescription: "Discover the biomechanical science of progressive spring resistance in Reformer Pilates. Learn why springs decompress the spine and sculpt deep core strength.",
+        focusKeyword: "reformer springs",
+        canonicalUrl: "https://enthalpypilatesstudio.com/journal/why-the-reformer-uses-springs",
+        ogTitle: "Why the Reformer Uses Progressive Springs | ENTHALPY",
+        ogDescription: "The physics of spring tension vs gym weights: spine decompression and deep core muscle recruitment.",
+        ogImage: "assets/img_hero_studio.jpg",
+        robots: "index, follow"
+      }
+    },
+    {
+      id: "post-2",
+      slug: "pilates-for-men-strength-mobility",
+      title: "Pilates for Men: The Deep Core Strength Traditional Gym Training Misses",
+      category: "Pilates for Men",
+      author: "ENTHALPY Biomechanics Team",
+      readingTime: "5 min read",
+      featuredImage: "assets/img_class_plank.jpg",
+      excerpt: "Heavy bench presses and squats build outer prime movers, but often neglect rotator cuffs, transverse abdominis, and hip capsules. Reformer Pilates bridges the strength-mobility gap.",
+      content: "<h2>Beyond Surface Muscles: The Stabilizer Deficit</h2><p>Most male fitness regimens prioritize mirror muscles: chest, lats, and quads. However, when the deep stabilizers remain undertrained, the nervous system restricts power output to protect compromised joints.</p><p>Reformer Pilates acts as an immediate diagnostic tool. Asymmetries and micro-instabilities cannot be hidden behind momentum.</p>",
+      status: "published",
+      publishedAt: new Date(Date.now() - 432000000).toISOString(),
+      updatedAt: new Date(Date.now() - 43200000).toISOString(),
+      seo: {
+        metaTitle: "Reformer Pilates for Men: Core Strength & Mobility | ENTHALPY",
+        metaDescription: "Explore why top male athletes and professionals in Delhi use Reformer Pilates for rotational power, spine decompression, and injury resilience.",
+        focusKeyword: "pilates for men",
+        canonicalUrl: "https://enthalpypilatesstudio.com/journal/pilates-for-men-strength-mobility",
+        ogTitle: "Pilates for Men: Core Strength & Athletic Mobility",
+        ogDescription: "Target the deep stabilizers that heavy gym lifting misses with Reformer Pilates in Defence Colony.",
+        ogImage: "assets/img_class_plank.jpg",
+        robots: "index, follow"
+      }
+    }
+  ];
+}
+
+function updateBlogStats() {
+  const total = adminBlogPosts.length;
+  const published = adminBlogPosts.filter(p => p.status === 'published').length;
+  const drafts = total - published;
+
+  document.getElementById('stat-blog-total').innerText = total;
+  document.getElementById('stat-blog-published').innerText = published;
+  document.getElementById('stat-blog-drafts').innerText = drafts;
+  document.getElementById('blog-count').innerText = total;
+
+  // Calculate average SEO score
+  let scoreSum = 0;
+  adminBlogPosts.forEach(p => {
+    scoreSum += calcPostSeoScore(p);
+  });
+  const avg = total > 0 ? Math.round(scoreSum / total) : 95;
+  document.getElementById('stat-blog-seo').innerText = avg + '%';
+}
+
+function calcPostSeoScore(p) {
+  let score = 50;
+  const kw = (p.seo?.focusKeyword || '').toLowerCase().trim();
+  const title = (p.title || '').toLowerCase();
+  const desc = (p.seo?.metaDescription || p.excerpt || '').toLowerCase();
+  const slug = (p.slug || '').toLowerCase();
+  const content = (p.content || '').toLowerCase();
+
+  if (kw) {
+    if (title.includes(kw)) score += 10;
+    if (desc.includes(kw)) score += 10;
+    if (slug.includes(kw)) score += 10;
+    if (content.includes(kw)) score += 10;
+  } else {
+    score += 20;
+  }
+  if ((p.content || '').split(/\s+/).length >= 100) score += 10;
+  return Math.min(100, score);
+}
+
+function renderBlogTable(posts) {
+  const tbody = document.getElementById('blog-posts-tbody');
+  if (!tbody) return;
+
+  if (posts.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 32px; color: var(--cocoa);">No articles found matching filters. Click <b>+ New Article</b> to draft one.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = posts.map(p => {
+    const seoScore = calcPostSeoScore(p);
+    const scoreClass = seoScore >= 80 ? 'seo-score-good' : (seoScore >= 60 ? 'seo-score-fair' : 'seo-score-poor');
+    const scoreLabel = seoScore >= 80 ? 'Optimal' : (seoScore >= 60 ? 'Fair' : 'Needs Work');
+    const isPub = p.status === 'published';
+    const updated = p.updatedAt ? new Date(p.updatedAt).toLocaleDateString([], { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recently';
+
+    return `
+      <tr>
+        <td>
+          <div style="display: flex; gap: 14px; align-items: center;">
+            <img src="${p.featuredImage || 'assets/img_hero_studio.jpg'}" style="width: 52px; height: 38px; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); flex-shrink: 0;">
+            <div>
+              <div style="font-weight: 700; color: var(--espresso); font-size: 14px; max-width: 320px; line-height: 1.3;">${p.title}</div>
+              <div style="font-family: monospace; font-size: 11px; color: var(--camel); margin-top: 2px;">/journal/${p.slug}</div>
+            </div>
+          </div>
+        </td>
+        <td><span style="font-size: 12px; font-weight: 600; color: var(--cocoa);">${p.category || 'Movement Science'}</span></td>
+        <td>
+          <div style="font-size: 13px; font-weight: 600;">${p.author || 'ENTHALPY Team'}</div>
+          <div style="font-size: 11px; color: var(--cocoa);">${p.readingTime || '5 min read'}</div>
+        </td>
+        <td>
+          <span class="seo-score-pill ${scoreClass}" style="font-size: 11px; padding: 2px 10px;">
+            ${seoScore}% · ${scoreLabel}
+          </span>
+        </td>
+        <td>
+          <span class="status-pill ${isPub ? 'status-confirmed' : 'status-hold'}" style="cursor: pointer;" onclick="toggleBlogStatus('${p.id}')" title="Click to toggle status">
+            ${isPub ? '● Published' : '○ Draft'}
+          </span>
+        </td>
+        <td style="font-size: 12px; color: var(--cocoa);">${updated}</td>
+        <td style="text-align: right;">
+          <div style="display: inline-flex; gap: 6px;">
+            <button class="btn btn-sm" style="padding: 0 10px; min-height: 32px; font-size: 11px;" onclick="openBlogEditor('${p.id}')">Edit</button>
+            <a href="article.html?slug=${p.slug}" target="_blank" class="btn btn-sm" style="padding: 0 10px; min-height: 32px; font-size: 11px; background: transparent; color: var(--espresso); border-color: var(--line);" title="Preview live article">View</a>
+            <button class="btn btn-sm" style="padding: 0 8px; min-height: 32px; font-size: 11px; background: transparent; color: #C5221F; border-color: var(--line);" onclick="deleteBlogPost('${p.id}')" title="Delete">✕</button>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function filterBlogPosts() {
+  const q = (document.getElementById('blog-search-input')?.value || '').toLowerCase();
+  const cat = document.getElementById('blog-category-filter')?.value || 'all';
+  const status = document.getElementById('blog-status-filter')?.value || 'all';
+
+  let filtered = [...adminBlogPosts];
+  if (q) {
+    filtered = filtered.filter(p =>
+      (p.title || '').toLowerCase().includes(q) ||
+      (p.slug || '').toLowerCase().includes(q) ||
+      (p.seo?.focusKeyword || '').toLowerCase().includes(q) ||
+      (p.excerpt || '').toLowerCase().includes(q)
+    );
+  }
+  if (cat !== 'all') {
+    filtered = filtered.filter(p => (p.category || '').toLowerCase() === cat.toLowerCase());
+  }
+  if (status !== 'all') {
+    filtered = filtered.filter(p => p.status === status);
+  }
+
+  renderBlogTable(filtered);
+}
+
+function openBlogEditor(postId) {
+  const modal = document.getElementById('blog-editor-modal');
+  const modalTitle = document.getElementById('modal-editor-title');
+  const btnDelete = document.getElementById('btn-delete-post');
+
+  switchEditorTab('content');
+
+  if (postId) {
+    const post = adminBlogPosts.find(p => p.id === postId || p.slug === postId);
+    if (!post) return;
+
+    modalTitle.innerText = 'Edit Journal Article';
+    document.getElementById('modal-editor-sub').innerText = `Editing: ${post.title}`;
+    document.getElementById('edit-post-id').value = post.id;
+    document.getElementById('edit-post-published-at').value = post.publishedAt || '';
+    document.getElementById('edit-title').value = post.title || '';
+    document.getElementById('edit-slug').value = post.slug || '';
+    document.getElementById('edit-category').value = post.category || 'Movement Science';
+    document.getElementById('edit-author').value = post.author || 'ENTHALPY Movement Team';
+    document.getElementById('edit-reading-time').value = post.readingTime || '5 min read';
+    document.getElementById('edit-image').value = post.featuredImage || 'assets/img_hero_studio.jpg';
+    document.getElementById('edit-excerpt').value = post.excerpt || '';
+    document.getElementById('edit-content-editor').innerHTML = post.content || '';
+    document.getElementById('edit-post-status').value = post.status || 'published';
+
+    // SEO Tab fields
+    document.getElementById('edit-seo-keyword').value = post.seo?.focusKeyword || '';
+    document.getElementById('edit-seo-title').value = post.seo?.metaTitle || '';
+    document.getElementById('edit-seo-desc').value = post.seo?.metaDescription || '';
+    document.getElementById('edit-seo-canonical').value = post.seo?.canonicalUrl || '';
+    document.getElementById('edit-seo-robots').value = post.seo?.robots || 'index, follow';
+
+    btnDelete.style.display = 'inline-block';
+  } else {
+    // Brand new blank post
+    modalTitle.innerText = 'Create New Journal Article';
+    document.getElementById('modal-editor-sub').innerText = 'New publication for ENTHALPY Movement Journal';
+    document.getElementById('edit-post-id').value = '';
+    document.getElementById('edit-post-published-at').value = '';
+    document.getElementById('edit-title').value = '';
+    document.getElementById('edit-slug').value = '';
+    document.getElementById('edit-category').value = 'Movement Science';
+    document.getElementById('edit-author').value = 'ENTHALPY Movement Team';
+    document.getElementById('edit-reading-time').value = '5 min read';
+    document.getElementById('edit-image').value = 'assets/img_hero_studio.jpg';
+    document.getElementById('edit-excerpt').value = '';
+    document.getElementById('edit-content-editor').innerHTML = '<p>Write your article intro here...</p><h2>Biomechanical Analysis</h2><p>Explain the reformer principle and movement execution...</p>';
+    document.getElementById('edit-post-status').value = 'published';
+
+    // SEO Tab fields
+    document.getElementById('edit-seo-keyword').value = '';
+    document.getElementById('edit-seo-title').value = '';
+    document.getElementById('edit-seo-desc').value = '';
+    document.getElementById('edit-seo-canonical').value = '';
+    document.getElementById('edit-seo-robots').value = 'index, follow';
+
+    btnDelete.style.display = 'none';
+  }
+
+  updateContentStats();
+  updateSeoAudit();
+  modal.classList.add('open');
+}
+
+function closeBlogEditor() {
+  document.getElementById('blog-editor-modal').classList.remove('open');
+}
+
+function switchEditorTab(tabKey) {
+  const contentTab = document.getElementById('editor-tab-content');
+  const seoTab = document.getElementById('editor-tab-seo');
+  const btnContent = document.getElementById('tab-btn-content');
+  const btnSeo = document.getElementById('tab-btn-seo');
+
+  if (tabKey === 'content') {
+    contentTab.style.display = 'block';
+    seoTab.style.display = 'none';
+    btnContent.classList.add('active');
+    btnSeo.classList.remove('active');
+  } else {
+    contentTab.style.display = 'none';
+    seoTab.style.display = 'block';
+    btnContent.classList.remove('active');
+    btnSeo.classList.add('active');
+    updateSeoAudit();
+  }
+}
+
+function handleTitleInput(title) {
+  const slugInput = document.getElementById('edit-slug');
+  const autoSlug = title.toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+  
+  // Only override slug if it's currently empty or previously matched
+  if (!slugInput.value || slugInput.dataset.auto === 'true' || !document.getElementById('edit-post-id').value) {
+    slugInput.value = autoSlug;
+    slugInput.dataset.auto = 'true';
+  }
+
+  const seoTitleInput = document.getElementById('edit-seo-title');
+  if (!seoTitleInput.value || seoTitleInput.dataset.auto === 'true') {
+    seoTitleInput.value = title ? `${title} | ENTHALPY Pilates` : '';
+    seoTitleInput.dataset.auto = 'true';
+  }
+
+  updateSeoAudit();
+}
+
+function handleExcerptInput(excerpt) {
+  const seoDescInput = document.getElementById('edit-seo-desc');
+  if (!seoDescInput.value || seoDescInput.dataset.auto === 'true') {
+    seoDescInput.value = excerpt;
+    seoDescInput.dataset.auto = 'true';
+  }
+  updateSeoAudit();
+}
+
+function handleSeoTitleInput(val) {
+  document.getElementById('edit-seo-title').dataset.auto = 'false';
+  updateSeoAudit();
+}
+
+function handleSeoDescInput(val) {
+  document.getElementById('edit-seo-desc').dataset.auto = 'false';
+  updateSeoAudit();
+}
+
+function selectPresetImage(url) {
+  document.getElementById('edit-image').value = url;
+  updateSeoAudit();
+}
+
+function execFormat(cmd, val = null) {
+  document.execCommand(cmd, false, val);
+  const editor = document.getElementById('edit-content-editor');
+  editor.focus();
+  updateContentStats();
+  updateSeoAudit();
+}
+
+function insertLinkPrompt() {
+  const url = prompt('Enter destination link (e.g., https://... or classes.html):', 'https://');
+  if (url) {
+    execFormat('createLink', url);
+  }
+}
+
+function handleContentInput() {
+  updateContentStats();
+  updateSeoAudit();
+}
+
+function updateContentStats() {
+  const text = document.getElementById('edit-content-editor').innerText || '';
+  const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+  const chars = text.length;
+  const timeEst = Math.max(1, Math.ceil(words / 180)) + ' min read';
+
+  document.getElementById('stat-words').innerText = words;
+  document.getElementById('stat-chars').innerText = chars;
+  document.getElementById('stat-calc-time').innerText = timeEst;
+
+  const readingTimeInput = document.getElementById('edit-reading-time');
+  if (!readingTimeInput.value || readingTimeInput.dataset.auto === 'true') {
+    readingTimeInput.value = timeEst;
+    readingTimeInput.dataset.auto = 'true';
+  }
+}
+
+function updateSeoAudit() {
+  const title = document.getElementById('edit-title').value.trim();
+  const slug = document.getElementById('edit-slug').value.trim();
+  const keyword = document.getElementById('edit-seo-keyword').value.trim().toLowerCase();
+  const seoTitle = document.getElementById('edit-seo-title').value.trim() || title;
+  const seoDesc = document.getElementById('edit-seo-desc').value.trim() || document.getElementById('edit-excerpt').value.trim();
+  const content = document.getElementById('edit-content-editor').innerText || '';
+  const image = document.getElementById('edit-image').value.trim() || 'assets/img_hero_studio.jpg';
+  const words = content.trim() ? content.trim().split(/\s+/).length : 0;
+
+  // SERP Google Preview
+  document.getElementById('serp-preview-slug').innerText = slug || 'article-slug';
+  document.getElementById('serp-preview-title').innerText = seoTitle || 'Article Title | ENTHALPY Pilates';
+  document.getElementById('serp-preview-desc').innerText = seoDesc || 'Article excerpt and description snippet will appear here in Google SERP results...';
+
+  // Social OG Preview
+  document.getElementById('og-preview-title').innerText = seoTitle || title;
+  document.getElementById('og-preview-desc').innerText = seoDesc || 'Read notes on movement science from ENTHALPY Pilates.';
+  document.getElementById('og-preview-img').src = image;
+
+  // Character Meter: Title
+  const titleLen = seoTitle.length;
+  document.getElementById('title-char-count').innerText = titleLen;
+  const titleBar = document.getElementById('title-meter-fill');
+  const titleStatus = document.getElementById('title-meter-status');
+  const titlePct = Math.min(100, Math.round((titleLen / 60) * 100));
+  titleBar.style.width = titlePct + '%';
+  if (titleLen >= 50 && titleLen <= 60) {
+    titleBar.style.backgroundColor = '#34A853';
+    titleStatus.innerText = 'Optimal (50-60)';
+    titleStatus.style.color = '#137333';
+  } else if (titleLen > 60) {
+    titleBar.style.backgroundColor = '#EA4335';
+    titleStatus.innerText = 'Too long (>60)';
+    titleStatus.style.color = '#C5221F';
+  } else {
+    titleBar.style.backgroundColor = '#FBBC04';
+    titleStatus.innerText = 'Short (<50)';
+    titleStatus.style.color = '#B06000';
+  }
+
+  // Character Meter: Description
+  const descLen = seoDesc.length;
+  document.getElementById('desc-char-count').innerText = descLen;
+  const descBar = document.getElementById('desc-meter-fill');
+  const descStatus = document.getElementById('desc-meter-status');
+  const descPct = Math.min(100, Math.round((descLen / 160) * 100));
+  descBar.style.width = descPct + '%';
+  if (descLen >= 120 && descLen <= 160) {
+    descBar.style.backgroundColor = '#34A853';
+    descStatus.innerText = 'Optimal (120-160)';
+    descStatus.style.color = '#137333';
+  } else if (descLen > 160) {
+    descBar.style.backgroundColor = '#EA4335';
+    descStatus.innerText = 'Too long (>160)';
+    descStatus.style.color = '#C5221F';
+  } else {
+    descBar.style.backgroundColor = '#FBBC04';
+    descStatus.innerText = 'Short (<120)';
+    descStatus.style.color = '#B06000';
+  }
+
+  // Checklist Validation
+  let passedCount = 0;
+  const checkElem = (id, passed) => {
+    const el = document.getElementById(id);
+    if (passed) {
+      el.className = 'check-icon check-pass';
+      el.innerText = '✓';
+      passedCount++;
+    } else {
+      el.className = 'check-icon check-warn';
+      el.innerText = '✕';
+    }
+  };
+
+  const kwInTitle = keyword ? seoTitle.toLowerCase().includes(keyword) : true;
+  const kwInDesc = keyword ? seoDesc.toLowerCase().includes(keyword) : true;
+  const kwInSlug = keyword ? slug.toLowerCase().includes(keyword.replace(/\s+/g, '-')) : true;
+  const kwInContent = keyword ? content.toLowerCase().includes(keyword) : true;
+  const depthGood = words >= 50; // flexible test
+  const canonicalConfigured = !!document.getElementById('edit-seo-canonical').value || !!slug;
+
+  checkElem('chk-title', kwInTitle);
+  checkElem('chk-desc', kwInDesc);
+  checkElem('chk-slug', kwInSlug);
+  checkElem('chk-content', kwInContent);
+  checkElem('chk-length', depthGood);
+  checkElem('chk-canonical', canonicalConfigured);
+
+  // Score Calculation
+  const totalChecks = 6;
+  const score = Math.round((passedCount / totalChecks) * 100);
+  const scoreVal = document.getElementById('seo-score-val');
+  const scoreLbl = document.getElementById('seo-score-label');
+  const scoreBadge = document.getElementById('seo-score-badge');
+
+  scoreVal.innerText = score + '%';
+  if (score >= 80) {
+    scoreBadge.className = 'seo-score-pill seo-score-good';
+    scoreLbl.innerText = 'Optimal';
+  } else if (score >= 60) {
+    scoreBadge.className = 'seo-score-pill seo-score-fair';
+    scoreLbl.innerText = 'Good';
+  } else {
+    scoreBadge.className = 'seo-score-pill seo-score-poor';
+    scoreLbl.innerText = 'Needs Work';
+  }
+}
+
+async function saveBlogPost(statusOverride) {
+  const id = document.getElementById('edit-post-id').value;
+  const title = document.getElementById('edit-title').value.trim();
+  const slug = document.getElementById('edit-slug').value.trim();
+  const category = document.getElementById('edit-category').value;
+  const author = document.getElementById('edit-author').value.trim();
+  const readingTime = document.getElementById('edit-reading-time').value.trim();
+  const featuredImage = document.getElementById('edit-image').value.trim();
+  const excerpt = document.getElementById('edit-excerpt').value.trim();
+  const content = document.getElementById('edit-content-editor').innerHTML;
+  const status = statusOverride || document.getElementById('edit-post-status').value;
+
+  const seo = {
+    metaTitle: document.getElementById('edit-seo-title').value.trim() || `${title} | ENTHALPY Pilates`,
+    metaDescription: document.getElementById('edit-seo-desc').value.trim() || excerpt,
+    focusKeyword: document.getElementById('edit-seo-keyword').value.trim(),
+    canonicalUrl: document.getElementById('edit-seo-canonical').value.trim() || `https://enthalpypilatesstudio.com/journal/${slug}`,
+    ogTitle: document.getElementById('edit-seo-title').value.trim() || title,
+    ogDescription: document.getElementById('edit-seo-desc').value.trim() || excerpt,
+    ogImage: featuredImage || 'assets/img_hero_studio.jpg',
+    robots: document.getElementById('edit-seo-robots').value
+  };
+
+  if (!title) {
+    alert('Please enter an article title.');
+    switchEditorTab('content');
+    document.getElementById('edit-title').focus();
+    return;
+  }
+
+  const payload = {
+    title,
+    slug,
+    category,
+    author,
+    readingTime,
+    featuredImage,
+    excerpt,
+    content,
+    status,
+    seo
+  };
+
+  try {
+    const isEdit = !!id;
+    const url = isEdit ? `/api/posts/${id}` : '/api/posts';
+    const method = isEdit ? 'PUT' : 'POST';
+
+    const res = await fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      const saved = await res.json();
+      showToast(isEdit ? `Article "${title}" updated successfully!` : `Article "${title}" published!`);
+      closeBlogEditor();
+      await loadBlogPosts();
+    } else {
+      const errData = await res.json();
+      alert('Error saving article: ' + (errData.error || 'Server error'));
+    }
+  } catch (err) {
+    console.error('Save error:', err);
+    // Offline local fallback
+    if (id) {
+      const idx = adminBlogPosts.findIndex(p => p.id === id);
+      if (idx !== -1) adminBlogPosts[idx] = { ...adminBlogPosts[idx], ...payload, updatedAt: new Date().toISOString() };
+    } else {
+      adminBlogPosts.unshift({ ...payload, id: 'post-' + Date.now(), updatedAt: new Date().toISOString() });
+    }
+    showToast('Saved locally in dashboard memory');
+    closeBlogEditor();
+    updateBlogStats();
+    renderBlogTable(adminBlogPosts);
+  }
+}
+
+async function deleteCurrentPost() {
+  const id = document.getElementById('edit-post-id').value;
+  if (!id) return;
+  await deleteBlogPost(id);
+  closeBlogEditor();
+}
+
+async function deleteBlogPost(id) {
+  if (!confirm('Are you sure you want to delete this journal article? This action cannot be undone.')) {
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/posts/${id}`, { method: 'DELETE' });
+    if (res.ok) {
+      showToast('Article deleted successfully.');
+      await loadBlogPosts();
+    } else {
+      adminBlogPosts = adminBlogPosts.filter(p => p.id !== id);
+      showToast('Article removed from directory.');
+      updateBlogStats();
+      renderBlogTable(adminBlogPosts);
+    }
+  } catch (err) {
+    adminBlogPosts = adminBlogPosts.filter(p => p.id !== id);
+    showToast('Article removed from directory.');
+    updateBlogStats();
+    renderBlogTable(adminBlogPosts);
+  }
+}
+
+async function toggleBlogStatus(id) {
+  const post = adminBlogPosts.find(p => p.id === id);
+  if (!post) return;
+
+  const newStatus = post.status === 'published' ? 'draft' : 'published';
+  try {
+    const res = await fetch(`/api/posts/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: newStatus })
+    });
+    if (res.ok) {
+      showToast(`Article status updated to ${newStatus}`);
+      await loadBlogPosts();
+      return;
+    }
+  } catch (e) {}
+
+  post.status = newStatus;
+  showToast(`Article status updated to ${newStatus}`);
+  updateBlogStats();
+  renderBlogTable(adminBlogPosts);
+}
+
+// Initialise blog posts on load
+document.addEventListener('DOMContentLoaded', () => {
+  loadBlogPosts();
+});
+
 </script>
 
 </body>

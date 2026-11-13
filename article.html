@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="doc-title">ENTHALPY — Movement Journal</title>
+  <meta name="description" id="doc-desc" content="Notes on movement science, reformer technique, and biomechanics from ENTHALPY Pilates Studio, Defence Colony, New Delhi.">
+  <meta property="og:title" id="og-title" content="ENTHALPY Movement Journal">
+  <meta property="og:description" id="og-desc" content="Notes on movement science, reformer technique, and biomechanics.">
+  <meta property="og:image" id="og-image" content="assets/img_hero_studio.jpg">
+  <link rel="stylesheet" href="assets/prelaunch-waitlist.css">
+  <style>
+    :root {
+      --linen: #F5F1EA;
+      --khaki: #D7C9B8;
+      --camel: #B2967D;
+      --cocoa: #7D5A44;
+      --espresso: #4A342A;
+      --paper: #FBF9F5;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: Manrope, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --wrap: 1200px;
+      --pad: clamp(20px, 5vw, 64px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--linen);
+      color: var(--espresso);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--pad); }
+    .nav {
+      background: var(--linen);
+      border-bottom: 1px solid var(--khaki);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 80px;
+    }
+    .logo { height: 26px; width: auto; }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--espresso);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--cocoa); }
+    .nav-links a.on { border-bottom: 1px solid var(--espresso); padding-bottom: 4px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 26px;
+      background: var(--espresso);
+      color: var(--linen);
+      border: 1px solid var(--espresso);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all .2s ease;
+    }
+    .btn:hover { background: var(--cocoa); border-color: var(--cocoa); color: var(--linen); }
+    .btn-sm { min-height: 40px; padding: 0 18px; font-size: 11px; }
+
+    /* Article layout */
+    .article-header {
+      padding-top: clamp(40px, 6vw, 72px);
+      padding-bottom: clamp(28px, 4vw, 44px);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--cocoa);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .article-title {
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.5vw, 60px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--khaki);
+      font-size: 14px;
+      color: var(--cocoa);
+    }
+    .author-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--khaki);
+      color: var(--espresso);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .featured-wrap {
+      max-width: 1040px;
+      margin: 0 auto clamp(40px, 6vw, 64px);
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: var(--khaki);
+    }
+    .featured-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .article-content {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--espresso);
+    }
+    .article-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 2.8vw, 36px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 48px 0 20px;
+      color: var(--espresso);
+    }
+    .article-content h3 {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2vw, 26px);
+      font-weight: 500;
+      margin: 32px 0 16px;
+    }
+    .article-content p {
+      margin-bottom: 24px;
+    }
+    .article-content blockquote {
+      border-left: 2px solid var(--espresso);
+      padding: 16px 28px;
+      margin: 36px 0;
+      font-family: var(--serif);
+      font-size: 22px;
+      font-style: italic;
+      color: var(--espresso);
+      background: rgba(215, 201, 184, 0.25);
+    }
+    .article-content ul, .article-content ol {
+      margin: 0 0 24px 24px;
+    }
+    .article-content li {
+      margin-bottom: 8px;
+    }
+    .share-bar {
+      max-width: 760px;
+      margin: 48px auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--khaki);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .share-links {
+      display: flex;
+      gap: 12px;
+    }
+    .share-pill {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid var(--espresso);
+      color: var(--espresso);
+      text-decoration: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .share-pill:hover { background: var(--espresso); color: var(--linen); }
+
+    /* Footer */
+    .foot { background: var(--espresso); color: var(--linen); padding-block: 72px 48px; margin-top: 80px; }
+    .foot a { color: var(--linen); text-decoration: none; }
+    .foot a:hover { color: var(--khaki); }
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .foot-bot {
+      border-top: 1px solid #6A4E40;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--khaki);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .foot-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pre-Launch Banner -->
+  <div class="prelaunch-banner">
+    <span class="badge">Coming Soon</span>
+    <span>ENTHALPY Reformer Pilates is Opening Soon in Defence Colony, New Delhi for Men &amp; Women</span>
+    <a href="#waitlist" class="btn-inline open-waitlist-modal">Join Waitlist &rarr;</a>
+  </div>
+
+  <!-- Main Nav -->
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/0368beb7-b5b1-4486-95dc-d48e299a7e05.svg" alt="ENTHALPY"></a>
+      <ul class="nav-links">
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li><a href="new-here.html">New Here</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="studio.html">Studio</a></li>
+        <li><a href="instructors.html">Instructors</a></li>
+        <li><a class="on" href="journal.html">Journal</a></li>
+      </ul>
+      <div>
+        <button class="btn btn-sm open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article View -->
+  <main class="wrap">
+    <article id="article-container">
+      <div class="article-header">
+        <span class="eyebrow" id="post-category">Movement Science</span>
+        <h1 class="article-title" id="post-title">Loading Article...</h1>
+        <div class="article-meta">
+          <div class="author-badge" id="post-author-badge">EP</div>
+          <div>
+            <div style="font-weight: 600; color: var(--espresso);" id="post-author">ENTHALPY Editorial Team</div>
+            <div style="font-size: 13px;" id="post-date-reading">Defence Colony · 5 min read</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-wrap" id="post-featured-wrap">
+        <img id="post-image" src="assets/img_hero_studio.jpg" alt="Article image">
+      </div>
+
+      <div class="article-content" id="post-content">
+        <p>Loading editorial content...</p>
+      </div>
+
+      <div class="share-bar">
+        <span class="eyebrow" style="margin-bottom:0;">Share this article</span>
+        <div class="share-links">
+          <a class="share-pill" id="share-wa" href="#" target="_blank">WhatsApp</a>
+          <a class="share-pill" id="share-li" href="#" target="_blank">LinkedIn</a>
+          <button class="share-pill" onclick="copyLink()">Copy Link</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Pre-launch waitlist box at bottom of every article -->
+    <section class="wrap" style="margin-top: 60px;">
+      <div style="background: #4A342A; color: #F5F1EA; padding: clamp(32px, 5vw, 56px); border-radius: 4px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <span class="eyebrow" style="color: #D7C9B8; margin-bottom: 0;">Defence Colony, New Delhi · Coming Soon</span>
+          <h2 style="font-family: var(--serif); font-size: clamp(26px, 3vw, 40px); font-weight: 400; line-height: 1.1; margin: 0;">Experience the method in our studio.</h2>
+          <p style="font-size: 15px; color: #D7C9B8; line-height: 1.6; margin: 0;">Reformer Pilates engineered for both men and women. Classes strictly capped at 12 reformers for precision attention. Register for priority launch privileges.</p>
+        </div>
+        <div>
+          <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()" style="background: #F5F1EA; color: #4A342A; border-color: #F5F1EA; width: 100%; min-height: 52px;">Join Pre-Launch Waitlist &rarr;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <img src="assets/420d0ca0-56ee-4172-83a2-88545a413cfc.svg" alt="ENTHALPY" style="height:26px; width:auto; align-self:flex-start;">
+          <span style="font-size:12px; letter-spacing:.25em; color:var(--khaki);">MOVEMENT. ENERGY. TRANSFORMATION.</span>
+          <span style="font-size:14px; line-height:1.7;">Defence Colony, New Delhi<br>Opening Soon · Daily 6:30 AM – 9:00 PM<br>(Full address shared prior to opening)</span>
+        </div>
+        <div>
+          <h4 style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--khaki); margin-bottom:14px;">Studio</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:14px;">
+            <li><a href="about.html">About</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="journal.html">Journal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--khaki); margin-bottom:14px;">Book</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:14px;">
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="timetable.html">Timetable</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--khaki); margin-bottom:14px;">Contact</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:14px;">
+            <li>+91 95899 92237</li>
+            <li>admin@enthalpypilatesstudio.com</li>
+            <li>Defence Colony, New Delhi</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <span>&copy; 2026 ENTHALPY. All rights reserved.</span>
+        <span>Instagram &middot; LinkedIn &middot; WhatsApp: +91 95899 92237 &middot; admin@enthalpypilatesstudio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/prelaunch-waitlist.js"></script>
+  <script>
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Article link copied to clipboard!');
+    }
+
+    async function loadArticle() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug') || 'why-the-reformer-uses-springs';
+
+      try {
+        const res = await fetch(`/api/posts/${slug}`);
+        if (!res.ok) throw new Error('Post not found');
+        const post = await res.json();
+
+        // Populate fields
+        document.getElementById('post-title').innerText = post.title;
+        document.getElementById('doc-title').innerText = post.seo?.metaTitle || `${post.title} | ENTHALPY Pilates`;
+        document.getElementById('post-category').innerText = post.category || 'Movement Science';
+        document.getElementById('post-author').innerText = post.author || 'ENTHALPY Movement Team';
+        document.getElementById('post-author-badge').innerText = (post.author || 'EP').split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+        document.getElementById('post-date-reading').innerText = `${post.readingTime || '5 min read'} · Defence Colony, New Delhi`;
+        
+        if (post.featuredImage) {
+          document.getElementById('post-image').src = post.featuredImage;
+          document.getElementById('post-image').alt = post.title;
+        }
+
+        document.getElementById('post-content').innerHTML = post.content || `<p>${post.excerpt}</p>`;
+
+        // Share URLs
+        const shareUrl = encodeURIComponent(window.location.href);
+        const shareTitle = encodeURIComponent(post.title);
+        document.getElementById('share-wa').href = `https://api.whatsapp.com/send?text=${shareTitle}%20${shareUrl}`;
+        document.getElementById('share-li').href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+
+      } catch (err) {
+        console.warn('API article load failed, rendering fallback:', err);
+        // Fallback for standalone static usage
+        document.getElementById('post-title').innerText = 'Why the Reformer Uses Progressive Springs Instead of Weights';
+        document.getElementById('post-content').innerHTML = `
+          <h2>The Physics of Progressive Resistance</h2>
+          <p>In traditional weightlifting, resistance is static and governed by gravity. Reformer springs follow Hooke's Law: resistance increases proportionally as the carriage moves outward.</p>
+          <p>This asks the most of your stabilizing muscles at the end range of motion, where joints are typically most vulnerable, building long lean muscles without compressive spinal load.</p>
+        `;
+      }
+    }
+
+    loadArticle();
+  </script>
+</body>
+</html>

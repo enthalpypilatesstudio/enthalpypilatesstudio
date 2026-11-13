@@ -614,30 +614,131 @@ a{color:#4A342A}a:hover{color:#7D5A44}
       <p class="lead" style="max-width: 26em">The science behind the method, technique explained, and news from the studio.</p>
     </div>
 
-    <a class="feat" href="why-the-reformer-uses-springs.html">
-      <div class="ph r32"><span class="cap">Photo · Springs on the reformer, close-up, raking light</span></div>
+    <!-- Featured Article -->
+    <a class="feat" id="journal-feat" href="article.html?slug=why-the-reformer-uses-springs" style="border: 1px solid var(--line); border-radius: 4px; padding: clamp(20px, 3vw, 36px); background: #FBF9F5;">
+      <div class="ph r32" style="border-radius: 4px; overflow: hidden;"><img id="feat-img" src="assets/img_hero_studio.jpg" alt="Reformer progressive springs" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       <div style="display: flex; flex-direction: column; gap: 18px">
-        <span class="ey">Featured · The science</span>
-        <h2 class="d2">Why the reformer uses springs, not weights.</h2>
-        <p class="p muted">Springs resist you most at the end of a movement, which is exactly where most training goes easy. Here's what that means for your muscles.</p>
-        <span class="sm">[Author] · 6 min read</span>
+        <span class="ey" id="feat-cat">Featured · Movement Science</span>
+        <h2 class="d2" id="feat-title" style="font-size: clamp(28px, 3.2vw, 44px);">Why the reformer uses springs, not weights.</h2>
+        <p class="p muted" id="feat-excerpt">Springs resist you most at the end of a movement, which is exactly where most training goes easy. Learn how Hooke's Law transforms muscle recruitment and spine decompression.</p>
+        <span class="sm" id="feat-meta">ENTHALPY Movement Team · 6 min read</span>
       </div>
     </a>
 
-    <nav class="tabs" style="margin-top: clamp(56px, 7vw, 96px)" aria-label="Journal categories">
-      <a class="on" href="#">All</a><a href="#">The science</a><a href="#">Technique</a><a href="#">For everybody</a><a href="#">Recovery</a><a href="#">Studio news</a>
+    <nav class="tabs" style="margin-top: clamp(48px, 6vw, 80px)" aria-label="Journal categories">
+      <a class="on" href="javascript:void(0)" onclick="filterCategory('all', this)">All Articles</a>
+      <a href="javascript:void(0)" onclick="filterCategory('Movement Science', this)">Movement Science</a>
+      <a href="javascript:void(0)" onclick="filterCategory('Pilates for Men', this)">Pilates for Men</a>
+      <a href="javascript:void(0)" onclick="filterCategory('Pilates for Women', this)">Pilates for Women</a>
+      <a href="javascript:void(0)" onclick="filterCategory('Studio News', this)">Studio News</a>
     </nav>
 
-    <div class="g3" style="row-gap: 56px; margin-top: 40px">
-      <a class="cc" href="why-the-reformer-uses-springs.html"><div class="ph k r32"></div><span class="ey">For everybody</span><span class="name" style="font-size: 26px">Pilates for men: the strength most training misses</span><span class="sm muted">5 min read</span></a>
-      <a class="cc" href="why-the-reformer-uses-springs.html"><div class="ph c r32"></div><span class="ey">Technique</span><span class="name" style="font-size: 26px">What your instructor means by "knit the ribs"</span><span class="sm muted">4 min read</span></a>
-      <a class="cc" href="why-the-reformer-uses-springs.html"><div class="ph r32"></div><span class="ey">For everybody</span><span class="name" style="font-size: 26px">Your first month on the reformer, week by week</span><span class="sm muted">7 min read</span></a>
-      <a class="cc" href="why-the-reformer-uses-springs.html"><div class="ph e r32"></div><span class="ey">Recovery</span><span class="name" style="font-size: 26px">Desk posture: three exercises to undo the workday</span><span class="sm muted">5 min read</span></a>
-      <a class="cc" href="why-the-reformer-uses-springs.html"><div class="ph k r32"></div><span class="ey">The science</span><span class="name" style="font-size: 26px">Reformer or mat: what's the difference?</span><span class="sm muted">6 min read</span></a>
-      <a class="cc" href="why-the-reformer-uses-springs.html"><div class="ph c r32"></div><span class="ey">Studio news</span><span class="name" style="font-size: 26px">[Opening announcement]</span><span class="sm muted">2 min read</span></a>
+    <!-- Articles Grid -->
+    <div class="g3" id="journal-grid" style="row-gap: 48px; margin-top: 40px">
+      <!-- Dynamic cards rendered by script -->
     </div>
+  </main>
 
-    <div class="pager" style="margin-top: 64px" aria-label="Pages"><a class="on" href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#" aria-label="Next page">›</a></div>
+  <script>
+    let allPosts = [];
+
+    async function fetchJournalPosts() {
+      try {
+        const res = await fetch('/api/posts');
+        if (res.ok) {
+          allPosts = await res.json();
+          renderJournal(allPosts);
+          return;
+        }
+      } catch (err) {
+        console.log('Using static journal cache:', err);
+      }
+
+      // Default curated articles fallback
+      allPosts = [
+        {
+          slug: 'why-the-reformer-uses-springs',
+          title: 'Why the Reformer Uses Progressive Springs, Not Weights',
+          category: 'Movement Science',
+          readingTime: '6 min read',
+          featuredImage: 'assets/img_hero_studio.jpg',
+          excerpt: 'Progressive spring resistance lengthens muscles under continuous tension, decompressing the spine and training stability at full range.'
+        },
+        {
+          slug: 'pilates-for-men-strength-mobility',
+          title: 'Pilates for Men: The Deep Core Strength Most Gym Lifting Misses',
+          category: 'Pilates for Men',
+          readingTime: '5 min read',
+          featuredImage: 'assets/img_class_plank.jpg',
+          excerpt: 'How reformer training targets the rotator cuff, transverse abdominis, and hip flexors that heavy barbell training routinely neglects.'
+        },
+        {
+          slug: 'pilates-for-women',
+          title: 'Long, Lean Athletic Muscle Tone & Postural Restoration',
+          category: 'Pilates for Women',
+          readingTime: '5 min read',
+          featuredImage: 'assets/img_class_footwork.jpg',
+          excerpt: 'Sculpt core definition and pelvic floor balance with zero joint impact in our intimate Defence Colony studio.'
+        }
+      ];
+      renderJournal(allPosts);
+    }
+
+    function renderJournal(posts) {
+      const grid = document.getElementById('journal-grid');
+      if (!grid) return;
+
+      if (!posts || posts.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1 / -1; padding: 48px 0; text-align: center; color: var(--cocoa); font-style: italic;">Articles are being prepared by our editorial team. Check back soon.</div>';
+        return;
+      }
+
+      // If featured post exists, populate hero
+      const feat = posts[0];
+      if (feat) {
+        const featElem = document.getElementById('journal-feat');
+        if (featElem) featElem.href = `article.html?slug=${feat.slug}`;
+        const titleEl = document.getElementById('feat-title');
+        if (titleEl) titleEl.innerText = feat.title;
+        const catEl = document.getElementById('feat-cat');
+        if (catEl) catEl.innerText = `Featured · ${feat.category || 'Movement Science'}`;
+        const excerptEl = document.getElementById('feat-excerpt');
+        if (excerptEl) excerptEl.innerText = feat.excerpt || '';
+        const metaEl = document.getElementById('feat-meta');
+        if (metaEl) metaEl.innerText = `${feat.author || 'ENTHALPY Movement Team'} · ${feat.readingTime || '5 min read'}`;
+        const imgEl = document.getElementById('feat-img');
+        if (imgEl && feat.featuredImage) imgEl.src = feat.featuredImage;
+      }
+
+      // Render cards (excluding hero if > 1 post)
+      const cards = posts.length > 1 ? posts.slice(1) : posts;
+      grid.innerHTML = cards.map(p => `
+        <a class="cc" href="article.html?slug=${p.slug}" style="display:flex; flex-direction:column; gap:14px; text-decoration:none; color:var(--espresso);">
+          <div class="ph r32" style="border-radius:4px; overflow:hidden; aspect-ratio:3/2; background:var(--khaki);">
+            <img src="${p.featuredImage || 'assets/img_hero_studio.jpg'}" alt="${p.title}" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <span class="ey" style="color:var(--cocoa);">${p.category || 'Article'}</span>
+          <h3 class="name" style="font-family:var(--serif); font-size:24px; font-weight:500; line-height:1.2; margin:0;">${p.title}</h3>
+          <p class="sm muted" style="margin:0; line-height:1.5;">${p.excerpt ? p.excerpt.slice(0, 110) + '...' : ''}</p>
+          <span class="sm muted" style="font-weight:600; margin-top:auto;">${p.readingTime || '5 min read'} &rarr;</span>
+        </a>
+      `).join('');
+    }
+
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.tabs a').forEach(a => a.classList.remove('on'));
+      if (btn) btn.classList.add('on');
+
+      if (cat === 'all') {
+        renderJournal(allPosts);
+      } else {
+        const filtered = allPosts.filter(p => (p.category || '').toLowerCase() === cat.toLowerCase());
+        renderJournal(filtered);
+      }
+    }
+
+    fetchJournalPosts();
+  </script>
   </main>
 
   <section style="background: #D7C9B8" class="sec-tight">

@@ -345,6 +345,172 @@ app.get('/api/waitlist', (req, res) => {
   });
 });
 
+// ── BLOG & JOURNAL POSTS CMS API ──
+const postsFilePath = path.join(__dirname, 'posts.json');
+
+function getPosts() {
+  try {
+    if (fs.existsSync(postsFilePath)) {
+      const data = fs.readFileSync(postsFilePath, 'utf8');
+      return JSON.parse(data);
+    }
+  } catch (err) {
+    console.error('Error reading posts:', err);
+  }
+  return [];
+}
+
+function savePosts(posts) {
+  try {
+    fs.writeFileSync(postsFilePath, JSON.stringify(posts, null, 2), 'utf8');
+    return true;
+  } catch (err) {
+    console.error('Error saving posts:', err);
+    return false;
+  }
+}
+
+app.get('/api/posts', (req, res) => {
+  const posts = getPosts();
+  const { status, category, search } = req.query;
+  let filtered = [...posts];
+
+  if (status && status !== 'all') {
+    filtered = filtered.filter(p => p.status === status);
+  }
+  if (category && category !== 'all') {
+    filtered = filtered.filter(p => p.category?.toLowerCase() === category.toLowerCase());
+  }
+  if (search) {
+    const s = search.toLowerCase();
+    filtered = filtered.filter(p =>
+      p.title?.toLowerCase().includes(s) ||
+      p.excerpt?.toLowerCase().includes(s) ||
+      p.category?.toLowerCase().includes(s) ||
+      p.author?.toLowerCase().includes(s)
+    );
+  }
+
+  // Sort newest first
+  filtered.sort((a, b) => new Date(b.publishedAt || b.updatedAt) - new Date(a.publishedAt || a.updatedAt));
+  res.json(filtered);
+});
+
+app.get('/api/posts/:slug', (req, res) => {
+  const posts = getPosts();
+  const slug = req.params.slug;
+  const post = posts.find(p => p.slug === slug || p.id === slug);
+  if (!post) {
+    return res.status(404).json({ error: 'Article not found' });
+  }
+  res.json(post);
+});
+
+app.post('/api/posts', (req, res) => {
+  const posts = getPosts();
+  const {
+    title,
+    slug,
+    category,
+    author,
+    readingTime,
+    featuredImage,
+    excerpt,
+    content,
+    status = 'draft',
+    seo = {}
+  } = req.body;
+
+  if (!title) {
+    return res.status(400).json({ error: 'Title is required' });
+  }
+
+  // Generate slug if omitted
+  const cleanSlug = (slug || title)
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+
+  // Slug collision check
+  const exists = posts.some(p => p.slug === cleanSlug);
+  const finalSlug = exists ? `${cleanSlug}-${Date.now().toString().slice(-4)}` : cleanSlug;
+
+  const now = new Date().toISOString();
+  const newPost = {
+    id: `post-${Date.now()}`,
+    slug: finalSlug,
+    title,
+    category: category || 'Movement Science',
+    author: author || 'ENTHALPY Movement Team',
+    readingTime: readingTime || '5 min read',
+    featuredImage: featuredImage || 'assets/img_hero_studio.jpg',
+    excerpt: excerpt || '',
+    content: content || '',
+    status: status === 'published' ? 'published' : 'draft',
+    publishedAt: status === 'published' ? now : null,
+    updatedAt: now,
+    seo: {
+      metaTitle: seo.metaTitle || `${title} | ENTHALPY Pilates`,
+      metaDescription: seo.metaDescription || excerpt || '',
+      focusKeyword: seo.focusKeyword || '',
+      canonicalUrl: seo.canonicalUrl || `https://enthalpypilatesstudio.com/journal/${finalSlug}`,
+      ogTitle: seo.ogTitle || title,
+      ogDescription: seo.ogDescription || excerpt || '',
+      ogImage: seo.ogImage || featuredImage || 'assets/img_hero_studio.jpg',
+      robots: seo.robots || 'index, follow'
+    }
+  };
+
+  posts.unshift(newPost);
+  savePosts(posts);
+  res.status(201).json(newPost);
+});
+
+app.put('/api/posts/:id', (req, res) => {
+  const posts = getPosts();
+  const id = req.params.id;
+  const index = posts.findIndex(p => p.id === id || p.slug === id);
+
+  if (index === -1) {
+    return res.status(404).json({ error: 'Article not found' });
+  }
+
+  const existing = posts[index];
+  const updates = req.body;
+  const now = new Date().toISOString();
+
+  const updatedPost = {
+    ...existing,
+    ...updates,
+    id: existing.id, // Immutable ID
+    updatedAt: now,
+    publishedAt: (updates.status === 'published' && !existing.publishedAt) ? now : (existing.publishedAt || now),
+    seo: {
+      ...existing.seo,
+      ...(updates.seo || {})
+    }
+  };
+
+  posts[index] = updatedPost;
+  savePosts(posts);
+  res.json(updatedPost);
+});
+
+app.delete('/api/posts/:id', (req, res) => {
+  let posts = getPosts();
+  const id = req.params.id;
+  const exists = posts.some(p => p.id === id || p.slug === id);
+
+  if (!exists) {
+    return res.status(404).json({ error: 'Article not found' });
+  }
+
+  posts = posts.filter(p => p.id !== id && p.slug !== id);
+  savePosts(posts);
+  res.json({ success: true, message: 'Article deleted successfully' });
+});
+
 // ── STATIC ASSETS & WEBSITE PAGES ──
 const rootPath = path.join(__dirname, '..');
 const assetsPath = path.join(rootPath, 'assets');
@@ -376,6 +542,7 @@ const cleanRoutes = {
   '/studio': 'studio.html',
   '/gallery': 'gallery.html',
   '/journal': 'journal.html',
+  '/article': 'article.html',
   '/why-the-reformer-uses-springs': 'why-the-reformer-uses-springs.html',
   '/contact': 'contact.html',
   '/faq': 'faq.html',
