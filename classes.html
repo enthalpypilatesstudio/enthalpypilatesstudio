@@ -2,7 +2,8 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ENTHALPY — Classes</title>
+<title>ENTHALPY — Classes | Reformer Pilates for Men & Women in Defence Colony, Delhi</title>
+<link rel="stylesheet" href="assets/prelaunch-waitlist.css">
 <script src="assets/2c7f4c9f-b29e-4897-a1dd-907e285e1842.js"></script>
 <script src="assets/4a7bb0fb-ef5f-40ef-99af-b54dacd45b96.js"></script>
 <script src="assets/22b26f22-49a7-4c24-b2f0-14f65481a3bb.js"></script>
@@ -59,7 +60,7 @@ a{color:var(--espresso)} a:hover{color:var(--cocoa)}
 .dots i{width:7px;height:7px;border-radius:50%;border:1px solid var(--espresso);display:block}
 .dots i.on{background:var(--espresso)}
 
-/* photo placeholders (art direction until the shoot) */
+/* photo placeholders */
 .ph{position:relative;background:var(--camel);overflow:hidden}
 .ph::after{content:"";position:absolute;inset:14px;border:1px solid rgba(245,241,234,.35);pointer-events:none}
 .ph .cap{position:absolute;left:28px;bottom:24px;right:28px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--linen);line-height:1.5}
@@ -90,30 +91,6 @@ a{color:var(--espresso)} a:hover{color:var(--cocoa)}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
 .hr{height:1px;background:var(--line);border:0;margin:0}
 
-/* class card */
-.cc{display:flex;flex-direction:column;gap:16px;text-decoration:none;color:var(--espresso)}
-.cc .meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px}
-.cc .name{font-family:var(--serif);font-size:28px;line-height:1.1;font-weight:500}
-
-/* session row */
-.srow{display:grid;grid-template-columns:110px minmax(0,1.6fr) minmax(0,1fr) 150px 170px;align-items:center;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
-.srow .t{font-family:var(--serif);font-size:30px;line-height:1}
-.srow .cn{font-weight:600;font-size:16px}
-.srow .sp{font-size:13px;font-weight:600}
-.srow .sp.low{color:var(--cocoa)}
-.srow .act{justify-self:end}
-
-/* faq */
-details.q{border-top:1px solid var(--line)}
-details.q:last-child{border-bottom:1px solid var(--line)}
-details.q summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font-family:var(--serif);font-size:24px;line-height:1.2}
-details.q summary::-webkit-details-marker{display:none}
-details.q summary .pl{width:16px;height:16px;flex:none;position:relative}
-details.q summary .pl::before,details.q summary .pl::after{content:"";position:absolute;background:var(--espresso);left:0;top:7.5px;width:16px;height:1px}
-details.q summary .pl::after{transform:rotate(90deg)}
-details.q[open] summary .pl::after{transform:none}
-details.q .a{padding:0 0 26px;max-width:42em;font-size:15px}
-
 /* forms */
 .fld{display:flex;flex-direction:column;gap:8px}
 .fld label{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
@@ -128,7 +105,6 @@ details.q .a{padding:0 0 26px;max-width:42em;font-size:15px}
 .foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px}
 .foot .bot{border-top:1px solid #6A4E40;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:24px;font-size:12px;letter-spacing:.06em;color:var(--khaki)}
 
-/* responsive */
 @media (max-width:1100px){
   .nav ul{display:none} .nav .menu{display:inline-flex} .nav .act a.login{display:none}
   .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -137,479 +113,22 @@ details.q .a{padding:0 0 26px;max-width:42em;font-size:15px}
 @media (max-width:760px){
   .g2,.g3,.g4{grid-template-columns:minmax(0,1fr)}
   .nav .wrap{min-height:68px;gap:16px} .nav .logo{height:22px} .nav .act .btn{min-height:44px;padding:0 16px}
-  .srow{grid-template-columns:72px minmax(0,1fr) auto;row-gap:6px}
-  .srow .t{font-size:24px} .srow .in,.srow .sp{grid-column:2} .srow .act{grid-column:3;grid-row:1 / span 3}
-  .foot .top{grid-template-columns:minmax(0,1fr)}
-  .hide-m{display:none !important}
-}
-
-/* ───────────────────────────────────────────────
-   MOTION LAYER — calm, physical, never decorative noise.
-   Pure CSS: scroll-driven where supported, static everywhere else.
-   Everything switches off for prefers-reduced-motion.
-   ─────────────────────────────────────────────── */
-:root{--ease:cubic-bezier(.22,.61,.36,1);--ease-out:cubic-bezier(.16,1,.3,1)}
-
-/* hover craft (works in every browser) */
-.btn{background-image:linear-gradient(var(--cocoa),var(--cocoa));background-repeat:no-repeat;background-size:0% 100%;background-position:0 0;transition:background-size .5s var(--ease-out),color .3s,border-color .3s}
-.btn:hover{background-image:linear-gradient(var(--cocoa),var(--cocoa));background-size:100% 100%;background-color:var(--espresso)}
-.btn-o{background-image:linear-gradient(var(--espresso),var(--espresso))}
-.btn-o:hover{background-image:linear-gradient(var(--espresso),var(--espresso));background-color:transparent;color:var(--linen)}
-.btn-l{background-image:linear-gradient(var(--khaki),var(--khaki))}
-.btn-l:hover{background-image:linear-gradient(var(--khaki),var(--khaki));background-color:var(--linen);color:var(--espresso)}
-/* expressive buttons: spring, shape-morph, magnetic pull (motion.js), cursor light, press ripple */
-.btn{position:relative;overflow:hidden;isolation:isolate;border-radius:var(--br,0px);
-  transform:translate(var(--mx,0px),var(--my,0px)) scale(var(--s,1));
-  transition:transform .6s cubic-bezier(.34,1.56,.64,1),border-radius .6s cubic-bezier(.34,1.56,.64,1),background-size .5s var(--ease-out),color .3s,border-color .3s;will-change:transform}
-.btn:hover{--s:1.045;--br:14px}
-.btn:active{--s:.94;--br:26px;transition-duration:.16s,.16s,.5s,.3s,.3s}
-.btn:focus-visible{outline:2px solid var(--espresso);outline-offset:3px}
-.btn::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;
-  background:radial-gradient(160px circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.28),rgba(255,255,255,0) 70%);transition:opacity .4s}
-.btn:hover::before{opacity:1}
-.btn-o::before{background:radial-gradient(160px circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.22),rgba(178,150,125,0) 70%)}
-.btn-l::before{background:radial-gradient(160px circle at var(--px,50%) var(--py,50%),rgba(255,255,255,.7),rgba(255,255,255,0) 70%)}
-.btn::after{content:"";position:absolute;left:var(--rx,50%);top:var(--ry,50%);width:12px;height:12px;border-radius:50%;background:currentColor;opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(0)}
-.btn.rip::after{animation:rip .65s cubic-bezier(.16,1,.3,1)}
-@keyframes rip{0%{opacity:.28;transform:translate(-50%,-50%) scale(0)}100%{opacity:0;transform:translate(-50%,-50%) scale(36)}}
-.btn .arr{transition:transform .6s cubic-bezier(.34,1.56,.64,1)}
-.btn:hover .arr{transform:translateX(5px)}
-@media (hover:none){.btn:hover{--s:1;--br:0px}}
-.lnk .arr,.cc .arr{transition:transform .45s var(--ease-out)}
-.lnk:hover .arr{transform:translateX(6px)}
-.lnk{transition:color .3s,letter-spacing .45s var(--ease-out)}
-.nav ul a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:4px;transition:background-size .4s var(--ease-out)}
-.nav ul a:hover{background-size:100% 1px;color:var(--espresso)}
-.ph::after{transition:inset .7s var(--ease-out),border-color .5s}
-.cc:hover .ph::after,a.ph:hover::after,.m:hover .ph::after{inset:24px;border-color:rgba(245,241,234,.7)}
-.cc .name,.cc .d3{transition:color .3s}
-.cc:hover .name{color:var(--cocoa)}
-.srow{transition:background-color .35s,padding .35s var(--ease-out)}
-.srow:hover{background-color:rgba(215,201,184,.22)}
-details.q summary .pl::after{transition:transform .4s var(--ease-out)}
-details.q[open] .a{animation:qopen .5s var(--ease-out)}
-@keyframes qopen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.foot a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .4s var(--ease-out),color .3s}
-.foot a:hover{background-size:100% 1px}
-
-/* signature: the brand wave draws itself */
-.wave path{stroke-dasharray:1;stroke-dashoffset:0}
-
-/* page-load entrance */
-@media (prefers-reduced-motion:no-preference){
-  .nav{animation:navin .9s var(--ease-out) both}
-  @keyframes navin{from{transform:translateY(-100%)}to{transform:none}}
-  main > section:first-child .d1,main > header .d1,main .d1:first-of-type{animation:rise-in 1.1s var(--ease-out) .15s both}
-  @keyframes rise-in{from{opacity:0;transform:translateY(30px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
-}
-
-/* scroll-driven layer */
-@supports (animation-timeline:view()){
-@media (prefers-reduced-motion:no-preference){
-  /* reading progress */
-  .site::before{content:"";position:fixed;left:0;top:0;height:2px;width:100%;background:var(--camel);transform-origin:0 50%;transform:scaleX(0);z-index:60;animation:prog linear both;animation-timeline:scroll(root)}
-  @keyframes prog{to{transform:scaleX(1)}}
-  /* nav docks as you scroll */
-  .nav{animation:navin .9s var(--ease-out) both,dock linear both;animation-timeline:auto,scroll(root);animation-range:normal,0 180px}
-  @keyframes dock{to{background:rgba(245,241,234,.92);box-shadow:0 12px 30px -18px rgba(74,52,42,.35);backdrop-filter:blur(10px)}}
-  .nav .wrap{animation:navtight linear both;animation-timeline:scroll(root);animation-range:0 180px}
-  @keyframes navtight{to{min-height:68px}}
-
-  /* elements rise into place as they enter */
-  .sh,.cc,.srow,.pi,details.q,.card,.m,
-  .ben > div,.std > div,.about > div,.myth > div,.bring > div,.tl > div,.arc > div,.pr > div,.am > div,
-  .lv > div,.vals > div,.pol > div,.terms > div,.who > div,.how > div,.facts > span,.feat,.ins,.links a,.ways a{
-    animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
-  :is(.g3,.g4,.team,.ben,.std,.myth,.bring,.tl,.arc,.pr,.am,.lv,.vals,.pol,.who,.how,.facts) > :nth-child(2){animation-range:entry 6% entry 62%}
-  :is(.g3,.g4,.team,.ben,.std,.myth,.bring,.tl,.arc,.pr,.am,.lv,.vals,.pol,.who,.how,.facts) > :nth-child(3){animation-range:entry 12% entry 68%}
-  :is(.g3,.g4,.team,.ben,.std,.myth,.bring,.tl,.arc,.pr,.am,.lv,.vals,.pol,.who,.how,.facts) > :nth-child(4){animation-range:entry 18% entry 74%}
-  :is(.g3,.g4,.team,.ben,.std,.myth,.bring,.tl,.arc,.pr,.am,.lv,.vals,.pol,.who,.how,.facts) > :nth-child(n+5){animation-range:entry 22% entry 78%}
-  @keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
-
-  /* photographs unveil like a curtain, then settle */
-  .ph{animation:curtain linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
-  @keyframes curtain{from{clip-path:inset(22% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
-  .ph > img{animation:settle linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
-  @keyframes settle{from{transform:scale(1.12) translateY(-3%)}to{transform:scale(1) translateY(3%)}}
-
-  /* big serif headings drift up slightly slower than the page */
-  .d2{animation:drift linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
-  @keyframes drift{from{opacity:.0;transform:translateY(46px)}to{opacity:1;transform:none}}
-
-  /* the wave line draws as it crosses the screen */
-  .wave path,.wavebig path{stroke-dashoffset:1;animation:draw linear both;animation-timeline:view();animation-range:entry 10% cover 55%}
-  @keyframes draw{to{stroke-dashoffset:0}}
-}}
-
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
-  .wave path,.wavebig path{stroke-dashoffset:0}
-}
-
-/* ───────── WOW LAYER ───────── */
-/* film grain: a tactile, printed-paper feel over everything */
-.site::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:70;background:url("assets/e3b3f0ed-f633-4426-88b7-954806c5042f.png") repeat;background-size:180px;opacity:.6;mix-blend-mode:overlay}
-
-/* custom cursor: a quiet ring; becomes a "view" disc over cards and photographs */
-@media (hover:hover) and (pointer:fine){
-  .site{cursor:url("assets/e5bc49fc-f09c-4742-b3be-6f4e6a77a191.svg") 14 14,auto}
-  .site a,.site button,.site summary,.site label,.site select{cursor:url("assets/e5bc49fc-f09c-4742-b3be-6f4e6a77a191.svg") 14 14,pointer}
-  .site .cc,.site a.ph,.site .feat,.site .m,.site .path a,.site .hx-card,.site .gal .ph{cursor:url("assets/4f87f7d4-f7b9-45c9-9512-10f51616e093.svg") 36 36,pointer}
-  .site input,.site textarea{cursor:text}
-}
-
-/* giant wordmark signs off every page */
-.foot{position:relative;overflow:hidden}
-.foot::after{content:"";display:block;height:clamp(56px,13.5vw,200px);margin:4px var(--pad) 0;background:url("assets/75febdda-c6ae-4fc5-85c8-a85959ddac64.svg") center bottom/contain no-repeat;opacity:.14}
-@supports (animation-timeline:view()){@media (prefers-reduced-motion:no-preference){
-  .foot::after{animation:wm linear both;animation-timeline:view();animation-range:entry 0% entry 100%}
-  @keyframes wm{from{transform:translateY(60%);opacity:0}to{transform:none;opacity:.14}}
-}}
-
-/* split-word headline reveal (used on Home hero) */
-.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
-.w > span{display:inline-block}
-@media (prefers-reduced-motion:no-preference){
-  .sl.on .w > span{animation:wup 1s cubic-bezier(.16,1,.3,1) calc(.85s + var(--i,0) * 70ms) both}
-  @keyframes wup{from{transform:translateY(105%)}to{transform:none}}
 }
 </style>
-<script src="assets/3b46c883-cd7e-48d0-a15c-574ba1e4d3b6.js"></script>
-<link rel="stylesheet" href="assets/prelaunch-waitlist.css">
 </head>
 <body>
-<x-dc>
-<helmet>
-<style>/* cyrillic-ext */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-hdM8Efs.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-jNM8Efs.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-h9M8Efs.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-htM8Efs.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/02a16525-cd7c-45e9-9df0-8e90d62f344e.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpHtKgS4.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYrXtKgS4.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpntKgS4.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYp3tKgS4.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/d2c6b812-ff82-4a82-be50-4def174299f7.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpHtKgS4.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYrXtKgS4.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpntKgS4.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYp3tKgS4.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/d2c6b812-ff82-4a82-be50-4def174299f7.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/d44edf42-9f5d-4185-a378-407df3acfd59.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/43a57139-10a9-4509-9c2e-c2920da7a0b4.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/2a9370a4-8918-4835-b929-a662c4afe3d3.woff2") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/e3246a31-f725-44e0-a5e5-ac47de15cd56.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/c1801f93-5395-43b7-97f0-52cef9b6b9bd.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/79caa164-54bf-4401-9b3c-2d3a4a74a023.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/d44edf42-9f5d-4185-a378-407df3acfd59.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/43a57139-10a9-4509-9c2e-c2920da7a0b4.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/2a9370a4-8918-4835-b929-a662c4afe3d3.woff2") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/e3246a31-f725-44e0-a5e5-ac47de15cd56.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/c1801f93-5395-43b7-97f0-52cef9b6b9bd.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/79caa164-54bf-4401-9b3c-2d3a4a74a023.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/d44edf42-9f5d-4185-a378-407df3acfd59.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/43a57139-10a9-4509-9c2e-c2920da7a0b4.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/2a9370a4-8918-4835-b929-a662c4afe3d3.woff2") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/e3246a31-f725-44e0-a5e5-ac47de15cd56.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/c1801f93-5395-43b7-97f0-52cef9b6b9bd.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/79caa164-54bf-4401-9b3c-2d3a4a74a023.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-</style>
-<style>
-body{margin:0}
-a{color:#4A342A}a:hover{color:#7D5A44}
-.lv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #4A342A}
-.lv div{padding:24px 24px 0 0;display:flex;flex-direction:column;gap:10px}
-.lv div+div{padding-left:24px;border-left:1px solid #D7C9B8}
-.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-block:20px;border-block:1px solid #D7C9B8}
-.chip{height:44px;padding:0 18px;border:1px solid #B2967D;background:transparent;font:inherit;font-size:13px;font-weight:500;color:#4A342A;cursor:pointer}
-.chip.on{background:#4A342A;border-color:#4A342A;color:#F5F1EA}
-.sel{height:44px;padding:0 16px;border:1px solid #B2967D;display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:500;background:transparent;font-family:inherit;color:#4A342A;cursor:pointer}
-.card{display:flex;flex-direction:column;gap:14px}
-.card .next{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #D7C9B8;padding-top:14px;font-size:13px}
-.card .ctas{display:flex;gap:10px}
-.band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
-@media (max-width:900px){
-  .lv{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .lv div+div{padding-left:0;border-left:0}
-  .band,.stack{grid-template-columns:minmax(0,1fr) !important}
-}
-</style>
-</helmet>
 <div class="site">
 
   <div class="prelaunch-banner">
     <span class="badge">Coming Soon</span>
-    <span>ENTHALPY Reformer Pilates is Opening Soon in Defence Colony, New Delhi for Men & Women</span>
+    <span>ENTHALPY Reformer Pilates is Opening Soon in Defence Colony, New Delhi for Men &amp; Women</span>
     <a href="#waitlist" class="btn-inline open-waitlist-modal">Join Waitlist &rarr;</a>
   </div>
+
   <header class="nav">
     <div class="wrap">
       <a href="index.html" aria-label="ENTHALPY home"><img class="logo" src="assets/0368beb7-b5b1-4486-95dc-d48e299a7e05.svg" alt="ENTHALPY"></a>
-            <ul>
+      <ul>
         <li><a class="on" href="classes.html">Classes</a></li>
         <li><a href="timetable.html">Timetable</a></li>
         <li><a href="new-here.html">New Here</a></li>
@@ -620,28 +139,98 @@ a{color:#4A342A}a:hover{color:#7D5A44}
       </ul>
       <div class="act">
         <button class="btn btn-sm open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
-        <button class="menu" aria-label="Open menu"><svg width="24" height="14" sc-camel-view-box="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button>
+        <button class="menu" aria-label="Open menu"><svg width="24" height="14" viewBox="0 0 24 14" aria-hidden="true"><path d="M0 1h24M0 13h24" stroke="#4A342A" stroke-width="1.4"></path></svg></button>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="wrap stack" style="padding-block: clamp(56px, 7vw, 104px) clamp(32px, 4vw, 48px); display: flex; flex-direction: column; gap: 24px; text-align: center; max-width: 860px; margin: 0 auto">
-      <span class="ey" style="color: #7D5A44;">Defence Colony, New Delhi · Coming Soon</span>
+    <!-- Hero Section -->
+    <section class="wrap stack" style="padding-block: clamp(48px, 6vw, 96px) clamp(32px, 4vw, 48px); display: flex; flex-direction: column; gap: 24px; text-align: center; max-width: 860px; margin: 0 auto">
+      <span class="ey" style="color: #7D5A44;">Defence Colony, New Delhi · Opening Soon</span>
       <h1 class="d1">Precision Reformer Classes for Men &amp; Women</h1>
-      <p class="lead" style="margin: 0 auto;">A luxury Reformer Pilates studio opening soon in Defence Colony, New Delhi. Designed for both men and women, featuring small-group reformer sessions (capped strictly at 12 reformers) and private 1:1 coaching. Register on our waitlist for priority launch access.</p>
+      <p class="lead" style="margin: 0 auto;">Every session at ENTHALPY runs on custom high-performance reformers in intimate small groups strictly capped at 12 participants. Built for deep core power, postural restoration, and athletic conditioning.</p>
       <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
         <button class="btn open-waitlist-modal" onclick="window.openWaitlistModal()">Join Pre-Launch Waitlist</button>
+        <a class="btn btn-o" href="new-here.html">New Here Guide</a>
+      </div>
+    </section>
+
+    <!-- Upcoming Class Formats Grid (Identical on Desktop and Mobile) -->
+    <section class="wrap sec-tight">
+      <div class="sh">
+        <div class="l">
+          <span class="ey">Upcoming Class Formats</span>
+          <h2 class="d2">Engineered for every movement ambition.</h2>
+        </div>
+      </div>
+
+      <div class="g2" style="row-gap: 32px;">
+        <!-- Card 1 -->
+        <div class="card" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="tag">Foundation</span>
+            <span class="sm muted">50 Min · All Levels</span>
+          </div>
+          <h3 class="d3" style="margin: 0;">Foundation Reformer</h3>
+          <p class="p muted" style="margin: 0;">Master the carriage, precision footwork, neutral spine mechanics, and spring resistance. The vital baseline for beginners and anyone refining their core connection.</p>
+          <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #D7C9B8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <span class="sm" style="font-weight: 600; color: #7D5A44;">Opening Soon · Defence Colony</span>
+            <button class="btn btn-sm btn-o open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="tag">Athletic Flow</span>
+            <span class="sm muted">50 Min · Intermediate</span>
+          </div>
+          <h3 class="d3" style="margin: 0;">Reformer Flow &amp; Tone</h3>
+          <p class="p muted" style="margin: 0;">Continuous fluid movement synchronizing breath with carriage glides. Delivers cardiovascular stamina, deep abdominal sculpting, and full-body neuromuscular control.</p>
+          <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #D7C9B8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <span class="sm" style="font-weight: 600; color: #7D5A44;">Opening Soon · Defence Colony</span>
+            <button class="btn btn-sm btn-o open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="tag tag-f">Power &amp; Posture</span>
+            <span class="sm muted">55 Min · High Intensity</span>
+          </div>
+          <h3 class="d3" style="margin: 0;">Reformer Strength &amp; Core</h3>
+          <p class="p muted" style="margin: 0;">Heavier spring configurations, isometric holds, and rotational core drills designed specifically to counter desk strain, build athletic back strength, and enhance muscular definition.</p>
+          <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #D7C9B8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <span class="sm" style="font-weight: 600; color: #7D5A44;">Opening Soon · Defence Colony</span>
+            <button class="btn btn-sm btn-o open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" style="background: #FAF7F2; border: 1px solid #D7C9B8; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="tag">Bespoke</span>
+            <span class="sm muted">55 Min · 1:1 or 2:1</span>
+          </div>
+          <h3 class="d3" style="margin: 0;">Private &amp; Duet Coaching</h3>
+          <p class="p muted" style="margin: 0;">Dedicated private sessions customized to your specific biomechanical profile, athletic rehabilitation, spine decompression, or personalized movement goals.</p>
+          <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #D7C9B8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <span class="sm" style="font-weight: 600; color: #7D5A44;">Opening Soon · Defence Colony</span>
+            <button class="btn btn-sm btn-o open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Embedded Waitlist Form Section -->
-    <section class="wrap sec" style="padding-top: 0;">
+    <section class="wrap sec" id="waitlist" style="padding-top: 0;">
       <div class="wl-split-grid" style="background: #4A342A; color: #F5F1EA; padding: clamp(28px, 5vw, 56px); border-radius: 4px;">
         <div style="display: flex; flex-direction: column; gap: 18px;">
           <span class="ey" style="color: #D7C9B8;">Exclusive Priority Access</span>
           <h2 class="d2" style="color: #F5F1EA; margin: 0;">Classes Opening Soon in Defence Colony.</h2>
-          <p class="p" style="color: #D7C9B8; margin: 0; line-height: 1.6;">Our studio will open with limited small-group reformer sessions. Waitlist members receive 48-hour advance notice to reserve their preferred reformer slots before public booking opens.</p>
+          <p class="p" style="color: #D7C9B8; margin: 0; line-height: 1.6;">Our Defence Colony studio will open with limited small-group reformer sessions. Waitlist members receive 48-hour advance notice to reserve their preferred reformer slots before public booking opens.</p>
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px; font-size: 13px; color: #F5F1EA;">
             <div>✓ Intimate small groups (strictly capped at 12 reformers)</div>
             <div>✓ Engineered for both men and women</div>
@@ -688,13 +277,6 @@ a{color:#4A342A}a:hover{color:#7D5A44}
     </div>
   </footer>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:4300}}">
-class Component extends DCLogic {
-  renderVals() { return {}; }
-}
-</script>
-
 
 <script src="assets/prelaunch-waitlist.js"></script>
 </body></html>
