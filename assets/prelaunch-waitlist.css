@@ -19,6 +19,21 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
+   RESPONSIVE HERO SLIDER ARCHITECTURE (Desktop & Mobile)
+   ───────────────────────────────────────────────────────────── */
+.sl .bg {
+  background-image: var(--bg-desk, url('hero_banner_1.jpg'));
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ─────────────────────────────────────────────────────────────
    EXPRESSIVE BUTTON MOTION & MORPHING PHYSICS (from design spec)
    ───────────────────────────────────────────────────────────── */
 .btn {
@@ -800,6 +815,162 @@ body.mobile-nav-open {
     order: 2 !important;
     margin-left: 4px !important;
     flex-shrink: 0 !important;
+  }
+
+  /* ─────────────────────────────────────────────────────────────
+     MOBILE HERO BANNER SLIDER — BESPOKE EDITORIAL LUXURY
+     ───────────────────────────────────────────────────────────── */
+  .slider {
+    height: clamp(620px, 86svh, 740px) !important;
+    min-height: 600px !important;
+    position: relative !important;
+  }
+
+  /* Switch to dedicated 9:16 vertical mobile crops */
+  .sl .bg {
+    background-image: var(--bg-mob, url('hero_banner_1_mob.jpg')) !important;
+    background-position: center top !important;
+    transform: scale(1.04) !important;
+  }
+  .sl.on .bg {
+    transform: scale(1) !important;
+  }
+
+  /* Velvety luxury mobile gradient scrim */
+  .sl .bg::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(
+      180deg,
+      rgba(24, 16, 12, 0.05) 0%,
+      rgba(26, 18, 14, 0.16) 28%,
+      rgba(38, 26, 20, 0.62) 52%,
+      rgba(30, 20, 16, 0.90) 76%,
+      rgba(22, 14, 10, 0.98) 100%
+    ) !important;
+  }
+
+  /* Bottom-anchored typography leaving the subject clear at the top */
+  .sl .in {
+    justify-content: flex-end !important;
+    padding-bottom: 96px !important;
+    padding-inline: 20px !important;
+    gap: 14px !important;
+  }
+
+  .sl .ey {
+    font-size: 11px !important;
+    letter-spacing: 0.18em !important;
+    color: #D7C9B8 !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .sl .d1 {
+    font-size: clamp(32px, 8.6vw, 42px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.015em !important;
+    color: #F5F1EA !important;
+    max-width: 14ch !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .sl .lead {
+    font-size: 14.5px !important;
+    line-height: 1.55 !important;
+    color: #EDE6DB !important;
+    max-width: 32ch !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Premium full-width stacked buttons with luxury glass finish */
+  .hero-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 6px !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.14em !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .hero-actions .btn-ol {
+    background: rgba(245, 241, 234, 0.08) !important;
+    border: 1px solid rgba(245, 241, 234, 0.35) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    color: #F5F1EA !important;
+  }
+
+  /* Frosted glass controls bar */
+  .ctl {
+    border-top: 1px solid rgba(245, 241, 234, 0.14) !important;
+    background: linear-gradient(180deg, rgba(30, 20, 16, 0.6) 0%, rgba(20, 14, 11, 0.92) 100%) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+
+  .ctl .wrap {
+    min-height: 52px !important;
+    padding-inline: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .tab {
+    padding: 10px 8px 12px 0 !important;
+    gap: 6px !important;
+    min-height: auto !important;
+  }
+
+  .tab .lb {
+    gap: 6px !important;
+  }
+
+  .tab .lb span {
+    font-size: 13px !important;
+  }
+
+  .tab .lb em {
+    display: none !important;
+  }
+
+  .tab .bar {
+    height: 2.5px !important;
+    background: rgba(245, 241, 234, 0.22) !important;
+    border-radius: 2px !important;
+  }
+
+  .tab .bar i {
+    border-radius: 2px !important;
+  }
+
+  .arrows {
+    padding-left: 8px !important;
+    gap: 6px !important;
+  }
+
+  .arrows button {
+    width: 36px !important;
+    height: 36px !important;
+    border-color: rgba(245, 241, 234, 0.35) !important;
+  }
+
+  .arrows .count {
+    display: inline-block !important;
+    font-size: 14px !important;
+    padding-right: 4px !important;
+    color: #F5F1EA !important;
   }
 
   /* Single Column Stacking for Grids */

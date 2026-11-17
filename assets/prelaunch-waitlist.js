@@ -333,6 +333,35 @@
       });
     }
 
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // Ensure horizontal swipe is dominant and has minimum threshold
+      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          // Swipe left -> next
+          goTo(currentIndex + 1);
+        } else {
+          // Swipe right -> prev
+          goTo(currentIndex - 1);
+        }
+        restartTimer();
+      }
+    }, { passive: true });
+
     function startTimer() {
       clearInterval(timer);
       if (isPaused) return;
