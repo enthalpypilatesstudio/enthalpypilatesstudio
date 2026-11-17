@@ -259,10 +259,101 @@
     if (codeEl) codeEl.innerText = code;
   }
 
+  // 5. Hero Banner Slider Enhancer (for 3 banners)
+  function initHeroSlider() {
+    const slider = document.querySelector('.slider, section[aria-roledescription="carousel"]');
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll('.sl');
+    const tabs = slider.querySelectorAll('.ctl .tab');
+    const countEl = slider.querySelector('.arrows .count');
+    const prevBtn = slider.querySelector('.arrows button[aria-label*="Previous"]');
+    const nextBtn = slider.querySelector('.arrows button[aria-label*="Next"]');
+    const toggleBtn = slider.querySelector('.arrows button[aria-label*="slideshow"]');
+
+    if (slides.length < 2) return;
+
+    let currentIndex = 0;
+    let timer = null;
+    let isPaused = false;
+
+    function goTo(idx) {
+      currentIndex = (idx + slides.length) % slides.length;
+      slides.forEach((sl, i) => {
+        if (i === currentIndex) {
+          sl.classList.add('on');
+          sl.setAttribute('aria-hidden', 'false');
+        } else {
+          sl.classList.remove('on');
+          sl.setAttribute('aria-hidden', 'true');
+        }
+      });
+      tabs.forEach((tab, i) => {
+        if (i === currentIndex) {
+          tab.classList.add('on');
+        } else {
+          tab.classList.remove('on');
+        }
+      });
+      if (countEl) {
+        countEl.textContent = `0${currentIndex + 1} / 0${slides.length}`;
+      }
+    }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', (e) => {
+        goTo(i);
+        restartTimer();
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        goTo(currentIndex - 1);
+        restartTimer();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        goTo(currentIndex + 1);
+        restartTimer();
+      });
+    }
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        isPaused = !isPaused;
+        slider.classList.toggle('paused', isPaused);
+        if (isPaused) {
+          clearInterval(timer);
+        } else {
+          startTimer();
+        }
+      });
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      if (isPaused) return;
+      timer = setInterval(() => {
+        goTo(currentIndex + 1);
+      }, 6500);
+    }
+
+    function restartTimer() {
+      startTimer();
+    }
+
+    // Initialize slide 0 and timer
+    startTimer();
+  }
+
   // 6. Global Event Listeners & Delegation
   function initEvents() {
     injectWaitlistModal();
     injectMobileNav();
+    initHeroSlider();
 
     // Hamburger button click delegation
     document.addEventListener('click', function (e) {

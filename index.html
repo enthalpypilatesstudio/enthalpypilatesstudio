@@ -740,56 +740,59 @@ a{color:#4A342A}a:hover{color:#7D5A44}
 
   <main>
     <!-- S2 hero -->
-    <section class="{{ rootCls }}" aria-roledescription="carousel" aria-label="Highlights">
-      <div class="{{ c0 }}" role="group" aria-roledescription="slide" aria-label="1 of 4" aria-hidden="{{ h0 }}">
-        <div class="bg" style="background: #7D5A44"></div>
-        <span class="shot">Photo · Reformer, side light from a tall window. Member mid-movement, instructor cueing the ribs.</span>
+    <section class="slider {{ rootCls }}" aria-roledescription="carousel" aria-label="Highlights">
+      <!-- Banner 1 -->
+      <div class="sl on {{ c0 }}" role="group" aria-roledescription="slide" aria-label="1 of 3" aria-hidden="{{ h0 }}">
+        <div class="bg" style="background-image: url('assets/hero_banner_1.jpg'); background-size: cover; background-position: center; background-color: #4A342A;"></div>
+        <span class="shot">Movement. Energy. Transformation.</span>
         <div class="wrap in">
-          <span class="ey">Defence Colony, New Delhi · Coming Soon</span>
-          <h1 class="d1" aria-label="Reformer Pilates for Men & Women. Coming Soon to Defence Colony."><span class="w" style="--i: 0" aria-hidden="true"><span>Reformer</span></span> <span class="w" style="--i: 1" aria-hidden="true"><span>Pilates</span></span> <span class="w" style="--i: 2" aria-hidden="true"><span>for</span></span> <span class="w" style="--i: 3" aria-hidden="true"><span>Men</span></span> <span class="w" style="--i: 4" aria-hidden="true"><span>&</span></span> <span class="w" style="--i: 5" aria-hidden="true"><span class="it">Women.</span></span></h1>
-          <p class="lead">A luxury reformer Pilates studio coming soon to Defence Colony, New Delhi. Precision spring mechanics engineered for deep core power, postural restoration, and mindful movement.</p>
-          <div style="display: flex; gap: 14px; flex-wrap: wrap"><button class="btn btn-l open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button><a class="btn btn-ol" href="new-here.html">What is Reformer Pilates?</a></div>
+          <span class="ey">Defence Colony, New Delhi · Opening Soon</span>
+          <h1 class="d1" aria-label="Engineered for movement."><span class="w" style="--i: 0" aria-hidden="true"><span>Engineered</span></span> <span class="w" style="--i: 1" aria-hidden="true"><span>for</span></span> <span class="w" style="--i: 2" aria-hidden="true"><span class="it">movement.</span></span></h1>
+          <p class="lead">Pilates designed with an engineer's precision, for strength, mobility, stability and control.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap">
+            <button class="btn btn-l open-waitlist-modal" onclick="window.openWaitlistModal()">Join the Founding Waitlist</button>
+            <a class="btn btn-ol" href="new-here.html">What is Reformer Pilates?</a>
+          </div>
         </div>
       </div>
-      <div class="{{ c1 }}" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="{{ h1 }}">
-        <div class="bg" style="background: #B2967D"></div>
-        <span class="shot">Photo · First-timer at the reformer, instructor kneeling beside them, both smiling</span>
+
+      <!-- Banner 2 -->
+      <div class="sl {{ c1 }}" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="{{ h1 }}">
+        <div class="bg" style="background-image: url('assets/hero_banner_2.jpg'); background-size: cover; background-position: center; background-color: #5A4033;"></div>
+        <span class="shot">Movement. Energy. Transformation.</span>
         <div class="wrap in">
-          <span class="ey">Engineered for Both Men & Women</span>
-          <h2 class="d1">Strength, posture and decompression.</h2>
-          <p class="lead">Whether developing athletic rotational power and relieving stiff lower backs, or sculpting long lean muscle tone and core stability without joint impact.</p>
-          <div style="display: flex; gap: 14px; flex-wrap: wrap"><a class="btn btn-l" href="pilates-for-men.html">Pilates for Men</a><a class="btn btn-ol" href="pilates-for-women.html">Pilates for Women</a></div>
+          <span class="ey">Movement. Energy. Transformation.</span>
+          <h2 class="d1" aria-label="Your body is a system."><span class="w" style="--i: 0" aria-hidden="true"><span>Your</span></span> <span class="w" style="--i: 1" aria-hidden="true"><span>body</span></span> <span class="w" style="--i: 2" aria-hidden="true"><span>is</span></span> <span class="w" style="--i: 3" aria-hidden="true"><span>a</span></span> <span class="w" style="--i: 4" aria-hidden="true"><span class="it">system.</span></span></h2>
+          <p class="lead">Everything that helps it move, breathe and function, trained with purpose through Pilates.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap">
+            <a class="btn btn-l" href="why-the-reformer-uses-springs.html">Discover the Science</a>
+            <button class="btn btn-ol open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button>
+          </div>
         </div>
       </div>
-      <div class="{{ c2 }}" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="{{ h2 }}">
-        <div class="bg" style="background: #5A4033"></div>
-        <span class="shot">Photo · Reformer Strength class, standing work on heavy springs, three members in a row</span>
+
+      <!-- Banner 3 -->
+      <div class="sl {{ c2 }}" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="{{ h2 }}">
+        <div class="bg" style="background-image: url('assets/hero_banner_3.jpg'); background-size: cover; background-position: center; background-color: #7D5A44;"></div>
+        <span class="shot">Coming soon to South Delhi</span>
         <div class="wrap in">
-          <span class="ey">The Science of Springs</span>
-          <h2 class="d1">Resistance that moves with your body.</h2>
-          <p class="lead">Traditional weights load your joints at the end of range. Reformer springs provide progressive resistance and continuous eccentric tension.</p>
-          <div style="display: flex; gap: 14px; flex-wrap: wrap"><button class="btn btn-l open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button><a class="btn btn-ol" href="first-visit.html">First Visit Guide</a></div>
-        </div>
-      </div>
-      <div class="{{ c3 }}" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="{{ h3 }}">
-        <div class="bg" style="background: #8C6E57"></div>
-        <span class="shot">Photo · The studio at morning light: oak floor, lime-washed walls, reformers in a row</span>
-        <div class="wrap in">
-          <span class="ey">The Studio · Defence Colony, New Delhi</span>
-          <h2 class="d1">A calm, considered sanctuary.</h2>
-          <p class="lead">Blonde oak timber, natural light, 12 Balanced Body Allegro 2 reformers, keyless lockers, and rainfall showers. Opening soon in South Delhi.</p>
-          <div style="display: flex; gap: 14px; flex-wrap: wrap"><button class="btn btn-l open-waitlist-modal" onclick="window.openWaitlistModal()">Join Waitlist</button><a class="btn btn-ol" href="studio.html">Studio Preview</a></div>
+          <span class="ey">Coming soon to South Delhi</span>
+          <h2 class="d1" aria-label="Pilates for every body."><span class="w" style="--i: 0" aria-hidden="true"><span>Pilates</span></span> <span class="w" style="--i: 1" aria-hidden="true"><span>for</span></span> <span class="w" style="--i: 2" aria-hidden="true"><span>every</span></span> <span class="w" style="--i: 3" aria-hidden="true"><span class="it">body.</span></span></h2>
+          <p class="lead">Every age. Every gender. Every level. Begin with a Movement Assessment.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap">
+            <button class="btn btn-l open-waitlist-modal" onclick="window.openWaitlistModal()">Register Your Interest</button>
+            <a class="btn btn-ol" href="studio.html">Studio Preview</a>
+          </div>
         </div>
       </div>
 
       <div class="ctl">
         <div class="wrap">
-          <button class="{{ t0 }}" sc-camel-on-click="{{ go0 }}" aria-label="Slide 1: Intro"><span class="lb"><span>01</span><em style="font-style: normal">New Delhi</em></span><span class="bar"><i></i></span></button>
-          <button class="{{ t1 }}" sc-camel-on-click="{{ go1 }}" aria-label="Slide 2: Men & Women"><span class="lb"><span>02</span><em style="font-style: normal">Men & Women</em></span><span class="bar"><i></i></span></button>
-          <button class="{{ t2 }}" sc-camel-on-click="{{ go2 }}" aria-label="Slide 3: Springs"><span class="lb"><span>03</span><em style="font-style: normal">Spring Science</em></span><span class="bar"><i></i></span></button>
-          <button class="{{ t3 }}" sc-camel-on-click="{{ go3 }}" aria-label="Slide 4: Studio"><span class="lb"><span>04</span><em style="font-style: normal">The Studio</em></span><span class="bar"><i></i></span></button>
+          <button class="tab on {{ t0 }}" sc-camel-on-click="{{ go0 }}" aria-label="Slide 1: Engineered for movement"><span class="lb"><span>01</span><em style="font-style: normal">Movement</em></span><span class="bar"><i></i></span></button>
+          <button class="tab {{ t1 }}" sc-camel-on-click="{{ go1 }}" aria-label="Slide 2: Body System"><span class="lb"><span>02</span><em style="font-style: normal">Body System</em></span><span class="bar"><i></i></span></button>
+          <button class="tab {{ t2 }}" sc-camel-on-click="{{ go2 }}" aria-label="Slide 3: Every Body"><span class="lb"><span>03</span><em style="font-style: normal">Every Body</em></span><span class="bar"><i></i></span></button>
           <div class="arrows">
-            <span class="count">{{ num }} / 04</span>
+            <span class="count">{{ num }} / 03</span>
             <button sc-camel-on-click="{{ prev }}" aria-label="Previous slide"><svg width="16" height="10" sc-camel-view-box="0 0 16 10" aria-hidden="true"><path d="M16 5H1M5 1L1 5l4 4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></button>
             <button sc-camel-on-click="{{ toggle }}" aria-label="{{ pauseLabel }}">
               <sc-if value="{{ paused }}" hint-placeholder-val="{{ false }}"><svg width="12" height="14" sc-camel-view-box="0 0 12 14" aria-hidden="true"><path d="M1 1l10 6-10 6z" fill="currentColor"></path></svg></sc-if>
@@ -1012,7 +1015,7 @@ class Component extends DCLogic {
     this.timer = setInterval(function () {
       if (!self.state.paused && Date.now() - self.last >= 6500) {
         self.last = Date.now();
-        self.setState({ i: (self.state.i + 1) % 4 });
+        self.setState({ i: (self.state.i + 1) % 3 });
       }
     }, 200);
   }
@@ -1022,11 +1025,11 @@ class Component extends DCLogic {
     var go = function (k) { return function () { self.last = Date.now(); self.setState({ i: k }); }; };
     return {
       rootCls: p ? 'slider paused' : 'slider',
-      c0: i === 0 ? 'sl on' : 'sl', c1: i === 1 ? 'sl on' : 'sl', c2: i === 2 ? 'sl on' : 'sl', c3: i === 3 ? 'sl on' : 'sl',
-      h0: i === 0 ? 'false' : 'true', h1: i === 1 ? 'false' : 'true', h2: i === 2 ? 'false' : 'true', h3: i === 3 ? 'false' : 'true',
-      t0: i === 0 ? 'tab on' : 'tab', t1: i === 1 ? 'tab on' : 'tab', t2: i === 2 ? 'tab on' : 'tab', t3: i === 3 ? 'tab on' : 'tab',
-      go0: go(0), go1: go(1), go2: go(2), go3: go(3),
-      prev: go((i + 3) % 4), next: go((i + 1) % 4),
+      c0: i === 0 ? 'sl on' : 'sl', c1: i === 1 ? 'sl on' : 'sl', c2: i === 2 ? 'sl on' : 'sl',
+      h0: i === 0 ? 'false' : 'true', h1: i === 1 ? 'false' : 'true', h2: i === 2 ? 'false' : 'true',
+      t0: i === 0 ? 'tab on' : 'tab', t1: i === 1 ? 'tab on' : 'tab', t2: i === 2 ? 'tab on' : 'tab',
+      go0: go(0), go1: go(1), go2: go(2),
+      prev: go((i + 2) % 3), next: go((i + 1) % 3),
       toggle: function () { self.last = Date.now(); self.setState({ paused: !p }); },
       paused: p, playing: !p,
       pauseLabel: p ? 'Play slideshow' : 'Pause slideshow',
